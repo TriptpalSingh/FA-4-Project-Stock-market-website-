@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/jquery-3.5.1.js"></script>
+  <style>
+    #outerDiv{
+      height: 400px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .divs{
+      height: 300px;
+      width: 200px;
+      margin: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      background-color: aqua;
+      font-size: 70px;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+      transition: all;
+      transition-duration: 0.5s;
+      transform: rotate(0 deg);
+      
+
+
+    }
+    .divs:hover{
+        width: 250px;
+        height: 350px;
+        box-shadow: black 5px 5px 20px;
+        animation-name: some;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+        animation-duration: 2s;
+    }
+    #num,#btnDiv{
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    #para{
+      font-size: 30px;
+      font-family: Arial, Helvetica, sans-serif;
+      
+    }
+    @keyframes some {
+      0%{
+        transform: rotate(0deg);
+      }
+      100%{
+        transform: rotate(180deg);
+      }
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="outerDiv">
+    <div id="div1" class="divs">1</div>
+    <div id="div2" class="divs">2</div>
+    <div id="div3" class="divs">3</div>
+    <div id="div4" class="divs">4</div>
+    <div id="div5" class="divs">5</div>
+  </div>
+  <div id="num">
+    <p id="para">The divs have been clicked: <span id="span"></span> times.</p>
+  </div>
+  <div id="btnDiv"><button id="btn">Clear</button></div>
+
+  <script>
+    $(document).ready(function(){
+      var num = 0;
+      document.getElementById("span").innerHTML=num;
+      $(".divs").click(function(){
+        num+=1;
+        document.getElementById("span").innerHTML=num;
+      });
+      $("#btn").click(function(){
+        num = 0;
+        document.getElementById("span").innerHTML=num;
+      });
+    })
+  </script>
+  
+</body>
+</html>
