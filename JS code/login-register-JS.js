@@ -1,7 +1,8 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext('2d')
 var particalsArray = [];
-var hue = 0; 
+var hue = 0;
+// var aa="helo" ;
 
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
