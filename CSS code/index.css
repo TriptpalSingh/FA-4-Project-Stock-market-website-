@@ -1,0 +1,368 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+body{
+    background-color: orange;
+    font-family:sans-serif;
+}
+.boxShadow {
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 10px 10px rgba(0, 0, 0, 0.12)
+}
+
+.textShadow {
+    text-shadow: 0px 1px 7px rgb(76, 80, 76);
+}
+
+/* Navbar */
+#navbar{
+    width: 100%;
+    min-height: 8vh;
+    background-color: seagreen;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color:aliceblue;
+    font-size: 2em;
+    letter-spacing: 1.5px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+
+}
+.logo{
+    color:whitesmoke;
+    list-style-type: none;
+}
+.nav-link{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    list-style-type: none;
+}
+.nav-link input{
+    height: 30px;
+    width: 250px;
+    outline: none;
+    border: none;
+    background-color: rgb(42, 112, 73);
+    color: whitesmoke;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.3s;
+    font-size: 17px;
+    /* text-transform: capitalize; */
+}
+
+/* Search and result */
+.res{
+    width: 250px;
+    background-color: whitesmoke;
+    position: absolute;
+    border-radius: 0px 0px 10px 10px;
+    transition: all 0.1s;
+    
+}
+.res .res-list{
+    position: absolute;
+    color: black;
+    font-size: 0.45em;
+    width: 100%;
+    display: none;
+}
+.res .res-list li{
+    padding: 5px;
+    list-style-type: none;
+    /* border-top: 1px solid gray; */
+
+    height: 30px;
+    width: 90%;
+    border-radius: 5px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+.res .res-list li:hover{
+    background-color: rgb(236, 236, 236);
+}
+
+
+.nav-link ::placeholder{
+    color: lightgrey;
+}
+.nav-link button{
+    height: 30px;
+    width: 70px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color:rgb(83, 204, 138) ;
+    cursor: pointer;
+    color:white;
+    font-weight: bold;
+}
+.nav-link button:active{
+    background-color:rgb(42, 112, 73) ;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: whitesmoke;
+    margin: 5px;
+    transition: all 0.2s;
+}
+.burger{
+    display: none;
+}
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+
+
+
+/* main */
+main{
+    height: 100vh;
+    width: 90vw;
+    /* background-color: aquamarine; */
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8vh;
+}
+.chart-info{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 95%;
+    width: 30%;
+    /* border:1px solid lightgray; */
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 2px 2px #888888; */
+    padding: 20px;
+    background-color: white;
+    overflow: scroll;
+}
+.chart-info::-webkit-scrollbar{
+    display: none;
+}
+.chart-graph{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#myChart{
+    box-sizing:content-box;
+}
+.chart-container{
+    margin-top: 20px;
+    position: relative; 
+    height:55%; 
+    width:100%;
+    background-color: white;
+    border-radius: 5px;
+    /* box-shadow: 0px 0px 2px 2px #888888; */
+
+}
+#ii{
+    margin-top: 20%; 
+    margin-left: 20%;
+    font-weight: bold; 
+    font-style: italic; 
+    text-align: center;
+    position: absolute;
+}
+.time-range li{
+    text-align: center;
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    width: 50px;
+    border-right: 1px solid black;
+    transition: all 0.3s;
+}
+.time-range{
+    display:flex;
+    width: 250px;
+    justify-content: space-around;
+    border: 1px solid lightgray;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* box-shadow: 0px 0px 1px 1px #888888; */
+}
+.stock-compare{
+    margin-top: 20px;
+    height:37%; 
+    width:100%;
+    background-color: white;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 2px 2px #888888; */
+    display: flex;
+    flex-direction: column;
+}
+.comp{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.comp h2{
+    text-align: center;
+}
+
+.com-1{
+    width: 50%;
+    height: 100%;
+    border-right: 1px solid black;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+.com-2{
+    width: 50%;
+    height: 100%;
+    border-left: 1px solid black;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+
+
+
+
+/* footer */
+.footer{
+    width: 100%;
+    height: 30vh;
+    position: aboslute;
+    left: 0px;
+    bottom:0px;
+    background-color: rgb(46, 44, 44);
+}
+
+
+@media screen and (max-width: 1200px){
+    .nav-link{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 850px){
+    body{
+        overflow-x: hidden;
+        min-width: 435;
+    }
+    .nav-link{
+        z-index: 2;
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        width: 40%;
+        top:8vh;
+        background-color: seagreen;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        transform: translateX(100%);
+        transition:transform 0.5s;
+        padding: 5%;
+    }
+    .burger{
+        display: block;
+        cursor: pointer;
+    }
+    /* .nav-link input{
+        width: 170px;
+    } */
+    .nav-link li{
+        margin: 5%;
+    }
+    .chart-graph{
+        width: 100%;
+        height: 60vh;
+    }
+    .stock-compare{
+        width: 100%;
+        height: 40%;
+    }
+    .chart-container{
+        width: 100%;
+        height: 50%;
+    }
+    .chart-info{
+        width: 100%;
+    }
+
+    main{
+        flex-direction: column;
+
+    }
+    
+}
+
+@media screen and (max-width : 655px){
+    .nav-link input{
+        width: 200px;
+    }
+    .res{
+        width: 200px;
+    }
+}
+@media screen and (max-width : 500px){
+    .nav-link input{
+        width: 170px;
+    }
+    .res{
+        width: 170px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .chart-container{
+        width: 100%;
+        height: auto;
+    }
+    .chart-info{
+        width: 100%;
+        height: max-content;
+    }
+    .chart-graph{
+        width: 100%;
+        height: 80vh;
+    }
+    .stock-compare{
+        width: 100%;
+    }
+    main{
+        flex-direction: column-reverse;
+    }
+}
+
+.nav-active{
+    
+    transform: translateX(0%);
+}
+
+.l1{
+
+    transform: rotateZ(50deg);
+}
+.l2{
+    display: none;
+}
+.l3{
+    transform: rotateZ(-50deg);
+}
+  
