@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Stock site</a>
+          
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+                </li>
+                
+                
+                <li class="nav-item dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="#">Item1</a></li>
+                      <li><a class="dropdown-item" href="#">Item2</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">End item</a></li>
+                    </ul>
+                </li>
+            </ul>
+                
+            <!--Search box-->
+            <form class="d-flex">
+                <input class="form-control me-2 col-xs-5" type="search" placeholder="Search" aria-label="Search">
+                
+                <button class="btn btn-outline-success " type="submit" id="Search">Search</button>
+
+                <!--Profile logo-->
+                <button class="btn btn-outline-success "  id="Profile">
+                    <i class="fas fa-user fa-2x"></i>
+                </button>
+            </form>
+          
+        </div>
+      </nav>
+    <div id="inner-box">
+
+
+
+        <!--Sidebar-->
+    <aside>
+        <marquee direction = "up" id="Stock-price" scrollamount="13">
+            <p>Stock1</p>
+            <p>Stock2</p>
+            <p>Stock3</p>
+            <p>Stock4</p>
+            <p>Stock5</p>
+            <p>Stock6</p>
+            <p>Stock7</p>
+            <p>Stock8</p>
+            <p>Stock9</p>
+            <p>Stock10</p>
+            <p>Stock11</p>
+            <p>Stock12</p>
+            <p>Stock13</p>
+            <p>Stock14</p>
+            <p>Stock15</p>
+            <p>Stock16</p>
+
+        </marquee>
+    </aside>
+    </div>
+
+
+    
+
+    <!--Footer-->
+    <footer class="container">
+        <p>Terms and conditions:</p>
+
+    </footer>
+
+    <!--Disclaimer-->
+    <marquee scrollamount="14" id="Warning">Note: Mutual Fund investments are subject to market risks, read all scheme related documents carefully.
+         The NAVs of the schemes may go up or down depending upon the factors and forces affecting the securities market including
+          the fluctuations in the interest rates. The past performance of the mutual funds is not necessarily indicative of future
+           performance of the schemes. The Mutual Fund is not guaranteeing or assuring any dividend under any of the schemes and the
+            same is subject to the availability and adequacy of distributable surplus. Investors are requested to review the prospectus
+             carefully and obtain expert professional advice with regard to specific legal, tax and financial implications of the 
+             investment/participation in the scheme.
+    </marquee>
+
+
+
+    <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+  
+</body>
+</html>
