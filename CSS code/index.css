@@ -87,10 +87,14 @@ body{
     /* border-top: 1px solid gray; */
 
     height: 30px;
+    overflow-x: scroll;
     width: 90%;
     border-radius: 5px;
     margin: 10px auto;
     cursor: pointer;
+}
+.res-list li::-webkit-scrollbar {
+    display: none;
 }
 .res .res-list li:hover{
     background-color: rgb(236, 236, 236);

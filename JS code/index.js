@@ -1,4 +1,5 @@
-window.company = {
+window.company_t = {
+    //popular company list
     "Microsoft":"MSFT",
     "Apple":"AAPL",
     "Google":"GOOGL",
@@ -11,13 +12,18 @@ window.company = {
     "Amd":"AMD",
 }
 
-const api_key="DLDFRT3OS2GC4CS9";
+window.company=company_t;
+
+const api_key="QPOUSNBCLNPRRT4I";
+const search_key="2Y7TYXX29G2ZODZS"
 /*
 Api keys
 K8OUKTRAB4ZCGXV9
 DLDFRT3OS2GC4CS9
 IKA4T7MP6LW4SQQO
 2Y7TYXX29G2ZODZS
+RZK00R0YIOTNFTPY
+QPOUSNBCLNPRRT4I
 */
 
 
@@ -93,16 +99,29 @@ $('#inp').focusout(function(){
 function get_keyword_search_result(){
     
     console.log($('#inp').val())
-    $.getJSON("https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords="+$('#inp').val()+"&apikey="+api_key)
+    $.getJSON("https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords="+$('#inp').val()+"&apikey="+search_key)
     .done(function(data){
-        
+
+        console.log("Searched")
+
         obj = data.bestMatches
         // console.log(obj)
         // console.log(obj["2. name"])
-        company={}
 
-        for(let i=0; i<Object.keys(obj).length; i++){
+        if (obj == undefined) return;
+        if (obj == {}) return;
+
+        company={};
+
+        
+        //return function if obj length is == 0
+
+        let k = (Object.keys(obj).length < 8 ) ? Object.keys(obj).length : 8;
+        //setting searh list to 10 if search list is greater than 10
+
+        for(let i=0; i< k ; i++){
             // console.log(obj[i]["2. name"]+" = "+obj[i]["1. symbol"])
+            if(obj[i]["2. name"].length > 20) continue;
             company[obj[i]["2. name"]] = obj[i]["1. symbol"]
         }
 
@@ -123,25 +142,21 @@ $('#inp').keyup(function(){
     //this functio will update suggestion list
     $('.res-list').empty();
 
+
+    window.final_company = company;
     company = get_keyword_search_result()
 
-    // let temp=[];
-    // str = this.value;
-    // if(str == ""){
-    //     return
-    // }
-    // for(i in company){
-    //     if(i.startsWith(str.charAt(0).toUpperCase()+str.slice(1))){
-    //         temp.push(i)
-    //     }
-    // }
-
+    for(i in company_t){
+        if(i[0] == $('#inp').val().trim()[0]){
+            company[i] = company_t[i]
+        }
+    }
+    
     console.log(company)
     
     let temp = Object.keys(company)
 
     for(let i=0; i<temp.length; i++){
-        console.log("hello")
         li = document.createElement('LI')
         li.innerText=temp[i];
         $(li).appendTo('.res-list')
@@ -157,8 +172,9 @@ $(document).on("click",'.res-list li',function(){
     //This function will listen to click li element in result
     //and extract its text and put in search field
     console.log(this.innerText)
+    console.log(final_company)
     $('#inp').val(this.innerText)
-    window.final_company = company;
+
 })
 
 function res_size(){
@@ -166,7 +182,7 @@ function res_size(){
     //of res box and the res-list change
     let temp = $('.res-list').children();
     $('.res').css({
-        height:45*temp.length+'px',
+        "min-height":45*temp.length+'px',
         //here 45 is height of one res element (li)
     })
 }
@@ -238,12 +254,12 @@ $('.time-range li').click(function(){
 function get_data(){
     $('#ii').text('Loading...')
     $('#ii').show()
-    let c = $(inp).val();
+    let c = $(inp).val().trim();
 
     if(final_company[c] == undefined){
         //if user have not searched any company just return
-        console.log(company)
-        console.log(company[c])
+        console.log(final_company)
+        console.log(final_company[c])
         alert("Please enter a valid company name")
         return;
     }
@@ -256,7 +272,7 @@ function get_data(){
 
 
     //this function will be used to get company infomation
-    $.getJSON("https://www.alphavantage.co/query?function=OVERVIEW&symbol="+company[c]+"&apikey="+api_key)
+    $.getJSON("https://www.alphavantage.co/query?function=OVERVIEW&symbol="+final_company[c]+"&apikey="+api_key)
     .done(function(data){
 
         //removing previous company info
@@ -295,11 +311,11 @@ function get_data(){
     //changing url according to time range has been selected 
     if(time_range == "TIME_SERIES_INTRADAY"){
         //intraday have slightly differnt url so we have to change url according to that
-        url="https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="+company[c]+"&interval=5min&apikey="+api_key;
+        url="https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="+final_company[c]+"&interval=5min&apikey="+api_key;
     }
     else{
         //rest time range work through same url
-        url="https://www.alphavantage.co/query?function="+time_range+"&symbol="+company[c]+"&outputsize=full&apikey="+api_key;
+        url="https://www.alphavantage.co/query?function="+time_range+"&symbol="+final_company[c]+"&outputsize=full&apikey="+api_key;
     }
 
     $.getJSON(url)
@@ -336,7 +352,7 @@ function get_data(){
   
         }
 
-        let name = data["Meta Data"]["2. Symbol"];//getting name of stock
+        // let name = data["Meta Data"]["2. Symbol"];//getting name of stock
 
         // console.log(name)
         console.log(data)
