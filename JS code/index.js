@@ -11,10 +11,13 @@ window.company_t = {
     "Zoom video":"ZM",
     "Amd":"AMD",
 }
+$('#overlay').hide();
 
 window.company=company_t;
+window.final_company=company_t;
 
-const api_key="QPOUSNBCLNPRRT4I";
+
+const api_key="K8OUKTRAB4ZCGXV9";
 const search_key="2Y7TYXX29G2ZODZS"
 /*
 Api keys
@@ -147,7 +150,7 @@ $('#inp').keyup(function(){
     company = get_keyword_search_result()
 
     for(i in company_t){
-        if(i[0] == $('#inp').val().trim()[0]){
+        if(i.search($('#inp').val() >= 0)){
             company[i] = company_t[i]
         }
     }
@@ -260,13 +263,17 @@ function get_data(){
         //if user have not searched any company just return
         console.log(final_company)
         console.log(final_company[c])
-        alert("Please enter a valid company name")
+        $('#overlay div p').text("Please enter a valid company name")
+        $('#overlay').show();
+        stop_scroll();
         return;
     }
 
     if(window.time_range == undefined){
         //if time range no selected alert user
-        alert("Please choose a Time-range")
+        $('#overlay div p').text("Please choose a time range")
+        $('#overlay').show();
+        stop_scroll();
         return;
     }
 
@@ -274,6 +281,15 @@ function get_data(){
     //this function will be used to get company infomation
     $.getJSON("https://www.alphavantage.co/query?function=OVERVIEW&symbol="+final_company[c]+"&apikey="+api_key)
     .done(function(data){
+
+        
+        if(data["Note"] != undefined || data["Information"] != undefined){
+            console.log(data)
+            $('#overlay div p').text("The key is used maximum time \nplease change the key")
+            $('#overlay').show();
+            stop_scroll();
+            return;
+        }
 
         //removing previous company info
         $('.chart-info').remove();
@@ -351,13 +367,18 @@ function get_data(){
             }
   
         }
+        if(data["Note"] != undefined || data["Information"] != undefined){
+            $('#overlay div p').text("The key is used maximum time \nplease change the key")
+            $('#overlay').show();
+            stop_scroll();
 
-        // let name = data["Meta Data"]["2. Symbol"];//getting name of stock
+        }
 
-        // console.log(name)
+        let name = data["Meta Data"]["2. Symbol"];//getting name of stock
+
         console.log(data)
-        // console.log(data["Meta Data"]);
-        // console.log(data["Weekly Adjusted Time Series"])
+        
+
 
         if(window.ctx == undefined){
             //if ctx is not defined put the graph 
@@ -450,3 +471,19 @@ function update_chart(l,d,name){
 
 }
 
+
+
+//------------------------------------------------------------------
+//overlay functions
+function hide_overlay(){
+    $('#overlay').hide();
+    $('body').css({
+        'overflow':'scroll',
+    })
+}
+
+function stop_scroll(){
+    $('body').css({
+        'overflow':'hidden',
+    });
+}
