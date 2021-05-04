@@ -92,7 +92,7 @@
     display: inline-block;
     transition-property: all;
     transition-duration: 300ms;
-    transition-timing-function: ease-out;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 #login_form{
