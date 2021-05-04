@@ -87,10 +87,14 @@ body{
     /* border-top: 1px solid gray; */
 
     height: 30px;
+    overflow-x: scroll;
     width: 90%;
     border-radius: 5px;
     margin: 10px auto;
     cursor: pointer;
+}
+.res-list li::-webkit-scrollbar {
+    display: none;
 }
 .res .res-list li:hover{
     background-color: rgb(236, 236, 236);
@@ -165,7 +169,7 @@ main{
     flex-direction: column;
 }
 #myChart{
-    box-sizing:content-box;
+    box-sizing:border-box;
 }
 .chart-container{
     margin-top: 20px;
@@ -366,3 +370,52 @@ main{
     transform: rotateZ(-50deg);
 }
   
+
+#overlay{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0px;
+    box-sizing: border-box;
+
+    z-index: 3;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay div{
+    height: 200px;
+    width: 350px;
+    border-radius:4px;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#overlay div h3{
+    flex-grow: 1;
+}
+#overlay div p{
+    flex-grow: 2;
+}
+
+#overlay div button{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #dc3545;
+    border: none;
+    color: #fff;
+    height: 30px;
+    width: 50px;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+#overlay div button:active{
+    background-color: #af1020;
+}
