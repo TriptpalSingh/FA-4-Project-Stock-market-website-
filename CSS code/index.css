@@ -4,11 +4,17 @@
     box-sizing: border-box;
 }
 
+#myCanvas {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}
+
 body::-webkit-scrollbar {
     display: none;
 }
 body{
-    background-color: orange;
     font-family:sans-serif;
 }
 .boxShadow {
@@ -29,7 +35,7 @@ body{
 #navbar{
     width: 100%;
     min-height: 8vh;
-    background-color: seagreen;
+    background-color: rgb(58, 58, 58);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -274,7 +280,7 @@ main{
         height: 92vh;
         width: 40%;
         top:8vh;
-        background-color: seagreen;
+        background-color: rgb(78, 83, 81);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -383,6 +389,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 #overlay div{
