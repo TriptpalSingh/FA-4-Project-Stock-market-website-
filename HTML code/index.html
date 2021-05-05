@@ -8,11 +8,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Stock</title>
     <link rel="stylesheet" href="../CSS code/index.css">
-    <script src="../JS code/login-register-JS.js"></script>
 
 </head>
 <body>
-    <canvas id="myCanvas"></canvas>
     <nav id="navbar" class="boxShadow">
         <div class="logo">
             <h4 class="textShadow">TRADEnBUILD</h4>
@@ -72,7 +70,11 @@
                     <li>1Y</li>
                     <li>Max</li>
                 </ul>
-                <h1 id="ii" >Search Stock to See A Chart ⚡</h1>
+                <div id="chart-overlay">
+                    <!-- <div id="gif"><img src="../pictures/Skateboarding.gif"></div> -->
+                    <div id="anime-box">
+                    </div>
+                </div>
                 <canvas id="myChart" ></canvas>
             </div>
 
@@ -83,9 +85,12 @@
                 <div class="comp">
                     <div class="com-1">
                         <h2>Company 1</h2>
+                        <p>RoE: </p>
                     </div>
                     <div class="com-2">
                         <h2>Company 2</h2>
+                        <p>Search Second company</p>
+                        <Button>Search</Button>
                     </div>
                 </div>
             </div>
