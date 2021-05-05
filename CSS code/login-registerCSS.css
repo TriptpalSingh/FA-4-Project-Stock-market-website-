@@ -17,14 +17,29 @@
 
 
 #outer {
-    height: 2000px;
+    /* height: 2000px; */
     width: 100%;
     display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
     padding-top: 30px;
     font-size: 1.2em;
+}
+
+#img_div{
+    margin-top: 7px;
+    width: 450px;
+    height: 550px;
+    /* background: url(../sources/Pictures/MicrosoftTeams-image.png);
+    background-size: cover; */
+    background-color: blanchedalmond;
+    box-shadow: rgb(132, 134, 136) -5px 1px 15px;
+}
+#bull_img{
+    height: 550px;
+    width: 450px;
+    opacity: 0.9;
 }
 
 #formdiv {
@@ -33,19 +48,19 @@
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
-    margin-top: 1vh;
-    border-radius: 5%;
+    margin-top: 7px;
+    /* border-radius: 5%; */
     border: solid 1px rgba(230, 245, 248, 0.3);
     /* width: 32vw; */
     width: 500px;
     height: 550px;
     transition: all 100ms ease-out 0s;
-    box-shadow: rgb(132, 134, 136) 1px 1px 15px;
+    box-shadow: rgb(132, 134, 136) 5px 1px 15px;
     overflow: visible;
 }
 
 #button-div {
-    height: 8vh;
+    height: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -53,18 +68,19 @@
     font-family: 'Courier New', Courier, monospace;
     font-weight: 900;
     font-size: 1.5em;
+    
 }
 
 #seperator {
-    height: 8vh;
+    height: 60px;
     width: 1px;
     border: solid 4px rgba(230, 245, 248, 0.9);
     border-radius: 10%;
 }
 
 .buttons {
-    height: 50px;
-    width: 150px;
+    height: 60px;
+    width: 233px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -73,6 +89,7 @@
     transition-property: all;
     transition-duration: 50ms;
     transition-timing-function: ease-out;
+    /* background-image: linear-gradient(to right,red,white); */
 }
 
 .buttons:hover {
@@ -134,4 +151,11 @@
     background-color: white;
     border: solid 2px red;
     border-radius: 20px;
+}
+
+@media screen and (max-width: 950px){
+    #img_div{
+        display: none;
+    }
+    
 }
