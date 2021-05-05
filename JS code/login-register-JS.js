@@ -2,7 +2,6 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext('2d')
 var particalsArray = [];
 var hue = 0;
-// var aa="helo" ;
 
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
@@ -119,16 +118,19 @@ animate();
 $("document").ready(function(){
     var login_btn = $("#l_b");
     var register_btn = $("#su_b");
+    var button = document.getElementById("btn");
     $(login_btn).click(function(){
         var register_div = document.getElementById("register_form");
         var login_div = document.getElementById("login_form");
         register_div.style.transform = "translate(0px, -400px)"
         login_div.style.transform = "translate(0px, -560px)"
+        button.value="LOGIN";
     });
     $(register_btn).click(function(){
         var register_div = document.getElementById("register_form");
         var login_div = document.getElementById("login_form");
         register_div.style.transform = "translate(0px, 0px)"
         login_div.style.transform = "translate(0px, -100px)"
+        button.value="SIGNUP";
     });
 });
