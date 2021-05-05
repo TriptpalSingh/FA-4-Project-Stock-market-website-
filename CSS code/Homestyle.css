@@ -3,16 +3,22 @@
     padding: 0;
     margin: 0;}
 
-body  {
-    /*background: rgba(255, 255, 255, 0.8);*/
-    background-image:linear-gradient(rgba(143, 140, 140, 0.4),rgba(255, 251, 251, 0.3)),url(../pictures/money3.jpg);
-    background-attachment: fixed;
-  }
+
+      /*Disclaimer*/
+#Warning {
+    background-color: black;
+    font-weight: 600;
+    color: white;
+}
 
     /*Navbar*/
-
+.navbar{
+    position: sticky;
+    top:0px;
+    
+}
 .navbar-brand{
-    background-color: yellow;
+    background-color: rgb(255, 136, 0);
     font-family: cursive;
     color:black !important;
     padding: 0.5%;
@@ -25,13 +31,16 @@ body  {
 }  
 
 #Search {
-    margin-right: 20vw;
+    margin-right: 5vw;
     border-width: 4px;
     font-weight: 800;
     font-size: 1.3rem;
     
 }
-
+.search-logo{
+    color: #ee7f18;
+    border-color: #ee7f18;
+}
 
 input[type="search"] {
     width:20vw;
@@ -40,17 +49,30 @@ input[type="search"] {
 #Profile {
     border-width: 4px;
 }
+.profile-logo{
+    color:#ee7f18;
+    border-color: #ee7f18;
+}
 
     /*Main body*/
 #inner-box {
 
-
+    background-image:url(../pictures/money2.jpg);
     height:100vh;
     width:98.9vw;
+    background-size: cover;
+    padding: 14%;
+    padding-left: 7%;
+    font-size: 5rem;
+    font-weight: 700;
+    color:rgba(71, 38, 38,0.86);
     
     }
-
+#Page-name{
+    font-size: 6.2rem;
+}
     /*Sidebar*/
+
 
 aside{
 
@@ -58,9 +80,9 @@ aside{
     margin: 20px;
     width: 300px;
     height: 95%;
-    background-color: #01022c;
-    border:8px solid rgba(8, 4, 219, 0.849);
-    
+    background-color: #ee7f18;
+    border:8px solid rgba(94, 108, 112, 0.849);
+    border-radius: 7%;
     
 }
 
@@ -77,17 +99,9 @@ aside marquee{
     /*Footer*/
 footer {
     height: 200px;
-    background-color: rgb(24, 23, 23,0.9);
+    background-color: rgb(24, 23, 23,1);
     padding: 30px;
     font-weight: bolder;
     color:white;
 
-}
-    /*Disclaimer*/
-#Warning {
-    background-color: red;
-    margin: 0;
-    font-weight: 600;
-    position: sticky;
-    bottom:0px;
 }

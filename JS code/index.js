@@ -147,15 +147,19 @@ $('#inp').keyup(function(){
 
 
     window.final_company = company;
-    company = get_keyword_search_result()
+    // company = get_keyword_search_result()
+
+    company={}
+
 
     for(i in company_t){
-        if(i.search($('#inp').val() >= 0)){
+        //here searching in company_t and appending in company
+        if(i.search($(this).val()) >= 0){
             company[i] = company_t[i]
         }
     }
     
-    console.log(company)
+    // console.log(company)
     
     let temp = Object.keys(company)
 
@@ -255,8 +259,7 @@ $('.time-range li').click(function(){
 
 
 function get_data(){
-    $('#ii').text('Loading...')
-    $('#ii').show()
+    
     let c = $(inp).val().trim();
 
     if(final_company[c] == undefined){
@@ -264,18 +267,19 @@ function get_data(){
         console.log(final_company)
         console.log(final_company[c])
         $('#overlay div p').text("Please enter a valid company name")
-        $('#overlay').show();
-        stop_scroll();
+        show_overlay();
         return;
     }
 
     if(window.time_range == undefined){
         //if time range no selected alert user
         $('#overlay div p').text("Please choose a time range")
-        $('#overlay').show();
-        stop_scroll();
+        show_overlay();
         return;
     }
+
+    $('#ii').text('Loading...')
+    $('#ii').show()
 
 
     //this function will be used to get company infomation
@@ -286,8 +290,7 @@ function get_data(){
         if(data["Note"] != undefined || data["Information"] != undefined){
             console.log(data)
             $('#overlay div p').text("The key is used maximum time \nplease change the key")
-            $('#overlay').show();
-            stop_scroll();
+            show_overlay();
             return;
         }
 
@@ -369,8 +372,8 @@ function get_data(){
         }
         if(data["Note"] != undefined || data["Information"] != undefined){
             $('#overlay div p').text("The key is used maximum time \nplease change the key")
-            $('#overlay').show();
-            stop_scroll();
+            show_overlay();
+            return;
 
         }
 
@@ -480,6 +483,12 @@ function hide_overlay(){
     $('body').css({
         'overflow':'scroll',
     })
+}
+
+function show_overlay(){
+    $(window).scrollTop(0);
+    $('#overlay').show()
+    stop_scroll();
 }
 
 function stop_scroll(){
