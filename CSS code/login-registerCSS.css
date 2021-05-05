@@ -6,10 +6,11 @@
 }
 
 .bg-custom-1 {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     opacity: 1;
     height: 60px;
     align-items: center;
+    background-color: #E71989;
     /* background-image: linear-gradient(to right, rgb(253, 253, 253,1),rgba(88, 181, 235, 1));  */
 
 }
@@ -39,7 +40,7 @@
     width: 500px;
     height: 76.5vh;
     transition: all 100ms ease-out 0s;
-    box-shadow: violet 1px 1px 15px;
+    box-shadow: rgb(132, 134, 136) 1px 1px 15px;
     overflow: visible;
 }
 
@@ -117,123 +118,9 @@
 }
 
 #register_div {
-    padding-top: 1em;
+    padding-top: 0.5em;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    justify-content: center;
 
 }
-
-/* #test{
-    width: 400px;
-    height: 600px;
-    background-color: aqua;
-    border: solid 2px red;
-} */
-
-/* @media all and (min-width: 50px) {
-    body {
-        font-size: 0.02em;
-    }
-}
-
-@media all and (min-width: 100px) {
-    body {
-        font-size: 0.04em;
-    }
-}
-
-@media all and (min-width: 200px) {
-    body {
-        font-size: 0.06em;
-    }
-}
-
-@media all and (min-width: 300px) {
-    body {
-        font-size: 0.08em;
-    }
-}
-
-@media all and (min-width: 400px) {
-    body {
-        font-size: 0.1em;
-    }
-}
-
-@media all and (min-width: 500px) {
-    body {
-        font-size: 0.2em;
-    }
-}
-
-@media all and (min-width: 600px) {
-    body {
-        font-size: 0.3em;
-    }
-}
-
-@media all and (min-width: 700px) {
-    body {
-        font-size: 0.4em;
-    }
-}
-
-@media all and (min-width: 800px) {
-    body {
-        font-size: 0.5em;
-    }
-}
-
-@media all and (min-width: 900px) {
-    body {
-        font-size: 0.6em;
-    }
-}
-
-@media all and (min-width: 1000px) {
-    body {
-        font-size: 0.7em;
-    }
-}
-
-@media all and (min-width: 1100px) {
-    body {
-        font-size: 0.8em;
-    }
-}
-
-@media all and (min-width: 1200px) {
-    body {
-        font-size: 0.9em;
-    }
-}
-
-@media all and (min-width: 1300px) {
-    body {
-        font-size: 1.0em;
-    }
-}
-
-@media all and (min-width: 1400px) {
-    body {
-        font-size: 1.1em;
-    }
-} */
-
-/* @media all and (min-width: 1500px) {
-    body {
-        font-size: 1.2em;
-    }
-} */
-
-/* @media all and (min-width: 1600px) {
-    body {
-        font-size: 1.4em;
-    }
-}
-
-@media all and (min-width: 1700px) {
-    body {
-        font-size: 1.6em;
-    }
-} */
