@@ -349,19 +349,31 @@ function get_data(){
         
 
         let k=0;
+
+        open_high=[]
+
+        // console.log(c_data)
+        
         for(i in c_data){
+            if(k == 0){
+                open_high.push(c_data[i]["2. high"])
+                open_high.push(c_data[i]["3. low"])
+                open_high.push(c_data[i]["1. open"])
+                open_high.push(c_data[i]["4. close"])
+                open_high.push(c_data[i]["5. volume"])
+            }
             if(k==loop){ //only getting loop amount of data 
                 break;
             }
+
             l.push(i)//here pushing label-data in lable
-            for(j in c_data[i]){
-                d.push(c_data[i][j]);//here putting open price of that day
-                break;
-            }
+            d.push(c_data[i]["4. close"]);
+
             k+=1;
         }
+        set_open_high(open_high);
         l.reverse();
-        console.log(l)
+        // console.log(l)
         d.reverse();
 
         if(time_range == "TIME_SERIES_INTRADAY"){
@@ -518,3 +530,16 @@ function stop_scroll(){
         'overflow':'hidden',
     });
 }
+
+//compare stock functions
+function set_open_high(arr){
+    console.log($('.data_point').children());
+
+    let x = $('.data_point').children()["prevObject"];
+
+    for(let i=0; i<5; i++){
+        x[i]["innerHTML"]="<b>$"+arr[i]+"</b>";
+    }
+    $('.com-1 h2').text($('#inp').val())
+}
+// set_open_high()
