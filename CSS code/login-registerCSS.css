@@ -96,6 +96,10 @@
     font-size: 1.2em;
 }
 
+#su_b{
+    background-image: linear-gradient(to left,rgba(230, 245, 248, 0.9),white);
+}
+
 #inner_formdiv { 
     border-top: solid 4px rgba(230, 245, 248, 0.9);
     border-bottom: solid 4px rgba(230, 245, 248, 0.9);
@@ -133,7 +137,7 @@
 .inputs {
     width: 420px;
     border: 0;
-    border-bottom: solid 2px rgba(0,0,0,0.7);
+    border-bottom: solid 2px rgba(0,0,0,0.6);
     height: 50px;
 }
 

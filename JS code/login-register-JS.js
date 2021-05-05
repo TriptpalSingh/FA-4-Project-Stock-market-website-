@@ -1,5 +1,5 @@
 var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext('2d')
+var ctx = canvas.getContext('2d');
 var particalsArray = [];
 var hue = 0;
 
