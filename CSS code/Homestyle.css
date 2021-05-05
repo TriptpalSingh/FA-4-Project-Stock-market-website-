@@ -62,7 +62,7 @@ input[type="search"] {
     /*Main body*/
 #inner-box {
 
-    background-image:url(../pictures/money2.jpg);
+    background-image:url(../sources/pictures/money2.jpg);
     height:100vh;
     width:98.9vw;
     background-size: cover;
@@ -100,6 +100,17 @@ aside marquee{
     color:white;
     font-weight: 600;
     font-size: 2rem;
+}
+
+    /*Comments*/
+
+#Comments{
+    background-image: url(../sources/Pictures/Comments.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height:600px;
+
+    
 }
     /*Footer*/
 footer {
