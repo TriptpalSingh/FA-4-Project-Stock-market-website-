@@ -10,8 +10,11 @@ window.company_t = {
     "Intel":"INTC",
     "Zoom video":"ZM",
     "Amd":"AMD",
+    "Reliance":"RELI",
 }
-$('#overlay').hide();
+
+hide_overlay();
+// hide_loading_animation();
 
 window.company=company_t;
 window.final_company=company_t;
@@ -78,7 +81,7 @@ $('#inp').focusout(function(){
     //input focusout
     setTimeout(function(){
         $('#inp').css({
-            backgroundColor:"rgb(42, 112, 73)",
+            backgroundColor:"rgb(219, 123, 33)",
             color:"white",
             borderRadius: '10px',
             color:"whitesmoke"
@@ -154,7 +157,7 @@ $('#inp').keyup(function(){
 
     for(i in company_t){
         //here searching in company_t and appending in company
-        if(i.search($(this).val()) >= 0){
+        if(i.search($(this).val().charAt(0).toUpperCase()+$(this).val().slice(1)) >= 0){
             company[i] = company_t[i]
         }
     }
@@ -207,7 +210,7 @@ $('.time-range li').click(function(){
 
     let inp = this.innerText;//getting time-range that user is clicked
 
-    this.style.backgroundColor="green" //changing color to clicked time-range
+    this.style.backgroundColor="rgb(219, 123, 33)" //changing color to clicked time-range
     this.style.color="white"
 
     window.time_range = "";//declaring some global function that will be used in get data function
@@ -278,8 +281,7 @@ function get_data(){
         return;
     }
 
-    $('#ii').text('Loading...')
-    $('#ii').show()
+    
 
 
     //this function will be used to get company infomation
@@ -293,6 +295,8 @@ function get_data(){
             show_overlay();
             return;
         }
+
+        show_loading_animation();
 
         //removing previous company info
         $('.chart-info').remove();
@@ -370,6 +374,16 @@ function get_data(){
             }
   
         }
+        else if(time_range == "TIME_SERIES_MONTHLY" && l.length==60){
+
+            for(let i=0; i<l.length; i++){
+                l[i] =  l[i].split("-")[0]
+                
+            }
+        }
+
+        console.log(l)
+
         if(data["Note"] != undefined || data["Information"] != undefined){
             $('#overlay div p').text("The key is used maximum time \nplease change the key")
             show_overlay();
@@ -403,7 +417,7 @@ function get_data(){
 
 function put_chart(l,d,name){
     //this function will put chart
-    $('#ii').hide();
+    hide_loading_animation();
 
     ctx = document.getElementById('myChart').getContext('2d');
     
@@ -463,7 +477,7 @@ function put_chart(l,d,name){
 
 function update_chart(l,d,name){
     //this function will be used to update data on chart
-    $('#ii').hide()
+    hide_loading_animation();
     chart.data.labels = l;
     chart.data.datasets[0].data= d;
     chart.data.datasets[0].label=name;
@@ -483,6 +497,14 @@ function hide_overlay(){
     $('body').css({
         'overflow':'scroll',
     })
+}
+
+function show_loading_animation(){
+    $('#chart-overlay').show()
+}
+
+function hide_loading_animation(){
+    $('#chart-overlay').hide()
 }
 
 function show_overlay(){
