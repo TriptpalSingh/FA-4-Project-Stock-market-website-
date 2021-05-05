@@ -3,6 +3,11 @@
     padding: 0;
     margin: 0;}
 
+.mystyle::placeholder {
+        color: red;
+        opacity: 0.6;
+        font-weight: 500 ;
+      }
 
       /*Disclaimer*/
 #Warning {
@@ -98,7 +103,7 @@ aside marquee{
 }
     /*Footer*/
 footer {
-    height: 200px;
+    height: 300px;
     background-color: rgb(24, 23, 23,1);
     padding: 30px;
     font-weight: bolder;
