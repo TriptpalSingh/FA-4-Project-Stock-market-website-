@@ -1,5 +1,5 @@
 var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext('2d')
+var ctx = canvas.getContext('2d');
 var particalsArray = [];
 var hue = 0;
 
@@ -123,14 +123,18 @@ $("document").ready(function(){
         var register_div = document.getElementById("register_form");
         var login_div = document.getElementById("login_form");
         register_div.style.transform = "translate(0px, -400px)"
-        login_div.style.transform = "translate(0px, -560px)"
+        login_div.style.transform = "translate(0px, -700px)"
         button.value="LOGIN";
+        document.getElementById("l_b").style.backgroundImage="linear-gradient(to right,rgba(230, 245, 248, 0.9),white)"
+        document.getElementById("su_b").style.backgroundImage="linear-gradient(to right,white,white)";
     });
     $(register_btn).click(function(){
         var register_div = document.getElementById("register_form");
         var login_div = document.getElementById("login_form");
         register_div.style.transform = "translate(0px, 0px)"
-        login_div.style.transform = "translate(0px, -100px)"
+        login_div.style.transform = "translate(0px, -250px)"
         button.value="SIGNUP";
+        document.getElementById("l_b").style.backgroundImage="linear-gradient(to right,white,white)";
+        document.getElementById("su_b").style.backgroundImage="linear-gradient(to left,rgba(230, 245, 248, 0.9),white)";
     });
 });
