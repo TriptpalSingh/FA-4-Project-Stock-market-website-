@@ -64,7 +64,7 @@
 
 .buttons {
     height: 50px;
-    width: 130px;
+    width: 150px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -106,7 +106,7 @@
 }
 
 .input-col {
-    padding-bottom: 15px;
+    padding-bottom: 30px;
 }
 
 .lables {
@@ -115,6 +115,9 @@
 
 .inputs {
     width: 420px;
+    border: 0;
+    border-bottom: solid 2px rgba(0,0,0,0.7);
+    height: 50px;
 }
 
 #register_div {
