@@ -6,10 +6,11 @@
 }
 
 .bg-custom-1 {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     opacity: 1;
     height: 60px;
     align-items: center;
+    background-color: #E71989;
     /* background-image: linear-gradient(to right, rgb(253, 253, 253,1),rgba(88, 181, 235, 1));  */
 
 }
@@ -39,7 +40,7 @@
     width: 500px;
     height: 76.5vh;
     transition: all 100ms ease-out 0s;
-    box-shadow: violet 1px 1px 15px;
+    box-shadow: rgb(132, 134, 136) 1px 1px 15px;
     overflow: visible;
 }
 
