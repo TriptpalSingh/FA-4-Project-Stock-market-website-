@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="../CSS code/Homestyle.css">
-    <script src="../JS code/Home.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
 </head>
 
 <body>
@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="#">TRADE n BUILD</a>
+            <a class="navbar-brand" href="#">TRADE'n BUILD</a>
           
             <!--ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
@@ -65,35 +65,48 @@
             <p id="Page-name"> TRADE'n BUILD</p>
         </div>
     </div>
-    <!--Sidebar
-    <aside>
-        <marquee direction = "up" id="Stock-price" scrollamount="13">
-            <p>Stock1</p>
-            <p>Stock2</p>
-            <p>Stock3</p>
-            <p>Stock4</p>
-            <p>Stock5</p>
-            <p>Stock6</p>
-            <p>Stock7</p>
-            <p>Stock8</p>
-            <p>Stock9</p>
-            <p>Stock10</p>
-            <p>Stock11</p>
-            <p>Stock12</p>
-            <p>Stock13</p>
-            <p>Stock14</p>
-            <p>Stock15</p>
-            <p>Stock16</p>
-
-        </marquee>
-    </aside-->
+    
         
     <!--Graphs-->
+    <div id="Main-Body">
+        <div id="Graphs">
+            <h1 id="Top-stocks">Stocks in News</h1>
+            <div id="Graph1">
+                <canvas id="myChart1"></canvas>
+            </div>
+            <div id="Graph2">
+                <canvas id="myChart2"></canvas>
+            </div>
+        </div>
+        <!--Sidebar-->
+    <aside>
+        <center><h1 id="major-stocks">Top by Market Cap</h1></center>
+        <marquee direction = "up" id="Stock-price" scrollamount="13">
+            <p>HDBC Bank &emsp;&emsp;<i class="fas fa-rupee-sign"></i>1,403.20(<i class="fas fa-caret-up up"></i><span class="up"> 0.04%</span>)</p>
+            <p>TCS &emsp;&emsp;<i class="fas fa-rupee-sign"></i>3,111.35(<i class="fas fa-caret-up up"></i><span class="up"> 0.51%</span>)</p>
+            <p>ONGC &emsp;&emsp;<i class="fas fa-rupee-sign"></i>110.25(<i class="fas fa-caret-down down"></i><span class="down"> 2.80%</span>)</p>
+            <p>Asian Paints &emsp;&emsp;<i class="fas fa-rupee-sign"></i>(<i class="fas fa-caret-down down"></i><span class="down"> 0.77%</span>)</p>
+            <p>Infosys &emsp;&emsp;<i class="fas fa-rupee-sign"></i>1,358.30(<i class="fas fa-caret-up up"></i><span class="up"> 1.25%</span>)</p>
+            <p>NTPC &emsp;&emsp;<i class="fas fa-rupee-sign"></i>(<i class="fas fa-caret-down down"></i><span class="down"> 2.80%</span>)</p>
+            <p>Wipro &emsp;&emsp;<i class="fas fa-rupee-sign"></i>(<i class="fas fa-caret-up up"></i><span class="up"> 2.80%</span>)</p>
+            <p>HDFC Life INS. &emsp;&emsp;<i class="fas fa-rupee-sign"></i>(<i class="fas fa-caret-down down"></i><span class="down"> 2.80%</span>)</p>
+            <p>Caol India &emsp;&emsp;<i class="fas fa-rupee-sign"></i>(<i class="fas fa-caret-up up"></i><span class="up"> 2.80%</span>)</p>
+            <p>Nestle &emsp;&emsp;<i class="fas fa-rupee-sign"></i>(<i class="fas fa-caret-up up"></i><span class="up"> 2.80%</span>)</p>
+            <p>BPCL &emsp;&emsp;<i class="fas fa-rupee-sign"></i>(<i class="fas fa-caret-up up"></i><span class="up"> 2.80%</span>)</p>
+            <p>Sun Pharma &emsp;&emsp;<i class="fas fa-rupee-sign"></i>(<i class="fas fa-caret-down down"></i><span class="down"> 2.80%</span>)</p>
+            <p>Kotak &emsp;&emsp;<i class="fas fa-rupee-sign"></i>(<i class="fas fa-caret-up up"></i><span class="up"> 2.80%</span>)</p>
+            <p>PNB &emsp;&emsp;<i class="fas fa-rupee-sign"></i>36.40 (<i class="fas fa-caret-down down"></i><span class="down"> 2.80%</span>)</p>
+            <p>Cipla &emsp;&emsp;<i class="fas fa-rupee-sign"></i>884.30 (<i class="fas fa-caret-down down"></i><span class="down"> .49%</span>)</p>
+            <p>ITC &emsp;&emsp;<i class="fas fa-rupee-sign"></i>(<i class="fas fa-caret-up up"></i><span class="up"> 2.80%</span>)</p>
 
+        </marquee>
+    </aside>
+    </div>
     
 
 
-    
+
+
     <!--Commments of users-->
     <div id="Comments" >
 
@@ -123,8 +136,12 @@
     
 
     <!--Scripts-->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>\
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../JS code/Home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-  
+
 </body>
 </html>

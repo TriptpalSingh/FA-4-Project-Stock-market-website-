@@ -3,6 +3,9 @@
     padding: 0;
     margin: 0;}
 
+body{
+    font-family: roboto;
+}
 .mystyle::placeholder {
         color: red;
         opacity: 0.6;
@@ -12,41 +15,47 @@
       /*Disclaimer*/
 #Warning {
     background-color: black;
+    font-size: 1.2rem;
     font-weight: 600;
-    color: white;
+    color: #00ff80;
 }
+
 
     /*Navbar*/
 .navbar{
-    position: sticky;
-    top:0px;
-    
+    background-color: #05386B !important;
 }
 .navbar-brand{
-    background-color: #00ff80;
+    background-color: #05386B;
     font-family: cursive;
-    color:black !important;
+    color:white !important;
     padding: 0.5%;
     border-radius: 5%;
     font-weight: 900;
+    font-size: 2rem;
     }
 
 .navbar-brand:hover{
     box-shadow: 0px 0px 10px 4px #9e824a;
 }  
 
+#search-box{
+    
+    height:40px !important;
+}
 #Search {
     margin-right: 5vw;
     border-width: 4px;
     font-weight: 800;
-    
 }
 
 .search-logo{
-    color: #00ff80;
-    border-color: #00ff80;
+    color: white;
+    border-color: white;
     padding: 0.3% 1.8%;
-    font-size: 2rem;
+    border-radius: 20px;
+    font-size: 20px;
+
     
     
 }
@@ -60,11 +69,12 @@ input[type="search"] {
     border-radius: 50%;
 }
 .profile-logo{
-    color: #00ff80;
-    border-color: #00ff80;
+    color: white;
+    border-color: white;
 }
 
     /*Main body*/
+
 #inner-box {
 
     background-image:url(../sources/pictures/money2.jpg);
@@ -77,22 +87,90 @@ input[type="search"] {
     font-weight: 700;
     color:rgba(71, 38, 38,0.86);
     
+    
     }
 #Page-name{
     font-size: 6.2rem;
 }
+
+    /*Graphs*/
+#Top-stocks{
+    font-size: 4rem;
+    text-shadow: 3px 3px 3px rgb(158, 152, 152);
+    font-weight: 600;
+    color: #edf5e1;
+    
+}
+
+#Graphs{
+    height: 1500px;
+    width: 60vw;
+    padding: 5% 0;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
     /*Sidebar*/
 
+#Graph1{
+    
+    padding: 2%;
+    width:80%;
+    background-color: white;
+    box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+#Graph1:hover{
+    /*background-color: #f0f0f0;*/
+    padding: 2%;
+    width:81%;
+    height: 41%;
+    box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
 
+
+#Graph2{
+    background-color: white;
+    padding: 2%;
+    width:80%;
+    box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+
+#Graph2:hover{
+    /*background-color: #00ff80;*/
+    padding: 2%;
+    width:81%;
+    height: 41%;
+    box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+
+#major-stocks{
+    border-bottom: 2px solid grey;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #edf5e1;
+
+}
+
+#Main-Body{
+    background-color: #5CDB95;
+}
 aside{
 
     float: right;
     margin: 20px;
-    width: 300px;
-    height: 95%;
-    background-color: #ee7f18;
-    border:8px solid rgba(94, 108, 112, 0.849);
-    border-radius: 7%;
+    margin-top: 90px;
+    width: 500px;
+    height: 90%;
+    /*background-color: #dfe2e1;*/
+    background-color: #05386B;
+    box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
     
 }
 
@@ -102,9 +180,16 @@ aside marquee{
 
 #Stock-price {
     padding: 40px;
-    color:white;
+    color: #edf5e1;
     font-weight: 600;
     font-size: 2rem;
+}
+
+.up{
+    color:#00ff80;
+}
+.down{
+    color:red;
 }
 
     /*Comments*/
