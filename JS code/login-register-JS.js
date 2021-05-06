@@ -34,7 +34,7 @@ class partical{
         this.speedX = Math.random() * 3 -1.5;
         this.speedY = Math.random() * 3 -1.5;
         // this.color = "rgb("+Math.random()* 255+","+Math.random()* 255+","+Math.random()* 255+")";
-        this.color = "rgb(18, 58, 58)"
+        this.color = "#05386B"
     }
 
     update(){
@@ -105,7 +105,7 @@ function particalHandler(){
 
 function animate(){
     // ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle = "rgb(255,255,255)";
+    ctx.fillStyle = "#5CDB95";
     ctx.fillRect(0,0,canvas.width,canvas.height);
     ctx.fill();
     particalHandler();
@@ -129,8 +129,8 @@ $("document").ready(function(){
         // button.value="LOGIN";
         signupbtn.style.transform= "translate(0px,-60px)";
         loginbtn.style.transform= "translate(0px,-70px)";
-        document.getElementById("l_b").style.backgroundImage="linear-gradient(to right,rgba(230, 245, 248, 0.9),white)"
-        document.getElementById("su_b").style.backgroundImage="linear-gradient(to right,white,white)";
+        document.getElementById("l_b").style.backgroundImage="linear-gradient(to right,#557A95,#05386B)"
+        document.getElementById("su_b").style.backgroundImage="linear-gradient(to right,#05386B,#05386B)";
     });
     $(register_btn).click(function(){
         var register_div = document.getElementById("register_form");
@@ -140,8 +140,8 @@ $("document").ready(function(){
         // button.value="SIGNUP";
         signupbtn.style.transform= "translate(0px,0px)";
         loginbtn.style.transform= "translate(0px, 40px)";
-        document.getElementById("l_b").style.backgroundImage="linear-gradient(to right,white,white)";
-        document.getElementById("su_b").style.backgroundImage="linear-gradient(to left,rgba(230, 245, 248, 0.9),white)";
+        document.getElementById("l_b").style.backgroundImage="linear-gradient(to right,#05386B,#05386B)";
+        document.getElementById("su_b").style.backgroundImage="linear-gradient(to left,#557A95,#05386B)";
     });
 });
 
