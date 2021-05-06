@@ -142,19 +142,27 @@
 }
 
 #register_div {
-    padding-top: 0.5em;
+    height: 60px;
+    padding-top: 2em;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-
+    /* background-color: blanchedalmond; */
+    overflow: hidden;
+    transition-property: all;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-#btn{
-    margin-top: 8px;
+.btn{
+    margin-top: 30px;
     border: 0;
     color: red;
     background-color: white;
     border: solid 2px red;
     border-radius: 20px;
+    transition-property: all;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 @media screen and (max-width: 950px){
