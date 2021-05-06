@@ -14,7 +14,6 @@ function openNew(){
     }
     
       
-<<<<<<< HEAD
 }
             //Graph1
 var ctx=document.getElementById("myChart1").getContext('2d');
@@ -49,6 +48,3 @@ var chart =new Chart(ctx,{
     },
     options : {}
 });
-=======
-}
->>>>>>> e35e83efeb218d60ea1d4391073b914775463801
