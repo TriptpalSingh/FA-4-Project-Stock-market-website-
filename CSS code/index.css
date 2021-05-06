@@ -109,7 +109,7 @@ body{
     color: lightgrey;
 }
 .nav-link button{
-    height: 40px;
+    height: 0px;
     width: 70px;
     border: none;
     outline: none;
