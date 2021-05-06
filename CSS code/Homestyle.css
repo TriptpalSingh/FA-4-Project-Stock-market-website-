@@ -23,7 +23,7 @@
     
 }
 .navbar-brand{
-    background-color: rgb(255, 136, 0);
+    background-color: #00ff80;
     font-family: cursive;
     color:black !important;
     padding: 0.5%;
@@ -39,12 +39,16 @@
     margin-right: 5vw;
     border-width: 4px;
     font-weight: 800;
-    font-size: 1.3rem;
     
 }
+
 .search-logo{
-    color: #ee7f18;
-    border-color: #ee7f18;
+    color: #00ff80;
+    border-color: #00ff80;
+    padding: 0.3% 1.8%;
+    font-size: 2rem;
+    
+    
 }
 
 input[type="search"] {
@@ -53,10 +57,11 @@ input[type="search"] {
 
 #Profile {
     border-width: 4px;
+    border-radius: 50%;
 }
 .profile-logo{
-    color:#ee7f18;
-    border-color: #ee7f18;
+    color: #00ff80;
+    border-color: #00ff80;
 }
 
     /*Main body*/
@@ -105,10 +110,10 @@ aside marquee{
     /*Comments*/
 
 #Comments{
-    background-image: url(../sources/Pictures/Comments.png);
+    background-image: url(../sources/Pictures/Comments2.jpg);
     background-size: contain;
     background-repeat: no-repeat;
-    height:600px;
+    height:700px;
 
     
 }
