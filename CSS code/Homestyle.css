@@ -95,6 +95,7 @@ input[type="search"] {
 
     /*Graphs*/
 #Top-stocks{
+    margin-top: 5%;
     font-size: 4rem;
     text-shadow: 3px 3px 3px rgb(158, 152, 152);
     font-weight: 600;
@@ -103,9 +104,9 @@ input[type="search"] {
 }
 
 #Graphs{
-    height: 1500px;
-    width: 60vw;
-    padding: 5% 0;
+    height: 1650px;
+    width: 63.5vw;
+    padding-bottom: 5%;
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
@@ -125,7 +126,7 @@ input[type="search"] {
     /*background-color: #f0f0f0;*/
     padding: 2%;
     width:81%;
-    height: 41%;
+    height: 34%;
     box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
 }
@@ -143,7 +144,7 @@ input[type="search"] {
     /*background-color: #00ff80;*/
     padding: 2%;
     width:81%;
-    height: 41%;
+    height: 34%;
     box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
 }
@@ -164,7 +165,7 @@ aside{
 
     float: right;
     margin: 20px;
-    margin-top: 90px;
+    margin-top: 50px;
     width: 500px;
     height: 90%;
     /*background-color: #dfe2e1;*/
@@ -179,10 +180,10 @@ aside marquee{
 }
 
 #Stock-price {
-    padding: 40px;
+    padding-left: 30px;
     color: #edf5e1;
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 .up{

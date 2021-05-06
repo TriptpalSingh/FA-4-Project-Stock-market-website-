@@ -18,15 +18,15 @@ function openNew(){
             //Graph1
 var ctx=document.getElementById("myChart1").getContext('2d');
 var chart =new Chart(ctx,{
-    type: 'line',
+    type: 'bar',
 
     data:{
         labels:['Day1','Day2','Day3','Day4','Day5'],
         datasets: [{
             label: 'NIFTY(NSE)',
-            data: [0,10,5,8,20],
+            data: [10,15,5,8,18],
             borderColor: 'grey',
-            backgroundColor: '#00ff80'
+            backgroundColor: '#5e6c75',
         }]
     },
     options : {}
@@ -43,7 +43,7 @@ var chart =new Chart(ctx,{
             label: 'SENSEX(DSE)',
             data: [28,20,15,22,18],
             borderColor: 'grey',
-            backgroundColor: '#00ff80'
+            backgroundColor: '#5e6c75'
         }]
     },
     options : {}
