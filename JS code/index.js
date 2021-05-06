@@ -33,6 +33,8 @@ QPOUSNBCLNPRRT4I
 */
 
 
+
+
 let t = false;
 $('.burger').click(function(){
     $('.nav-link').toggleClass('nav-active')
@@ -143,10 +145,19 @@ function get_keyword_search_result(){
 
 
 
-$('#inp').keyup(function(){
+$('#inp, #inp2').keyup(function(e){
     //every time a key is up in search box
     //this functio will update suggestion list
-    $('.res-list').empty();
+    console.log(e)
+    var w = e["target"]["id"] == "inp" ? 0 : 1;
+    
+    if(w){
+        $('.res-list1').empty();
+    }
+    else{
+        $('.res-list').empty();
+    }
+    
 
 
     window.final_company = company;
@@ -166,13 +177,25 @@ $('#inp').keyup(function(){
     
     let temp = Object.keys(company)
 
-    for(let i=0; i<temp.length; i++){
-        li = document.createElement('LI')
-        li.innerText=temp[i];
-        $(li).appendTo('.res-list')
+    if(w){
+        for(let i=0; i<temp.length; i++){
+            li = document.createElement('LI')
+            li.innerText=temp[i];
+            $(li).appendTo('.res-list1')
+            res_size1();
+        }
     }
+    else{
+        for(let i=0; i<temp.length; i++){
+            li = document.createElement('LI')
+            li.innerText=temp[i];
+            $(li).appendTo('.res-list')
+            res_size();
+        }
+    }
+    
 
-    res_size();
+    
     
     
     
@@ -192,7 +215,7 @@ function res_size(){
     //of res box and the res-list change
     let temp = $('.res-list').children();
     $('.res').css({
-        "min-height":45*temp.length+'px',
+        "min-height":"250px",
         //here 45 is height of one res element (li)
     })
 }
@@ -261,9 +284,21 @@ $('.time-range li').click(function(){
 
 
 
-function get_data(){
+function get_data(e){
+    console.log(e["id"])
+
+    var w = e["id"] == "s1" ? 1 : 0; 
+
+    let c;
     
-    let c = $(inp).val().trim();
+    if(w){
+        c = $('#inp').val().trim();
+        console.log(c)
+    }
+    else{
+        c = $('#inp2').val().trim();
+        console.log(c)
+    }
 
     if(final_company[c] == undefined){
         //if user have not searched any company just return
@@ -299,12 +334,13 @@ function get_data(){
         show_loading_animation();
 
         //removing previous company info
-        $('.chart-info').remove();
+        $('.chart-info').empty();
         let div = document.createElement('div');//creating new div for new company info
-        $(div).attr("class","chart-info boxShadow");
-
+        $(div).attr("class","info");
+        let div2 = document.createElement('div');
+        $(div2).attr("class","info")
         //and putting all data of new company in div
-        $("<h2>"+data["Name"]+"</h2><hr><br>").appendTo(div);
+        $("<h2>"+data["Name"]+"</h2><br>").appendTo(div);
         $("<h3>"+data["Symbol"]+"</h3><br>").appendTo(div);
         $("<h3>Asset Type</h3>"+data["AssetType"]+"<br><br>").appendTo(div);
         $("<h3>Exchange</h3>"+data["Exchange"]+"<br><br>").appendTo(div);
@@ -315,8 +351,21 @@ function get_data(){
         $("<h3>Address</h3>"+data["Address"]+"<br><br>").appendTo(div);
         $("<h3>Description</h3><p>"+data["Description"]+"</p><br>").appendTo(div);
 
+        $("<h2>"+data["Name"]+"</h2><br>").appendTo(div2);
+        $("<h3>"+data["Symbol"]+"</h3><br>").appendTo(div2);
+        $("<h3>Asset Type</h3>"+data["AssetType"]+"<br><br>").appendTo(div2);
+        $("<h3>Exchange</h3>"+data["Exchange"]+"<br><br>").appendTo(div2);
+        $("<h3>Currency</h3>"+data["Currency"]+"<br><br>").appendTo(div2);
+        $("<h3>Country</h3>"+data["Country"]+"<br><br>").appendTo(div2);
+        $("<h3>Sector</h3>"+data["Sector"]+"<br><br>").appendTo(div2);
+        $("<h3>Industry</h3>"+data["Industry"]+"<br><br>").appendTo(div2);
+        $("<h3>Address</h3>"+data["Address"]+"<br><br>").appendTo(div2);
+        $("<h3>Description</h3><p>"+data["Description"]+"</p><br>").appendTo(div2);
 
-        $(div).prependTo($('#main'))//prepending div to main
+
+        
+        $(div).prependTo($('.chart-info'))//prepending div to main
+        $(div2).prependTo($('.chart-info'))
 
         // console.log($('chart-info').children())
   
@@ -533,6 +582,7 @@ function stop_scroll(){
 
 //compare stock functions
 function set_open_high(arr){
+    //This function is setting data_points(open/high..) is card
     console.log($('.data_point').children());
 
     let x = $('.data_point').children()["prevObject"];
@@ -540,6 +590,53 @@ function set_open_high(arr){
     for(let i=0; i<5; i++){
         x[i]["innerHTML"]="<b>$"+arr[i]+"</b>";
     }
+
     $('.com-1 h2').text($('#inp').val())
+
+    
 }
+
 // set_open_high()
+
+
+$('#inp2').focus(function(){
+    //input focus
+    res_size1()
+    $('.res1').css({
+        display:'block',
+        border: '1px solid grey',
+    })
+    $('.res-list1').css({
+        display:'block',
+    })
+})
+$('#inp2').focusout(function(){
+    //input focusout
+    setTimeout(function(){
+        $('.res1').css({
+            display:'none',
+            border: 'none'
+        })
+        $('.res-list1').css({
+           display:'none',
+        })
+    },300)
+    //the suggestion box will hide after 0.3s
+    //of off focus on input
+    
+})
+
+function res_size1(){
+    //this function is to update the height
+    //of res box and the res-list change
+    $('.res1').css({
+        "min-height":'200px',
+        //here 45 is height of one res element (li)
+    })
+}
+$(document).on("click",'.res-list1 li',function(){
+    //This function will listen to click li element in result
+    //and extract its text and put in search field
+    $('#inp2').val(this.innerText)
+
+})
