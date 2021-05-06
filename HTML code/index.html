@@ -14,13 +14,10 @@
 <body>
     <nav id="navbar" class="boxShadow">
         <div class="logo">
-            <h4 class="textShadow">TRADE'nBUILD</h4>
+            <h4 >Trade'n Build</h4>
             
         </div>
         <ul class="nav-link">
-            <li>
-                <a class="textShadow">Home</a>
-            </li>
             <li>
                 <a href="#footer" class="textShadow">About</a>
             </li>
@@ -39,7 +36,7 @@
                 
             </li>
             <li>
-                <button class="boxShadow2" onclick="get_data()"><i class="fas fa-search-dollar"></i></button>
+                <button class="boxShadow2" onclick="get_data(this)" id="s1"><i class="fas fa-search-dollar"></i></button>
             </li>
         </ul>
         <div class="burger">
@@ -51,16 +48,31 @@
     <main id="main">
         
         <div class="chart-info boxShadow">
-            <h2>Google</h2><br>
-            <h3>GOOGL</h3><br>
-            <h3>Asset type</h3> Common Stock <br><br>
-            <h3>Exchange</h3> NYSE <br><br>
-            <h3>Currency</h3> USE <br><br>
-            <h3>Country</h3> USA <br><br>
-            <h3>Sector</h3> Technology <br><br>
-            <h3>Industy</h3> Information Technology Services <br><br>
-            <h3>Address</h3> One New Orchard Road, Armonk, NY, United States, 10504 <br><br>
-            <h3><i>Description</i></h3><p><i>International Business Machines Corporation provides integrated solutions and services worldwide. Its Cloud & Cognitive Software segment offers software for vertical and domain-specific solutions in health, financial services, supply chain, and asset management, weather, and security software and services application areas; and customer information control system and storage, and analytics and integration software solutions to support client mission critical on-premise workloads in banking, airline, and retail industries. It also offers middleware and data platform software, including Red Hat that enables the operation of clients' hybrid multi-cloud environments; and Cloud Paks, WebSphere distributed, and analytics platform software, such as DB2 distributed, information integration, and enterprise content management, as well as IoT, Blockchain and AI/Watson platforms</i></p>
+            <div class="info">
+                <h2>Google</h2><br>
+                <h3>GOOGL</h3><br>
+                <h3>Asset type</h3> Common Stock <br><br>
+                <h3>Exchange</h3> NYSE <br><br>
+                <h3>Currency</h3> USE <br><br>
+                <h3>Country</h3> USA <br><br>
+                <h3>Sector</h3> Technology <br><br>
+                <h3>Industy</h3> Information Technology Services <br><br>
+                <h3>Address</h3> One New Orchard Road, Armonk, NY, United States, 10504 <br><br>
+                <h3><i>Description</i></h3><p><i>International Business Machines Corporation provides integrated solutions and services worldwide. Its Cloud & Cognitive Software segment offers software for vertical and domain-specific solutions in health, financial services, supply chain, and asset management, weather, and security software and services application areas; and customer information control system and storage, and analytics and integration software solutions to support client mission critical on-premise workloads in banking, airline, and retail industries. It also offers middleware and data platform software, including Red Hat that enables the operation of clients' hybrid multi-cloud environments; and Cloud Paks, WebSphere distributed, and analytics platform software, such as DB2 distributed, information integration, and enterprise content management, as well as IoT, Blockchain and AI/Watson platforms</i></p>
+            </div>
+            <div class="info">
+                <h2>Google</h2><br>
+                <h3>GOOGL</h3><br>
+                <h3>Asset type</h3> Common Stock <br><br>
+                <h3>Exchange</h3> NYSE <br><br>
+                <h3>Currency</h3> USE <br><br>
+                <h3>Country</h3> USA <br><br>
+                <h3>Sector</h3> Technology <br><br>
+                <h3>Industy</h3> Information Technology Services <br><br>
+                <h3>Address</h3> One New Orchard Road, Armonk, NY, United States, 10504 <br><br>
+                <h3><i>Description</i></h3><p><i>International Business Machines Corporation provides integrated solutions and services worldwide. Its Cloud & Cognitive Software segment offers software for vertical and domain-specific solutions in health, financial services, supply chain, and asset management, weather, and security software and services application areas; and customer information control system and storage, and analytics and integration software solutions to support client mission critical on-premise workloads in banking, airline, and retail industries. It also offers middleware and data platform software, including Red Hat that enables the operation of clients' hybrid multi-cloud environments; and Cloud Paks, WebSphere distributed, and analytics platform software, such as DB2 distributed, information integration, and enterprise content management, as well as IoT, Blockchain and AI/Watson platforms</i></p>
+            
+            </div>
         </div>
         <div class="chart-graph">
             <div class="chart-container boxShadow" >
@@ -111,11 +123,55 @@
                                 <td class="data_point"><b>$45289374</b></td>
                             </tr>
                         </table>
+                        <div class="res1 boxShadow2"><!--boxShadow is a shadow class property-->
+                            <ul class="res-list1" id="list">
+                                <li>Microsoft</li>
+                                <li>Intel</li>
+                                <li>Nvidia</li>
+                                <li>Nvidia</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="com-2 boxShadow">
-                        <h2>Compare <br>stock <br> here,</h2>
-                        <input type="text">
-                        <button>Search</button>
+                        
+                        <div class="com-21">
+                            <h2>Compare <br>stock <br> here,</h2>
+                            <input type="text" id="inp2">
+                            <button id="s2" onclick="get_data(this)">Search</button>
+                            
+                        </div>
+                        <div class="com-22">
+                            <h2>Google</h2>
+                            <p><i>overview,</i></p>
+                            <table class="data_table">
+                                <tr>
+                                    <td>Today's High</td>
+                                    <td>⇛</td>
+                                    <td class="data_point"><b>$177.66</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Today's Low</td>
+                                    <td>⇛</td>
+                                    <td class="data_point"><b>$130.56</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Open Price</td>
+                                    <td>⇛</td>
+                                    <td class="data_point"><b>$150.22</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Close Price</td>
+                                    <td>⇛</td>
+                                    <td class="data_point"><b>$144.59</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Volume</td>
+                                    <td>⇛</td>
+                                    <td class="data_point"><b>$45289374</b></td>
+                                </tr>
+                            </table>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -133,12 +189,13 @@
             <p></p>
 
             
-            <button onclick="hide_overlay()">Close</button>
+            <button onclick="hide_overlay()" style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;">Close</button>
         </div>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script type="text/javascript" src="../JS code/index.js"></script>
+    <script src="../JS code/Home.js"></script>
 </body>
 </html>

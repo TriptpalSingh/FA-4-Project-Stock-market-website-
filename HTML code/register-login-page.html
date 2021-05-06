@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>register-page</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
@@ -15,11 +16,11 @@
 <body>
     <canvas id="myCanvas"></canvas>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-custom-1">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom-1">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="../sources/Pictures/company_logo.png"
-                    style="width: 35px; height: 35px;"></a>
-            <a class="navbar-brand mr-auto ml-auto" href="#" style="font-family: monospace; font-size: 2rem;">Trade-N'-Build</a>
+            <!-- <a class="navbar-brand" href="#"><img src="../sources/Pictures/company_logo.png"
+                    style="width: 35px; height: 35px;"></a> -->
+            <a class="navbar-brand mr-auto ml-auto" href="#" style="font-family: cursive; font-size: 2rem;">Trade'n Build</a>
             <!-- <button class="navbar-toggler" data-toggle="collapse" data-target="#info">
                 <span class="navbar-toggler-icon"></span>
             </button> -->
@@ -30,7 +31,7 @@
     </nav>
     <div id="outer">
         <div id="img_div">
-            <img src="../sources/Pictures/MicrosoftTeams-image.png" id="bull_img">
+            <img src="../sources/Pictures/Screen_Shot_2019-06-05_at_1.26.32_PM.jpg" id="bull_img">
         </div>
         <div id="formdiv">
             <form action="Home.html" method="GET">
@@ -46,31 +47,31 @@
                                 <td class="lables"> </td>
                             </tr>
                             <tr class="input-rows">
-                                <td class="input-col"><input type="text" class="inputs" placeholder="FirstName" ></td>
+                                <td class="input-col"><input type="text" class="inputs" placeholder="FirstName"  autocomplete="off"></td>
                             </tr>
                             <tr class="lable-rows">
                                 <td class="lables"></td>
                             </tr>
                             <tr class="input-rows">
-                                <td class="input-col"><input class="inputs" placeholder="Last Name"></td>
+                                <td class="input-col"><input class="inputs" placeholder="Last Name" autocomplete="off"></td>
                             </tr>
                             <tr class="lable-rows">
                                 <td class="lables"></td>
                             </tr>
                             <tr class="input-rows">
-                                <td class="input-col"><input type="email" class="inputs" placeholder="Email Address"></td>
+                                <td class="input-col"><input type="email" class="inputs" placeholder="Email Address" autocomplete="off"></td>
                             </tr>
                             <tr class="lable-rows">
                                 <td class="lables"></td>
                             </tr>
                             <tr class="input-rows">
-                                <td class="input-col"><input type="password" class="inputs" placeholder="Password"></td>
+                                <td class="input-col"><input type="password" class="inputs" placeholder="Password" autocomplete="off"></td>
                             </tr>
                             <tr class="lable-rows">
                                 <td class="lables"></td>
                             </tr>
                             <tr class="input-rows">
-                                <td class="input-col"><input type="password" class="inputs" placeholder="Confirm Password"></td>
+                                <td class="input-col"><input type="password" class="inputs" placeholder="Confirm Password" autocomplete="off"></td>
                             </tr>
                         </table>
                     </div>
@@ -80,20 +81,21 @@
                                 <td class="login_clm lables"></td>
                             </tr>
                             <tr class="login_row">
-                                <td class="login_clm input-col"><input type="email" class="inputs" placeholder="Email Address"></td>
+                                <td class="login_clm input-col"><input type="email" class="inputs" placeholder="Email Address" autocomplete="off"></td>
                             </tr>
                             <tr class="login_row lables">
                                 <td class="login_clm"></td>
                             </tr>
                             <tr class="login_row">
-                                <td class="login_clm input-col"><input type="password" class="inputs" placeholder="Password"></td>
+                                <td class="login_clm input-col"><input type="password" class="inputs" placeholder="Password" autocomplete="off"></td>
                             </tr>
                         </table>
                     </div>
                 </div>
                 <div id="register_div">
                     <!-- <button class="btn btn-outline-success" type="submit" id="sumbit_btn">SIGN UP</button> -->
-                    <input type="submit" id="btn" value="SIGNUP" >
+                    <input type="submit" class="btn" value="SIGNUP" id="signupbtn">
+                    <input type="submit" class="btn" value="LOGIN" id="loginbtn">
                 </div>
             </form>
         </div>

@@ -1,9 +1,9 @@
-var searchItem;
+var searchItem_stockname;
 function openNew(){
     
-    searchItem=document.getElementById("search-box").value;
+    searchItem_stockname=document.getElementById("search-box").value;
     
-    if(searchItem=="" || searchItem=="Please enter valid stock name"){
+    if(searchItem_stockname=="" || searchItem_stockname=="Please enter valid stock name"){
         document.getElementById("search-box").placeholder="Please enter valid stock name.....";
         document.getElementById("search-box").classList.add("mystyle");
         //document.getElementById("search-box").placeholder.style.color = red;
@@ -14,6 +14,7 @@ function openNew(){
     }
     
       
+<<<<<<< HEAD
 }
             //Graph1
 var ctx=document.getElementById("myChart1").getContext('2d');
@@ -48,3 +49,6 @@ var chart =new Chart(ctx,{
     },
     options : {}
 });
+=======
+}
+>>>>>>> e35e83efeb218d60ea1d4391073b914775463801
