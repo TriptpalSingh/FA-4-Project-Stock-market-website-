@@ -1,9 +1,9 @@
-var searchItem;
+var searchItem_stockname;
 function openNew(){
     
-    searchItem=document.getElementById("search-box").value;
+    searchItem_stockname=document.getElementById("search-box").value;
     
-    if(searchItem=="" || searchItem=="Please enter valid stock name"){
+    if(searchItem_stockname=="" || searchItem_stockname=="Please enter valid stock name"){
         document.getElementById("search-box").placeholder="Please enter valid stock name.....";
         document.getElementById("search-box").classList.add("mystyle");
         //document.getElementById("search-box").placeholder.style.color = red;

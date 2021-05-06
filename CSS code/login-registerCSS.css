@@ -139,6 +139,7 @@
     border: 0;
     border-bottom: solid 2px rgba(0,0,0,0.6);
     height: 50px;
+    outline: none;
 }
 
 #register_div {
