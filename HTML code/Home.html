@@ -47,12 +47,57 @@
                 
             <!--Search box-->
             <form class="d-flex">
-                <input class="form-control me-2 col-xs-5" id="search-box" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2 col-xs-5" list="Stocks-list" id="search-box" type="search" placeholder="Search" aria-label="Search">
                 
-                <button class="btn btn-outline-warning  search-logo" type="button" id="Search" onclick="openNew()"><i class="fas fa-search-dollar"></i></button>
+                <datalist id="Stocks-list">
+                    <option value="Microsoft" />
+                    <option value="Apple" />
+                    <option value="Netflix" />
+                    <option value="Google" />
+                    <option value="Adobe" />
+                    <option value="Tesla" />
+                    <option value="Facebook" />
+                    <option value="Intel" />
+                    <option value="Zoom Video" />
+                    <option value="Airtel" />
+                    <option value="Reliance" />
+                    <option value="AMD" />
+                    <option value="Amazon" />
+                    
+                    <option value="HDFC Bank" />
+                    <option value="HDFC Life Insurance" />
+                    <option value="TCS" />
+                    <option value="Hindustan Unilever" />
+                    <option value="ICICI Bank" />
+                    <option value="ITC" />
+                    <option value="Infosys" />
+                    <option value="Kotak Mahindra Bank" />
+                    <option value="SBI" />
+                    <option value="Bajaj Finance" />
+                    <option value="Maruti Suzuki" />
+                    <option value="Axis Bank" />
+                    <option value="Laren & Tourbo" />
+                    
+                    <option value="ONGC" />
+                    <option value="Asian Paints" />
+                    <option value="HCL Tech" />
+                    <option value="Bajaj Finserv" />
+                    <option value="Wipro" />
+                    <option value="Nestle" />
+                    <option value="Coal India" />
+                    <option value="India Oil Corp." />
+                    <option value="Ultratech Cement" />
+                    <option value="NTPC" />
+                    <option value="Avenue Supermarks" />
+                    <option value="BPCL" />
+                    <option value="Sun Pharma Inds." />
+
+                </datalist>
+
+                <button class="btn btn-outline-warning btn-sm" type="button" id="Search-logo" onclick="openNew()"><i class="fas fa-search-dollar"></i></button>
 
                 <!--Profile logo-->
-                <button class="btn btn-outline-warning profile-logo"  id="Profile">
+                <button class="btn btn-outline-warning btn-sm"  id="Profile-logo" type="button">
                     <i class="fas fa-user fa-2x"></i>
                 </button>
             </form>
@@ -72,11 +117,11 @@
         <div id="Graphs">
             <h1 id="Top-stocks">Stocks in News</h1>
             <div id="Graph1">
-                <h1>NIFTY(NSE)</h1>
+                <h1 class="Stock-name">NIFTY(NSE)</h1>
                 <canvas id="myChart1"></canvas>
             </div>
             <div id="Graph2">
-                <h1>SENSEX(DSE)</h1>
+                <h1 class="Stock-name">SENSEX(DSE)</h1>
                 <canvas id="myChart2"></canvas>
             </div>
         </div>
@@ -92,7 +137,7 @@
             <p>NTPC &emsp;&emsp;<i class="fas fa-rupee-sign"></i>103.05(<i class="fas fa-caret-down down"></i><span class="down"> 0.82%</span>)</p><br>
             <p>Wipro &emsp;&emsp;<i class="fas fa-rupee-sign"></i>512.30(<i class="fas fa-caret-up up"></i><span class="up"> 4.42%</span>)</p><br>
             <p>HDFC Life INS. &emsp;&emsp;<i class="fas fa-rupee-sign">671.80</i>(<i class="fas fa-caret-down down"></i><span class="down"> 0.39%</span>)</p><br>
-            <p>Caol India &emsp;&emsp;<i class="fas fa-rupee-sign"></i>134.60(<i class="fas fa-caret-up up"></i><span class="up"> 1.09%</span>)</p><br>
+            <p>Coal India &emsp;&emsp;<i class="fas fa-rupee-sign"></i>134.60(<i class="fas fa-caret-up up"></i><span class="up"> 1.09%</span>)</p><br>
             <p>Nestle &emsp;&emsp;<i class="fas fa-rupee-sign"></i>16,717.60(<i class="fas fa-caret-up up"></i><span class="up"> 1.02%</span>)</p><br>
             <p>BPCL &emsp;&emsp;<i class="fas fa-rupee-sign"></i>434.00(<i class="fas fa-caret-up up"></i><span class="up"> 2.17%</span>)</p><br>
             <p>Sun Pharma &emsp;&emsp;<i class="fas fa-rupee-sign"></i>679.40(<i class="fas fa-caret-down down"></i><span class="down"> 0.59%</span>)</p><br>
@@ -139,7 +184,7 @@
 
     <!--Scripts-->
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>\
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="../JS code/Home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>

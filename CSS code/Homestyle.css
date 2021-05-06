@@ -24,6 +24,8 @@ body{
     /*Navbar*/
 .navbar{
     background-color: #05386B !important;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 .navbar-brand{
     background-color: #05386B;
@@ -32,43 +34,40 @@ body{
     padding: 0.5%;
     border-radius: 5%;
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 1.7rem;
     }
 
 .navbar-brand:hover{
-    box-shadow: 0px 0px 10px 4px #9e824a;
+   /* box-shadow: 0px 0px 10px 4px #190299;*/
+    /*box-shadow: 0px 0px 10px 4px #d6d4e0;
+    
+    text-shadow: 3px 3px 3px rgb(158, 152, 152);
+    text-shadow: 2px 2px 2px rgb(175, 162, 162);*/
+    text-shadow: 3px 3px 3px rgb(185, 118, 16);
+
 }  
 
 #search-box{
-    
     height:40px !important;
+    margin-top: 5px;
 }
-#Search {
+
+#Search-logo{
     margin-right: 5vw;
     border-width: 4px;
-    font-weight: 800;
-}
-
-.search-logo{
     color: white;
     border-color: white;
-    padding: 0.3% 1.8%;
     border-radius: 20px;
-    font-size: 20px;
-
-    
-    
+    font-size: 22px;
 }
 
 input[type="search"] {
     width:20vw;
 }
 
-#Profile {
+#Profile-logo{
     border-width: 4px;
     border-radius: 50%;
-}
-.profile-logo{
     color: white;
     border-color: white;
 }
@@ -83,14 +82,15 @@ input[type="search"] {
     background-size: cover;
     padding: 14%;
     padding-left: 7%;
-    font-size: 5rem;
+    font-size: 11vh;
     font-weight: 700;
     color:rgba(71, 38, 38,0.86);
     
     
     }
+
 #Page-name{
-    font-size: 6.2rem;
+    font-size: 13vh;
 }
 
     /*Graphs*/
@@ -101,6 +101,10 @@ input[type="search"] {
     font-weight: 600;
     color: #edf5e1;
     
+}
+
+.Stock-name{
+    font-size: 4vw;
 }
 
 #Graphs{
@@ -126,7 +130,7 @@ input[type="search"] {
     /*background-color: #f0f0f0;*/
     padding: 2%;
     width:81%;
-    height: 34%;
+    height: 34vw;
     box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
 }
@@ -144,7 +148,7 @@ input[type="search"] {
     /*background-color: #00ff80;*/
     padding: 2%;
     width:81%;
-    height: 34%;
+    height: 34vw;
     box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
 }
@@ -160,6 +164,7 @@ input[type="search"] {
 
 #Main-Body{
     background-color: #5CDB95;
+    display: flex;
 }
 aside{
 
@@ -174,6 +179,7 @@ aside{
     border-radius: 10px;
     
 }
+
 
 aside marquee{
     height: 100%;
@@ -199,13 +205,13 @@ aside marquee{
     background-image: url(../sources/Pictures/Comments2.jpg);
     background-size: contain;
     background-repeat: no-repeat;
-    height:700px;
+    height:48vw;
 
     
 }
     /*Footer*/
 footer {
-    height: 300px;
+    height: auto;
     background-color: rgb(24, 23, 23,1);
     padding: 30px;
     font-weight: bolder;
