@@ -117,8 +117,8 @@ animate();
 
 $("document").ready(function(){
     var namereg = /[^A-Za-z]/;
-    var emailreg = /\w+\@+(gmail|yahoo)+\.+(com|net)/;
-    //triptpalsingh721@gmail.com
+    var emailreg = /^\w+\@+([*a-z])+\.+([a-z]{3})$/;
+    
 
 
     var login_btn = $("#l_b");
@@ -126,10 +126,10 @@ $("document").ready(function(){
     var signupbtn = document.getElementById("signupbtn");
     var loginbtn = document.getElementById("loginbtn");
     var firstName = document.getElementById("f_name");
-    var lastName = $("#l_name");
-    var registerEmail = $("#register_email");
-    var resisterPass = $("#register_pass");
-    var confirmPass = $("#confirm_pass");
+    var lastName = document.getElementById("l_name");
+    var registerEmail = document.getElementById("register_email");
+    var resisterPass = document.getElementById("register_pass");
+    var confirmPass = document.getElementById("confirm_pass");  
 
 
 
@@ -157,8 +157,8 @@ $("document").ready(function(){
     });
     $(signupbtn).click(function(){
         var val = registerEmail.value;
-        if(!namereg.test(val)){
-            alert("helo");
+        if(emailreg.test(val)){
+            alert("heloooo");
         }
         // if(val==''){
         //     $(signupbtn).attr('disabled','disabled');
