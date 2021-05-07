@@ -116,11 +116,23 @@ animate();
 
 
 $("document").ready(function(){
+    var namereg = /[^A-Za-z]/;
+    var emailreg = /\w+\@+(gmail|yahoo)+\.+(com|net)/;
+    //triptpalsingh721@gmail.com
+
+
     var login_btn = $("#l_b");
     var register_btn = $("#su_b");
     var signupbtn = document.getElementById("signupbtn");
     var loginbtn = document.getElementById("loginbtn");
-    var button = document.getElementById("btn");
+    var firstName = document.getElementById("f_name");
+    var lastName = $("#l_name");
+    var registerEmail = $("#register_email");
+    var resisterPass = $("#register_pass");
+    var confirmPass = $("#confirm_pass");
+
+
+
     $(login_btn).click(function(){
         var register_div = document.getElementById("register_form");
         var login_div = document.getElementById("login_form");
@@ -143,6 +155,17 @@ $("document").ready(function(){
         document.getElementById("l_b").style.backgroundImage="linear-gradient(to right,#05386B,#05386B)";
         document.getElementById("su_b").style.backgroundImage="linear-gradient(to left,#557A95,#05386B)";
     });
+    $(signupbtn).click(function(){
+        var val = registerEmail.value;
+        if(!namereg.test(val)){
+            alert("helo");
+        }
+        // if(val==''){
+        //     $(signupbtn).attr('disabled','disabled');
+        // }
+        
+        
+    })
 });
 
-var namereg = /[^A-Za-z]/;
+

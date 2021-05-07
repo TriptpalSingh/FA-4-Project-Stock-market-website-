@@ -93,7 +93,7 @@
     transition-property: all;
     transition-duration: 50ms;
     transition-timing-function: ease-out;
-    /* background-image: linear-gradient(to right,red,white); */
+    /* background-image: linear-gradient(to left,#557A95,#05386B); */
 }
 
 .buttons:hover {
@@ -101,7 +101,7 @@
 }
 
 #su_b{
-    background-image: linear-gradient(to left,#05386B,#05386B);
+    background-image: linear-gradient(to left,#557A95,#05386B)  ;
 }
 
 #inner_formdiv { 
@@ -193,6 +193,6 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
-    -webkit-transition-delay: 9999s;
+    transition: "color 9999s ease-out, background-color 9999s ease-out";
+    transition-delay: 9999s;  
 }
