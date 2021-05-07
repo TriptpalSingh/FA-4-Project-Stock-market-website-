@@ -118,7 +118,7 @@ animate();
 $("document").ready(function(){
     var namereg = /[^A-Za-z]/;
     var emailreg = /^\w+\@+([*a-z])+\.+([a-z]{3})$/;
-    
+    var passreg = /(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%\^\&\*])(?=.{8,})/;
 
 
     var login_btn = $("#l_b");
@@ -128,7 +128,7 @@ $("document").ready(function(){
     var firstName = document.getElementById("f_name");
     var lastName = document.getElementById("l_name");
     var registerEmail = document.getElementById("register_email");
-    var resisterPass = document.getElementById("register_pass");
+    var registerPass = document.getElementById("register_pass");
     var confirmPass = document.getElementById("confirm_pass");  
 
 
@@ -154,18 +154,101 @@ $("document").ready(function(){
         loginbtn.style.transform= "translate(0px, 40px)";
         document.getElementById("l_b").style.backgroundImage="linear-gradient(to right,#05386B,#05386B)";
         document.getElementById("su_b").style.backgroundImage="linear-gradient(to left,#557A95,#05386B)";
-    });
-    $(signupbtn).click(function(){
-        var val = registerEmail.value;
-        if(emailreg.test(val)){
-            alert("heloooo");
+
+        function check_credentials(){
+            let f_name_flag = false;
+            let l_name_flag = false;
+            let register_email_flag = false;
+            let register_pass_flag = false;
+            let confirm_pass_flag = false;
+
+            let f_name_val = firstName.value;
+            let l_name_val = lastName.value;
+            let register_email_val = registerEmail.value;
+            let register_pass_val = registerPass.value;
+            let confirm_pass_val = confirmPass.value;
+
+            // alert(f_name_val+" "+l_name_val+" "+register_email_val+" "+register_pass_val+" "+confirm_pass_val);
+            
+            if(!namereg.test(f_name_val)){
+                    f_name_flag = true;
+                    // alert(" fname success!!");
+                }
+            if(f_name_val !== ""){
+                
+            }
+            if(l_name_val !== ""){
+                if(!namereg.test(l_name_val)){
+                    l_name_flag = true;
+                    // alert("lname success!!");
+                }
+            }
+            if(emailreg.test(register_email_val)){
+                register_email_flag = true;
+                // alert("email success!!");
+            }
+            if(passreg.test(register_pass_val)){
+                register_pass_flag = true;
+                // alert("pass success!!");
+            }
+            if(register_pass_val !== ""){
+                if(confirm_pass_val == register_pass_val){
+                    confirm_pass_flag = true;
+                    // alert("confirm pass success!")
+                }
+            }
+
+            if(f_name_flag && l_name_flag && register_email_flag && register_pass_flag && confirm_pass_flag){
+                signupbtn.disabled = false;
+                // alert("sucees");
+            }
+            
         }
-        // if(val==''){
-        //     $(signupbtn).attr('disabled','disabled');
-        // }
+        check_credentials();
         
+    });
+    // $(signupbtn).click(function(){
+    //     let f_name_flag = false;
+    //     let l_name_flag = false;
+    //     let register_email_flag = false;
+    //     let register_pass_flag = false;
+    //     let confirm_pass_flag = false;
+
+    //     let f_name_val = firstName.value;
+    //     let l_name_val = lastName.value;
+    //     let register_email_val = registerEmail.value;
+    //     let register_pass_val = registerPass.value;
+    //     let confirm_pass_val = confirmPass.value;
+
+    //     // alert(f_name_val+" "+l_name_val+" "+register_email_val+" "+register_pass_val+" "+confirm_pass_val);
         
-    })
+    //     if(!namereg.test(f_name_val)){
+    //         f_name_flag = true;
+    //         // alert(" fname success!!");
+    //     }
+    //     if(!namereg.test(l_name_val)){
+    //         l_name_flag = true;
+    //         // alert("lname success!!");
+    //     }
+    //     if(emailreg.test(register_email_val)){
+    //         register_email_flag = true;
+    //         // alert("email success!!");
+    //     }
+    //     if(passreg.test(register_pass_val)){
+    //         register_pass_flag = true;
+    //         // alert("pass success!!");
+    //     }
+    //     if(confirm_pass_val == register_pass_val){
+    //         confirm_pass_flag = true;
+            
+    //     }
+
+    //     if(f_name_flag && l_name_flag && register_email_flag && register_pass_flag && confirm_pass_flag){
+            
+    //     }
+
+
+    // })
 });
 
 
