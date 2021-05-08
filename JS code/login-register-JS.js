@@ -220,10 +220,15 @@ $("document").ready(function(){
         }
     }
 
-    setInterval(check_signup_credentials,500);
-    setInterval(check_login_credentials,500);
-
+    var signup_function;
+    var login_function;
+    signup_function = setInterval(check_signup_credentials,500);
+    
     $(login_btn).click(function(){
+        clearInterval(signup_function);
+        login_function = setInterval(check_login_credentials,500);
+
+
         var register_div = document.getElementById("register_form");
         var login_div = document.getElementById("login_form");
         register_div.style.transform = "translate(0px, -400px)"
@@ -235,6 +240,10 @@ $("document").ready(function(){
         document.getElementById("su_b").style.backgroundImage="linear-gradient(to right,#05386B,#05386B)";
     });
     $(register_btn).click(function(){
+        clearInterval(login_function)
+        signup_function = setInterval(check_signup_credentials,500);
+
+
         var register_div = document.getElementById("register_form");
         var login_div = document.getElementById("login_form");
         register_div.style.transform = "translate(0px, 0px)"
