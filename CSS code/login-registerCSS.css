@@ -18,7 +18,7 @@
 
 
 #outer {
-    /* height: 2000px; */
+    /* height: 2000px; */   
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -48,16 +48,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     margin-top: 7px;
-    /* border-radius: 5%; */
     border: solid 1px rgba(230, 245, 248, 0.3);
-    /* width: 32vw; */
     width: 500px;
     height: 550px;
     transition: all 100ms ease-out 0s;
     box-shadow: rgba(0, 0, 0, 0.19) 5px 1px 15px;
     overflow: visible;
+    color: #edf5e1;
 }
 
 #button-div {
@@ -114,6 +112,16 @@
     overflow: hidden;
 }
 
+#register_form,#login_form{
+    height: 420px;
+    /* border: solid 2px black; */
+    overflow: auto;
+}
+
+/* .lables{
+    display: none;
+} */
+
 .forms{
     display: inline-block;
     transition-property: all;
@@ -130,8 +138,12 @@
     margin-top: 1.8vh;
 }
 
+.topmargin{
+    margin-top: 30px;
+}
+
 .input-col {
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
 }
 
 .lables {
@@ -195,4 +207,16 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition: "color 9999s ease-out, background-color 9999s ease-out";
     transition-delay: 9999s;  
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: transparent;
+}
+::-webkit-scrollbar-thumb{
+    /* background-color: #edf5e1;  */
+    background-color: rgba(237,245,225,0.6);
+    border-radius: 7px;
 }

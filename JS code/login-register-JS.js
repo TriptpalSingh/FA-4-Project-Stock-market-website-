@@ -144,6 +144,23 @@ $("document").ready(function(){
     var login_email = document.getElementById("login_email");
     var login_pass = document.getElementById("login_pass");
 
+    // hint toggle
+    {
+        $(firstName).focus(function(){
+            $("#f_name_hint").show();
+        })
+        $(firstName).focusout(function(){
+            $("#f_name_hint").hide();
+        })
+    }
+    
+
+
+
+
+
+
+    
     function check_signup_credentials(){
         let f_name_flag = false;
         let l_name_flag = false;
@@ -231,8 +248,8 @@ $("document").ready(function(){
 
         var register_div = document.getElementById("register_form");
         var login_div = document.getElementById("login_form");
-        register_div.style.transform = "translate(0px, -400px)"
-        login_div.style.transform = "translate(0px, -700px)"
+        register_div.style.transform = "translate(0px, -430px)"
+        login_div.style.transform = "translate(0px, -720px)"
         // button.value="LOGIN";
         signupbtn.style.transform= "translate(0px,-60px)";
         loginbtn.style.transform= "translate(0px,-70px)";
