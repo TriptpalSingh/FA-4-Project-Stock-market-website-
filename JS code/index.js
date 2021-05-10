@@ -13,14 +13,17 @@ window.company_t = {
     "Reliance":"RELI",
 }
 
+
 hide_overlay();
-// hide_loading_animation();
+hide_loading_animation();
+$('.c-button').hide();
+
 
 window.company=company_t;
 window.final_company=company_t;
 
 
-const api_key="K8OUKTRAB4ZCGXV9";
+const api_key="DLDFRT3OS2GC4CS9";
 const search_key="2Y7TYXX29G2ZODZS"
 /*
 Api keys
@@ -424,7 +427,9 @@ function get_data(e){
 
             k+=1;
         }
-        set_open_high(open_high);
+
+        set_open_high(open_high,w);
+        
         l.reverse();
         // console.log(l)
         d.reverse();
@@ -468,7 +473,23 @@ function get_data(e){
         }
         else{
             //else update the graph
-            update_chart(l,d,name);
+            if(w){
+                update_chart(l,d,name);
+            }
+            else{
+
+                update_chart(l,d,name);
+                $('#info-box').animate({scrollLeft:$('#info-box').width()+5}, 300);
+                $('.com-2').animate({scrollLeft:$('.com-2').width()}, 350);
+                $('.c-button').show()
+                $('.c-button').text('‹');
+                $('.c-button').css({
+                    color:"#0b4279",
+                })
+
+
+            }
+            
         }
         
 
@@ -480,7 +501,7 @@ function get_data(e){
 }
 
 
-function put_chart(l,d,name){
+function put_chart(l,d,name1){
     //this function will put chart
     hide_loading_animation();
 
@@ -495,11 +516,14 @@ function put_chart(l,d,name){
             
             labels: l,
             datasets: [{
-                label: name,
-                backgroundColor: '#517BE2',
+                label: name1,
+                // backgroundColor: '#517BE2',
                 borderColor: '#5cdb95',
-                data: d,
+                data:d,
                 
+            },{
+                label:"",
+                borderColor:'red',
             }]
         },
 
@@ -539,13 +563,25 @@ function put_chart(l,d,name){
 
 }
 
+// put_chart();
 
-function update_chart(l,d,name){
+
+function update_chart(l,d,name,w){
     //this function will be used to update data on chart
     hide_loading_animation();
-    chart.data.labels = l;
-    chart.data.datasets[0].data= d;
-    chart.data.datasets[0].label=name;
+
+    if(w){
+        chart.data.labels = l;
+        chart.data.datasets[0].data= d;
+        chart.data.datasets[0].label=name;
+    }
+    else{
+        chart.data.labels = l;
+        chart.data.datasets[1].data= d;
+        chart.data.datasets[1].label=name;
+    }
+    
+
     // chart.data.datasets[0].borderColor='rgba('+Math.random()*255+","+Math.random()*255+","+Math.random()*255+")";
     // chart.data.datasets[0].backgroundColor='rgba('+Math.random()*255+","+Math.random()*255+","+Math.random()*255+")";
 
@@ -585,17 +621,26 @@ function stop_scroll(){
 }
 
 //compare stock functions
-function set_open_high(arr){
+function set_open_high(arr,w){
     //This function is setting data_points(open/high..) is card
-    console.log($('.data_point').children());
-
-    let x = $('.data_point').children()["prevObject"];
+    // console.log($('#t1 .data_point').children());
+    // console.log($('#t2 .data_point').children());
+    // console.log($('.data_point').children());
+    let x;
+    if(w){
+        x = $('#t1 .data_point').children()["prevObject"];
+        $('.com-1 h2').text($('#inp').val())
+    }
+    else{
+        x = $('#t2 .data_point').children()["prevObject"];
+        $('.com-22 h2').text($('#inp2').val())
+    }
 
     for(let i=0; i<5; i++){
         x[i]["innerHTML"]="<b>$"+arr[i]+"</b>";
     }
 
-    $('.com-1 h2').text($('#inp').val())
+    
 
     
 }
@@ -657,14 +702,14 @@ $('.c-button').click(function(){
     
     if(which){
         if($(this).text() == '›'){
-            $('#info-box').animate({scrollLeft:pwidth}, 350, "swing");
+            $('#info-box').animate({scrollLeft:pwidth}, 300 );
             $(this).css({
                 color: "#0b4279",
             });
             $(this).text('‹')
         }
         else{
-            $('#info-box').animate({scrollLeft:0}, 350, "swing");
+            $('#info-box').animate({scrollLeft:0}, 300);
             $(this).css({
                 color: "white",
             });
@@ -673,14 +718,14 @@ $('.c-button').click(function(){
     }
     else{
         if($(this).text() == '›'){
-            $('.com-2').animate({scrollLeft:pwidth}, 350, "swing");
+            $('.com-2').animate({scrollLeft:pwidth}, 350);
             $(this).css({
                 color: "#0b4279",
             });
             $(this).text('‹')
         }
         else{
-            $('.com-2').animate({scrollLeft:0}, 350, "swing");
+            $('.com-2').animate({scrollLeft:0}, 350);
             $(this).css({
                 color: "white",
             });

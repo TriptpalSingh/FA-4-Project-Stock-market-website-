@@ -16,8 +16,8 @@ body::-webkit-scrollbar {
 }
 body{
     font-family:"Roboto";
-    /* background-image: url("../sources/Pictures/money-4.jpg"); */
-    background-color: #5CDB95;
+    background-image: url("../sources/Pictures/money-4.jpg");
+    /* background-color: #5CDB95; */
 }
 .boxShadow {
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;}
@@ -31,18 +31,18 @@ body{
 /* Navbar */
 #navbar{
     width: 100%;
-    min-height: 4vh;
+    height: 58px;
     
-    /* background-color:#05386B; */
+    background-color:#05386B;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    color:#083d72;
-    font-size: 2em;
+    color:white;
+    font-size: 1.7em;
     letter-spacing: 1.5px;
     /* position: fixed; */
     z-index: 4;
-    padding-top: 20px;
+    padding-top: 5px;
 
     
 
@@ -63,7 +63,7 @@ body{
     list-style-type: none;
 }
 .nav-link li{
-    margin: 0px 20px 0px 20px;
+    margin: 0px 10px 0px 10px;
 }
 .nav-link input{
     height: 40px;
@@ -88,6 +88,7 @@ body{
     transition: all 0.1s;
     overflow: scroll;
     z-index: 4;
+    font-size: 1.3em;
     
 }
 .res::-webkit-scrollbar{
