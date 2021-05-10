@@ -2,8 +2,9 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    z-index: -1;
+    z-index: -2;
 }
+
 
 .bg-custom-1 {
     /* border-radius: 10px; */
@@ -36,11 +37,14 @@
     background-size: cover; */
     background-color: blanchedalmond;
     box-shadow: rgb(132, 134, 136) -5px 1px 15px;
+    border-radius: 10px 0 0 10px;
+    /* opacity: 0.5; */
 }
 #bull_img{
     height: 550px;
     width: 450px;
-    opacity: 0.9;
+    /* opacity: 0.5; */
+    border-radius: 10px 0 0 10px;
 }
 
 #formdiv {
@@ -56,6 +60,8 @@
     box-shadow: rgba(0, 0, 0, 0.19) 5px 1px 15px;
     overflow: visible;
     color: #edf5e1;
+    border-radius: 0 10px 10px 0px;
+    /* background-color: rgb(0, 255, 255); */
 }
 
 #button-div {
@@ -118,9 +124,9 @@
     overflow: auto;
 }
 
-/* .lables{
+.some{
     display: none;
-} */
+}
 
 .forms{
     display: inline-block;
@@ -220,3 +226,4 @@ input:-webkit-autofill:active {
     background-color: rgba(237,245,225,0.6);
     border-radius: 7px;
 }
+

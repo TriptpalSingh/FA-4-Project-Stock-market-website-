@@ -116,7 +116,7 @@ function particalHandler(){
 
 function animate(){
     // ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle = "#5CDB95";
+    ctx.fillStyle = "rgba(255, 255, 255)";
     ctx.fillRect(0,0,canvas.width,canvas.height);
     ctx.fill();
     particalHandler();
@@ -147,10 +147,10 @@ $("document").ready(function(){
     // hint toggle
     {
         $(firstName).focus(function(){
-            $("#f_name_hint").show();
+            $("#f_name_hint").slideDown(300);
         })
         $(firstName).focusout(function(){
-            $("#f_name_hint").hide();
+            $("#f_name_hint").slideUp(300);
         })
     }
     
