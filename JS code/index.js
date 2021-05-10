@@ -66,10 +66,10 @@ $('#inp').focus(function(){
     //input focus
     res_size()
     $('#inp').css({
-        backgroundColor:"white",
-        color:"black",
+        backgroundColor:"#0b4279",
+        color:"white",
         borderRadius: '10px 10px 0px 0px',
-        color:"gray"
+        color:"white"
     })
     $('.res').css({
         display:'block',
@@ -83,10 +83,9 @@ $('#inp').focusout(function(){
     //input focusout
     setTimeout(function(){
         $('#inp').css({
-            backgroundColor:"rgb(219, 123, 33)",
-            color:"white",
+            backgroundColor:"white",
+            color:"black",
             borderRadius: '10px',
-            color:"whitesmoke"
             
         })
         $('.res').css({
@@ -233,7 +232,7 @@ $('.time-range li').click(function(){
 
     let inp = this.innerText;//getting time-range that user is clicked
 
-    this.style.backgroundColor="rgb(219, 123, 33)" //changing color to clicked time-range
+    this.style.backgroundColor="#0b4279" //changing color to clicked time-range
     this.style.color="white"
 
     window.time_range = "";//declaring some global function that will be used in get data function
@@ -287,7 +286,7 @@ $('.time-range li').click(function(){
 function get_data(e){
     console.log(e["id"])
 
-    var w = e["id"] == "s1" ? 1 : 0; 
+    let w = e["id"] == "s1" ? 1 : 0; 
 
     let c;
     
@@ -333,41 +332,46 @@ function get_data(e){
 
         show_loading_animation();
 
-        //removing previous company info
-        $('.chart-info').empty();
-        let div = document.createElement('div');//creating new div for new company info
-        $(div).attr("class","info");
-        let div2 = document.createElement('div');
-        $(div2).attr("class","info")
-        //and putting all data of new company in div
-        $("<h2>"+data["Name"]+"</h2><br>").appendTo(div);
-        $("<h3>"+data["Symbol"]+"</h3><br>").appendTo(div);
-        $("<h3>Asset Type</h3>"+data["AssetType"]+"<br><br>").appendTo(div);
-        $("<h3>Exchange</h3>"+data["Exchange"]+"<br><br>").appendTo(div);
-        $("<h3>Currency</h3>"+data["Currency"]+"<br><br>").appendTo(div);
-        $("<h3>Country</h3>"+data["Country"]+"<br><br>").appendTo(div);
-        $("<h3>Sector</h3>"+data["Sector"]+"<br><br>").appendTo(div);
-        $("<h3>Industry</h3>"+data["Industry"]+"<br><br>").appendTo(div);
-        $("<h3>Address</h3>"+data["Address"]+"<br><br>").appendTo(div);
-        $("<h3>Description</h3><p>"+data["Description"]+"</p><br>").appendTo(div);
+        console.log(w)
 
-        $("<h2>"+data["Name"]+"</h2><br>").appendTo(div2);
-        $("<h3>"+data["Symbol"]+"</h3><br>").appendTo(div2);
-        $("<h3>Asset Type</h3>"+data["AssetType"]+"<br><br>").appendTo(div2);
-        $("<h3>Exchange</h3>"+data["Exchange"]+"<br><br>").appendTo(div2);
-        $("<h3>Currency</h3>"+data["Currency"]+"<br><br>").appendTo(div2);
-        $("<h3>Country</h3>"+data["Country"]+"<br><br>").appendTo(div2);
-        $("<h3>Sector</h3>"+data["Sector"]+"<br><br>").appendTo(div2);
-        $("<h3>Industry</h3>"+data["Industry"]+"<br><br>").appendTo(div2);
-        $("<h3>Address</h3>"+data["Address"]+"<br><br>").appendTo(div2);
-        $("<h3>Description</h3><p>"+data["Description"]+"</p><br>").appendTo(div2);
+        if(w){
+            //removing previous company info
+            $('.info:nth-child(1)').remove()
+            let div = document.createElement('div');//creating new div for new company info
+            $(div).attr("class","info");
 
+            //and putting all data of new company in div
+            $("<h2>"+data["Name"]+"</h2><br>").appendTo(div);
+            $("<h3>"+data["Symbol"]+"</h3><br>").appendTo(div);
+            $("<h3>Asset Type</h3>"+data["AssetType"]+"<br><br>").appendTo(div);
+            $("<h3>Exchange</h3>"+data["Exchange"]+"<br><br>").appendTo(div);
+            $("<h3>Currency</h3>"+data["Currency"]+"<br><br>").appendTo(div);
+            $("<h3>Country</h3>"+data["Country"]+"<br><br>").appendTo(div);
+            $("<h3>Sector</h3>"+data["Sector"]+"<br><br>").appendTo(div);
+            $("<h3>Industry</h3>"+data["Industry"]+"<br><br>").appendTo(div);
+            $("<h3>Address</h3>"+data["Address"]+"<br><br>").appendTo(div);
+            $("<h3>Description</h3><p>"+data["Description"]+"</p><br>").appendTo(div);
+            $(div).prependTo($('#info-box'))
+            //prepending div to info-box
+        }
+        else{
 
-        
-        $(div).prependTo($('.chart-info'))//prepending div to main
-        $(div2).prependTo($('.chart-info'))
+            $('.info:nth-child(2)').remove();//removing the second child element from info box
+            let div2 = document.createElement('div');
+            $(div2).attr("class","info")
+            $("<h2>"+data["Name"]+"</h2><br>").appendTo(div2);
+            $("<h3>"+data["Symbol"]+"</h3><br>").appendTo(div2);
+            $("<h3>Asset Type</h3>"+data["AssetType"]+"<br><br>").appendTo(div2);
+            $("<h3>Exchange</h3>"+data["Exchange"]+"<br><br>").appendTo(div2);
+            $("<h3>Currency</h3>"+data["Currency"]+"<br><br>").appendTo(div2);
+            $("<h3>Country</h3>"+data["Country"]+"<br><br>").appendTo(div2);
+            $("<h3>Sector</h3>"+data["Sector"]+"<br><br>").appendTo(div2);
+            $("<h3>Industry</h3>"+data["Industry"]+"<br><br>").appendTo(div2);
+            $("<h3>Address</h3>"+data["Address"]+"<br><br>").appendTo(div2);
+            $("<h3>Description</h3><p>"+data["Description"]+"</p><br>").appendTo(div2);
+            $(div2).appendTo($('#info-box'))
+        }
 
-        // console.log($('chart-info').children())
   
 
     })
@@ -492,8 +496,8 @@ function put_chart(l,d,name){
             labels: l,
             datasets: [{
                 label: name,
-                backgroundColor: 'rgb(40, 148, 58)',
-                borderColor: 'orange',
+                backgroundColor: '#517BE2',
+                borderColor: '#5cdb95',
                 data: d,
                 
             }]
@@ -542,8 +546,8 @@ function update_chart(l,d,name){
     chart.data.labels = l;
     chart.data.datasets[0].data= d;
     chart.data.datasets[0].label=name;
-    chart.data.datasets[0].borderColor='rgba('+Math.random()*255+","+Math.random()*255+","+Math.random()*255+")";
-    chart.data.datasets[0].backgroundColor='rgba('+Math.random()*255+","+Math.random()*255+","+Math.random()*255+")";
+    // chart.data.datasets[0].borderColor='rgba('+Math.random()*255+","+Math.random()*255+","+Math.random()*255+")";
+    // chart.data.datasets[0].backgroundColor='rgba('+Math.random()*255+","+Math.random()*255+","+Math.random()*255+")";
 
     chart.update();
 
@@ -626,6 +630,8 @@ $('#inp2').focusout(function(){
     
 })
 
+//This function will set size of small box with search 
+//suggestion in compare stock
 function res_size1(){
     //this function is to update the height
     //of res box and the res-list change
@@ -640,3 +646,45 @@ $(document).on("click",'.res-list1 li',function(){
     $('#inp2').val(this.innerText)
 
 })
+
+//Function to control scroll on button click
+$('.c-button').click(function(){
+    console.log(this)
+    console.log($(this).parent()[0]["id"]);
+
+    let which = $(this).parent()[0]["id"] == "scroll-div1" ? 1 : 0;
+    let pwidth = $(this).parent().width()+1;
+    
+    if(which){
+        if($(this).text() == '›'){
+            $('#info-box').animate({scrollLeft:pwidth}, 350, "swing");
+            $(this).css({
+                color: "#0b4279",
+            });
+            $(this).text('‹')
+        }
+        else{
+            $('#info-box').animate({scrollLeft:0}, 350, "swing");
+            $(this).css({
+                color: "white",
+            });
+            $(this).text('›')
+        }
+    }
+    else{
+        if($(this).text() == '›'){
+            $('.com-2').animate({scrollLeft:pwidth}, 350, "swing");
+            $(this).css({
+                color: "#0b4279",
+            });
+            $(this).text('‹')
+        }
+        else{
+            $('.com-2').animate({scrollLeft:0}, 350, "swing");
+            $(this).css({
+                color: "white",
+            });
+            $(this).text('›')
+        }
+    }  
+});
