@@ -152,6 +152,39 @@ $("document").ready(function(){
         $(firstName).focusout(function(){
             $("#f_name_hint").slideUp(300);
         })
+
+        $(lastName).focus(function(){
+            $("#l_name_hint").slideDown(300);
+        })
+        $(lastName).focusout(function(){
+            $("#l_name_hint").slideUp(300);
+        })
+
+        $(registerEmail).focus(function(){
+            $("#email_hint").slideDown(300);
+        })
+        $(registerEmail).focusout(function(){
+            $("#email_hint").slideUp(300);
+        })
+
+        $(registerPass).focus(function(){
+            $("#pass_hint").slideDown(300);
+        })
+        $(registerPass).focusout(function(){
+            $("#pass_hint").slideUp(300);
+        })
+
+        $(confirmPass).focus(function(){
+            $("#confirm_pass_hint").slideDown(300);
+        })
+        $(confirmPass).focusout(function(){
+            $("#confirm_pass_hint").slideUp(300);
+        })
+
+
+
+
+
     }
     
 

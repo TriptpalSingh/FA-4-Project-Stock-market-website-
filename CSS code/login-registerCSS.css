@@ -111,7 +111,7 @@
 #inner_formdiv { 
     border-top: solid 4px rgba(85,122,149, 0.9);
     border-bottom: solid 4px rgba(85,122,149, 0.9);
-    height: 420px;
+    height: 430px;
     width: 470px;
     /* display: flex; */
     padding-bottom: 20px;
@@ -126,6 +126,9 @@
 
 .some{
     display: none;
+    margin-left: -15px;
+    opacity: 0.8;
+    font-size: 0.9rem;
 }
 
 .forms{
