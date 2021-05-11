@@ -105,10 +105,15 @@
         </div>
       </nav>
     <div id="inner-box">
-        <div id="inner-box1">
-            <p >Welcome,</p>
+        <!--div id="inner-box1">
+            <p id="welcome">Welcome,</p>
             <p id="Page-name"> TRADE'n BUILD</p>
-        </div>
+        </div-->
+        <!--div id="inner-box2"-->
+            <video autoplay muted loop >
+                <source src="../sources/Video2.mp4" type="video/mp4">
+              </video>
+        <!--/div-->
     </div>
     
         
@@ -117,12 +122,16 @@
         <div id="Graphs">
             <h1 id="Top-stocks">Stocks in News</h1>
             <div id="Graph1">
-                <h1 class="Stock-name">NIFTY(NSE)</h1>
+                <h1 class="Stock-name">NIFTY<span style="color:#00ff80;font-size: 2.5vw;">(NSE)</span></h1>
                 <canvas id="myChart1"></canvas>
             </div>
             <div id="Graph2">
-                <h1 class="Stock-name">SENSEX(DSE)</h1>
+                <h1 class="Stock-name">SENSEX<span style="color:#08c968;font-size: 2.5vw;">(BSE)</span></h1>
                 <canvas id="myChart2"></canvas>
+            </div>
+            <div id="Graph3">
+                <h1 class="Stock-name">TCS</h1>
+                <canvas id="myChart3"></canvas>
             </div>
         </div>
         <!--Sidebar-->
@@ -154,9 +163,93 @@
 
 
 
-    <!--Commments of users-->
+    <!--Commments of users>
     <div id="Comments" >
 
+    </div-->
+    
+    <div id="Comments1">
+        <h1 id="com-h">Creating proud investors.</h1>
+        <p id="com-p">You can feel the Pride of Trade'n Build members.</p>
+        <div id="Comments-inner">
+            <div class="Comments">
+                <table>
+                    <tr>
+                        <td class="Stars">
+                            <img src="../sources/Pictures/profile1.jpg" class="com-prof">
+                            <span>&ensp;</span>
+                            <i class="fas fa-star star">&nbsp;</i>
+                            <i class="fas fa-star star">&nbsp;</i>
+                            <i class="fas fa-star star">&nbsp;</i>
+                            <i class="fas fa-star star">&nbsp;</i>
+                            <i class="fas fa-star star">&nbsp;</i>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="fontSize">
+                            <p class="com-pp">"<b>Trade'nBuild</b> was the platform where I first got to board to MF and I would have to say, even for a beginner like me it made things quite easier to explore and invest."</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fontSize"><b>Ankit Puri</b></td>
+                    </tr>
+                    <tr>
+                        <td class="fontSize designation">Product Specialist, Google</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="Comments"><table>
+                <tr>
+                    <td class="Stars">
+                        <img src="../sources/Pictures/profile2.jpg" class="com-prof">
+                        <span>&ensp;</span>
+                        <i class="fas fa-star star">&nbsp;</i>
+                        <i class="fas fa-star star">&nbsp;</i>
+                        <i class="fas fa-star star">&nbsp;</i>
+                        <i class="fas fa-star star">&nbsp;</i>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td class="fontSize">
+                        <p class="com-pp">"Actually, the UI is extemely simple and easy for users to adapt, that's what makes it unique. Many of my referrals have also joined and enjoying trading with <b>Trade'nBuild.</b> "</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fontSize"><b>Amit Sharma</b></td>
+                </tr>
+                <tr>
+                    <td class="fontSize designation">Solution Architecture, Amazon Web Services</td>
+                </tr>
+            </table></div>
+            <div class="Comments"><table>
+                <tr>
+                    <td class="Stars">
+                        <img src="../sources/Pictures/profile3.jpg" class="com-prof">
+                        <span>&ensp;</span>
+                        <i class="fas fa-star star">&nbsp;</i>
+                        <i class="fas fa-star star">&nbsp;</i>
+                        <i class="fas fa-star star">&nbsp;</i>
+                        <i class="fas fa-star star">&nbsp;</i>
+                        <i class="fas fa-star star">&nbsp;</i>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td class="fontSize">
+                        <p class="com-pp">"If you are one of those who would like to take control of how you save, using <b>Trade'nBuild</b> it's ridiculously easy portal. It just took me 5 mins to set up and invest."</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fontSize"><b>Roop Ambedkar</b></td>
+                </tr>
+                <tr>
+                    <td class="fontSize designation">Associate, Netflix</td>
+                </tr>
+            </table></div>
+        </div>
+        
     </div>
     <!--Footer-->
     <footer class="container-fluid">

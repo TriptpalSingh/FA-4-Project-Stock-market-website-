@@ -23,6 +23,8 @@ body{
 
     /*Navbar*/
 .navbar{
+    position: relative;
+    top:-7px;
     background-color: #05386B !important;
     padding-top: 2px;
     padding-bottom: 2px;
@@ -75,36 +77,65 @@ input[type="search"] {
     /*Main body*/
 
 #inner-box {
-
-    background-image:url(../sources/pictures/money2.jpg);
-    height:100vh;
+    height:130vh;
     width:98.9vw;
     background-size: cover;
-    padding: 14%;
+    /*padding: 14%;
     padding-left: 7%;
+    color:rgba(71, 38, 38,0.86);*/
     font-size: 11vh;
     font-weight: 700;
-    color:rgba(71, 38, 38,0.86);
+    
+    padding: 0% 0 1%;
+    background-color: #f0f0f0;
+    position: relative;
+    top:-7px;
     
     
     }
+video{
+    height:100%;
+    width:100%
+}
+/*#inner-box1{
+    width:50vw;
+    display: inline-block;
+}
+#inner-box2 {
+    
+    min-width: 100%; 
+    min-height: 100%;
+  }
 
-#Page-name{
-    font-size: 13vh;
+#welcome{
+    width:50vw;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 
+#Page-name{
+    width:50vw;
+    font-size: 13vh;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+*/
     /*Graphs*/
 #Top-stocks{
-    margin-top: 5%;
-    font-size: 4rem;
+    margin-top: 2%;
+    font-size: 4vw;
     text-shadow: 3px 3px 3px rgb(158, 152, 152);
     font-weight: 600;
-    color: #edf5e1;
+    /*color: #edf5e1;*/
+    border-bottom: 4px dashed rgb(87, 85, 85);
+    color:black;
     
+}
+#Top-stocks:hover{
+    font-size: 5.2vw;
+    border-color: #2f302f;
 }
 
 .Stock-name{
-    font-size: 4vw;
+    font-size: 3vw;
 }
 
 #Graphs{
@@ -130,7 +161,7 @@ input[type="search"] {
     /*background-color: #f0f0f0;*/
     padding: 2%;
     width:81%;
-    height: 34vw;
+    height: 33vw;
     box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
 }
@@ -148,7 +179,24 @@ input[type="search"] {
     /*background-color: #00ff80;*/
     padding: 2%;
     width:81%;
-    height: 34vw;
+    height: 33vw;
+    box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+
+#Graph3{
+    background-color: white;
+    padding: 2%;
+    width:80%;
+    box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+
+#Graph3:hover{
+    /*background-color: #00ff80;*/
+    padding: 2%;
+    width:81%;
+    height: 33vw;
     box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
 }
@@ -163,7 +211,7 @@ input[type="search"] {
 }
 
 #Main-Body{
-    background-color: #5CDB95;
+    
     display: flex;
 }
 aside{
@@ -201,13 +249,63 @@ aside marquee{
 
     /*Comments*/
 
-#Comments{
+/*#Comments{
     background-image: url(../sources/Pictures/Comments2.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     height:48vw;
-
+}
+*/
+#Comments1{
+    background-color: #f0f0f0;
+    height:48vw;
+    padding: 2% 4%;
+}
+#Comments-inner{
+    height:80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4%;
+}
+.Comments{
+    padding: 3%;
+    height:31vw;
+    width: 28vw;
+    background-color: white;
+    border-radius: 10px;
     
+}
+.Comments:hover{
+    box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.Stars{
+    color: orange;
+    width:100%;
+}
+.star{
+    font-size: 1.5vw;
+}
+.com-prof{
+    width:5vw;
+    height:5vw;
+    border-radius: 50%;
+}
+#com-h{
+    font-size: 3.5vw;
+}
+#com-p{
+    font-size: 1.5vw;
+    color:rgb(99, 102, 104);
+}
+.fontSize{
+    font-size: 1.5vw;
+}
+.com-pp{
+    margin-top: 10px;
+}
+.designation{
+    color:rgb(161, 164, 167);
+    font-size: 1.33vw;
 }
     /*Footer*/
 footer {
