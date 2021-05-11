@@ -169,13 +169,16 @@ $("document").ready(function(){
 
         $(registerPass).focus(function(){
             $("#pass_hint").slideDown(300);
+            $("#confirm_pass").css("margin-top","0px"); 
         })
         $(registerPass).focusout(function(){
             $("#pass_hint").slideUp(300);
+            $("#confirm_pass").css("margin-top","30px"); 
         })
 
         $(confirmPass).focus(function(){
             $("#confirm_pass_hint").slideDown(300);
+               
         })
         $(confirmPass).focusout(function(){
             $("#confirm_pass_hint").slideUp(300);
