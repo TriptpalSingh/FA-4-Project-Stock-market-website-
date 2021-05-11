@@ -23,7 +23,7 @@ window.company=company_t;
 window.final_company=company_t;
 
 
-const api_key="DLDFRT3OS2GC4CS9";
+const api_key="IKA4T7MP6LW4SQQO";
 const search_key="2Y7TYXX29G2ZODZS"
 /*
 Api keys
@@ -322,7 +322,7 @@ function get_data(e){
 
 
     //this function will be used to get company infomation
-    $.getJSON("https://www.alphavantage.co/query?function=OVERVIEW&symbol="+final_company[c]+"&apikey="+api_key)
+    $.getJSON("https://www.alphavantage.co/query?function=OVERVIEW&symbol="+final_company[c]+"&apikey="+"2Y7TYXX29G2ZODZS")
     .done(function(data){
 
         
@@ -474,11 +474,16 @@ function get_data(e){
         else{
             //else update the graph
             if(w){
-                update_chart(l,d,name);
+                update_chart(l,d,name,w);
+                $('#info-box').animate({scrollLeft:0}, 300);
+                $('.c-button').text('›');
+                $('.c-button').css({
+                    color:"white",
+                })
             }
             else{
 
-                update_chart(l,d,name);
+                update_chart(l,d,name,w);
                 $('#info-box').animate({scrollLeft:$('#info-box').width()+5}, 300);
                 $('.com-2').animate({scrollLeft:$('.com-2').width()}, 350);
                 $('.c-button').show()
@@ -517,7 +522,7 @@ function put_chart(l,d,name1){
             labels: l,
             datasets: [{
                 label: name1,
-                // backgroundColor: '#517BE2',
+                backgroundColor: '#517BE2',
                 borderColor: '#5cdb95',
                 data:d,
                 
@@ -579,6 +584,7 @@ function update_chart(l,d,name,w){
         chart.data.labels = l;
         chart.data.datasets[1].data= d;
         chart.data.datasets[1].label=name;
+        chart.data.datasets[0].backgroundColor="";
     }
     
 
