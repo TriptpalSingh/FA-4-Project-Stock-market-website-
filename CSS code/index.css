@@ -18,6 +18,7 @@ body{
     font-family:"Roboto";
     background-image: url("../sources/Pictures/money-4.jpg");
     /* background-color: #5CDB95; */
+    min-width: 636px;
 }
 .boxShadow {
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;}
@@ -58,7 +59,7 @@ body{
 }
 .nav-link{
     display: flex;
-    /* justify-content: space-around; */
+    justify-content:center;
     width: 40%;
     list-style-type: none;
 }
@@ -70,10 +71,11 @@ body{
     width: 250px;
     outline: none;
     border: none;
-    background-color:  white;
+    border-bottom: 2px solid white;
+    background-color:  transparent;
     color: #05386B;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 0px;
     transition: all 0.3s;
     font-size: 17px;
     text-transform: capitalize;
@@ -134,11 +136,18 @@ body{
     cursor: pointer;
     color:black;
     font-weight: bold;
+    font-size: 20px;
 }
 .nav-link button:active{
     background-color:whitesmoke ;
 }
-
+#buy{
+    padding: 5px;
+    width: 100px;
+    margin-left: 200px;
+    background-color: seagreen;
+    color: white;
+}
 .burger div{
     width: 25px;
     height: 3px;
@@ -425,136 +434,63 @@ main{
 }
 
 /* footer */
-.footer{
+#footer{
     width: 100%;
     height: 30vh;
     position: aboslute;
     left: 0px;
     bottom:0px;
-    background-color: #05386B;
+    background-color: #379683;
+    color: #edf5e1;
 }
 
-
-@media screen and (max-width: 1200px){
-    .nav-link{
-        width: 60%;
-    }
-
-}
-@media screen and (max-width: 850px){
-    body{
-        /* overflow-x: hidden; */
-        min-width: 435;
-    }
-    .nav-link{
-        z-index: 4;
-        position: fixed;
-        right: 0px;
-        height: 100vh;
-        width: 40%;
-        top:0px;
-        background-color: rgba(255,255,255,0.2);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        transform: translateX(100%);
-        transition:transform 0.5s;
-        padding: 5%;
-        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-
-    }
-    .search-res{
-        margin-top: 40px;
-    }
-    .burger{
-        z-index: 5;
-        display: block;
-        cursor: pointer;
-    }
-    /* .nav-link input{
-        width: 170px;
-    } */
-    .nav-link li{
-        margin: 5%;
-    }
-    .chart-info{
-        margin-top: 50px;
-        min-height: 300px;
-    }
-    .chart-container{
-        min-height: 350px;
-    }
-    .stock-compare{
-        min-height: 250px;
-    }
+#f-container{
+    width: 80%;
+    margin: auto;
+    height: 100%;
     
-
-    main{
-        flex-direction: column;
-        height: auto;
-    }
-    
+    display: flex;
+    justify-content: space-between;
+}
+#f-container div{
+    height: 100%;
+    width: 30%;
+    /* background-color: white; */
+    padding: 20px;
+    border-radius: 5px;
+}
+#f-container div h2{
+    text-align: center;
+}
+#About p{
+    margin-top: 20px;
+}
+#follow table{
+    margin: auto;
+    margin-top: 30px;
+}
+#follow table tr td{
+    padding: 7px;
+}
+#follow .fab{
+    cursor: pointer;
+}
+#Creators table{
+    margin: auto;
+    margin-top: 30px;
+}
+#Creators table tr td{
+    padding: 7px;
 }
 
-@media screen and (max-width : 655px){
-    .nav-link input{
-        width: 200px;
-    }
-    .res{
-        width: 200px;
-    }
-}
-@media screen and (max-width : 500px){
-    .nav-link input{
-        width: 170px;
-    }
-    .res{
-        width: 170px;
-    }
-}
 
-@media screen and (max-width: 1000px){
 
-    .chart-graph{
-        width: 100%;
-        height: 80vh;
-    }
-
-    .chart-info{
-        margin-top: 50px;
-        height: 450px;
-        width: 100%;
-    }
-    .chart-container{
-        min-height: 350px;
-    }
-    .stock-compare{
-        min-height: 270px;
-    }
-    main{
-        flex-direction: column-reverse;
-        height: auto;
-    }
+#f-container1{
+    width: 100%;
+    text-align: center;
+    background-color: #379683;
+    padding-bottom: 20px;
 }
-
-.nav-active{
-    
-    transform: translateX(0%);
-}
-
-.l1{
-
-    transform: rotateZ(50deg);
-}
-.l2{
-    display: none;
-}
-.l3{
-    transform: rotateZ(-50deg);
-}
-  
-
 #overlay{
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
@@ -567,10 +503,11 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    /* backdrop-filter: blur(2px); */
 
 }
 
-#overlay div{
+#overlay #alert-box{
     height: 200px;
     width: 350px;
     border-radius:4px;
@@ -579,30 +516,192 @@ main{
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 }
-#overlay div h3{
-    flex-grow: 1;
+#alert-box h3{
+    font-size: 25px;
 }
-#overlay div p{
-    flex-grow: 2;
+#alert-box p{
+    margin-top: 20px;
 }
+#buy-box{
+    height: 300px;
+    width: 500px;
+    background-color:#05386B ;
+    border-radius: 5px;
+    padding: 35px;
+    color: white;
+    /* backdrop-filter: blur(2px); */
+    position: relative;
+}
+#buy-box h2{
+    font-size: 35px;
+    font-weight: 600;
+}
+.buy-logo{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 25px;
+    transition: all 0.2s;
+}
+.buy-logo:hover{
+    color: seagreen;
+}
+#c-list{
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+}
+#c-list div{
+    height: 50px;
+    width: 400px;
+    background-color: #2865a1;
+    color: white;
+    margin: 20px 0px 20px 0px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+#c-list div:hover{
+    background-color: seagreen;
+}
+
+#payment{
+    height: 630px;
+    width: 400px;
+    background-color: seagreen;
+    border-radius: 5px;
+    padding: 30px;
+    position: relative;
+    color: white;
+}
+#payment h2{
+    text-align: center;
+    font-size: 33px;
+}
+#payment h3{
+    font-size: 27px;
+}
+#payment p{
+    margin-top: 20px;
+}
+#payment p:nth-child(5){
+    margin-top: 30px;
+}
+#payment p:nth-child(7){
+    margin-top: 5px;
+}
+#payment p:nth-child(8){
+    margin-top: 30px;
+}
+#payment input{
+    height: 40px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid white;
+    font-size: 15px;
+    margin-top: -5px;
+}
+
+.buy-logo:nth-child(3){
+    top:92px;
+}
+.buy-logo:nth-child(2):hover{
+    color: white;
+}
+#payment-form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 0px;
+}
+#payment-form input{
+    margin: 20px 0px 20px 0px;
+    height: 40px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid white;
+    font-size: 15px;
+}
+#payment-form input::placeholder{
+    color: lightgrey;
+}
+#payment-form input[type=number]::-webkit-inner-spin-button{
+    /*Removing arrow button from input type number*/
+    display: none;
+}
+
 
 #overlay div button{
     position: absolute;
-    bottom: 5px;
+    top: 5px;
     right: 5px;
     background-color: #dc3545;
     border: none;
     color: #fff;
     height: 30px;
-    width: 50px;
+    width: 30px;
     border-radius: 2px;
-    transition: all 0.3s;
+    transition: all 0.25s;
+    cursor: pointer;
+    font-size: 17px;
+}
+#overlay div button:hover{
+    border-radius: 50%;
+    transform: rotate(180deg);
+    box-shadow: none;
 }
 
 #overlay div button:active{
     background-color: seagreen;
+}
+
+#payment-form button{
+    position: relative !important;
+    margin: auto;
+    cursor: pointer;
+    height: 50px !important;
+    width: 200px !important;
+    background-color: rgb(32, 134, 32) !important;
+    color:white !important;
+    font-size: 30px !important;
+    font-weight: 400 !important;
+    border-radius: 5px !important;
+    transition: none !important;
+}
+#payment-form button:hover{
+    transform: rotate(0deg) !important;
+}
+
+#payment-complete{
+    height: 300px;
+    width: 300px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+#payment-complete img{
+    width: 135px;
+    height: 100px;
+}
+#payment-complete h3{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+#payment-complete p{
+    margin-top: 20px;
+    font-style: italic;
 }
 
 /*Loading animation*/
@@ -625,3 +724,156 @@ main{
     100% { transform: rotate(360deg);}
 }
 
+@media screen and (max-width:1400px){
+    #buy{
+        margin-left: 80px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .nav-link{
+        width: 55%;
+    }
+    #buy{
+        margin-left: 90px;
+    }
+
+}
+
+@media screen and (max-width: 1042px){
+
+    .chart-graph{
+        width: 100%;
+        height: 80vh;
+    }
+
+    .chart-info{
+        margin-top: 220px;
+        height: 450px;
+        width: 100%;
+    }
+    .chart-container{
+        min-height: 500px;
+    }
+    .stock-compare{
+        min-height: 270px;
+    }
+    main{
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    #buy{
+        margin-left: 40px;
+    }
+}
+@media  screen and (max-width:970px) {
+    .chart-container{
+        min-height: 450px;
+    }
+    .chart-info{
+        margin-top: 180px;
+    }
+    #buy{
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 865px){
+   
+    main{
+        min-width: 636px;
+    }
+    .nav-link{
+        z-index: 4;
+        position: fixed;
+        right: 0px;
+        height: 100vh;
+        width: 40%;
+        top:0px;
+        background-color: #184b7e;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        transform: translateX(100%);
+        transition:transform 0.5s;
+        padding: 5%;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+    }
+    .search-res{
+        margin-top: 40px;
+    }
+    .nav-link button{
+        width: 150px;
+    }
+    #buy{
+        margin-left: 0px;
+        width: 150px;
+    }
+    .burger{
+        z-index: 5;
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-link li{
+        margin: 5%;
+    }
+    .chart-info{
+        margin-top: 95px;
+        min-height: 300px;
+    }
+    .chart-container{
+        min-height: 380px;
+    }
+    .stock-compare{
+        min-height: 250px;
+    }
+    .com-1,.com-2{
+        height: 105%;
+    }
+
+    main{
+        height: 1244px;
+    }
+    
+    #footer{
+        min-height: 340px;
+    }
+    #f-continer{
+        min-height: 300px;
+        height: auto;
+    }
+    
+}
+
+@media screen and (max-width : 655px){
+
+    .nav-link input{
+        width: 200px;
+    }
+    .res{
+        width: 200px;
+    }
+}
+
+
+
+
+
+.nav-active{
+    
+    transform: translateX(0%);
+}
+
+.l1{
+
+    transform: rotateZ(50deg);
+}
+.l2{
+    display: none;
+}
+.l3{
+    transform: rotateZ(-50deg);
+}

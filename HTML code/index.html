@@ -21,7 +21,7 @@
 
             <li>
                 <div class="search-res">
-                    <input class="boxShadow2" type="text" placeholder="search stock here..." id="inp" autocomplete="off">
+                    <input  type="text" placeholder="search stock here..." id="inp" autocomplete="off">
                     <div class="res boxShadow2"><!--boxShadow is a shadow class property-->
                         <ul class="res-list" id="list">
                             <li>Microsoft</li>
@@ -36,6 +36,9 @@
             <li>
                 <button class="boxShadow2" onclick="get_data(this)" id="s1"><i class="fas fa-search-dollar"></i></button>
             </li>
+            <li>
+                <button id="buy" class="boxShadow2">Buy <i class="fas fa-shopping-cart"></i></button>
+            </li>
         </ul>
         <div class="burger">
             <div class="line1 boxShadow"></div>
@@ -49,7 +52,7 @@
             <div id="info-box">
 
                 <div class="info">
-                    <h2>Google</h2><br>
+                    <h2>Netflix</h2><br>
                     <h3>GOOGL</h3><br>
                     <h3>Asset type</h3> Common Stock <br><br>
                     <h3>Exchange</h3> NYSE <br><br>
@@ -60,7 +63,7 @@
                     <h3>Address</h3> One New Orchard Road, Armonk, NY, United States, 10504 <br><br>
                     <h3><i>Description</i></h3><p><i>International Business Machines Corporation provides integrated solutions and services worldwide. Its Cloud & Cognitive Software segment offers software for vertical and domain-specific solutions in health, financial services, supply chain, and asset management, weather, and security software and services application areas; and customer information control system and storage, and analytics and integration software solutions to support client mission critical on-premise workloads in banking, airline, and retail industries. It also offers middleware and data platform software, including Red Hat that enables the operation of clients' hybrid multi-cloud environments; and Cloud Paks, WebSphere distributed, and analytics platform software, such as DB2 distributed, information integration, and enterprise content management, as well as IoT, Blockchain and AI/Watson platforms</i></p>
                 </div>
-                <div class="info">
+                <!-- <div class="info">
                     <h2>Google</h2><br>
                     <h3>GOOGL</h3><br>
                     <h3>Asset type</h3> Common Stock <br><br>
@@ -72,7 +75,7 @@
                     <h3>Address</h3> One New Orchard Road, Armonk, NY, United States, 10504 <br><br>
                     <h3><i>Description</i></h3><p><i>International Business Machines Corporation provides integrated solutions and services worldwide. Its Cloud & Cognitive Software segment offers software for vertical and domain-specific solutions in health, financial services, supply chain, and asset management, weather, and security software and services application areas; and customer information control system and storage, and analytics and integration software solutions to support client mission critical on-premise workloads in banking, airline, and retail industries. It also offers middleware and data platform software, including Red Hat that enables the operation of clients' hybrid multi-cloud environments; and Cloud Paks, WebSphere distributed, and analytics platform software, such as DB2 distributed, information integration, and enterprise content management, as well as IoT, Blockchain and AI/Watson platforms</i></p>
                 
-                </div>
+                </div> -->
 
             </div>
             
@@ -184,16 +187,102 @@
 
     </main>
 
-    <footer class="footer" id="footer">
+    <footer id="footer">
+        <div id="f-container">
+            <div id="About">
+                <h2><i class="fab fa-angellist"></i> About Us</h2>
+                <p><b>Trade'n Build</b> is a Stock Market Website, We provide 
+                information about Stocks of different Company and provide comparison among them,
+                We also provide option to buy stock. </p>
 
+            </div>
+            <div id="follow">
+                <h2><i class="fas fa-hashtag"></i> Follow Us</h2>
+                <table >
+                    <tr>
+                        <td>Facebook</td>
+                        <td><a> <i class="fab fa-facebook"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Twitter</td>
+                        <td><a><i class="fab fa-twitter"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Youtube</td>
+                        <td><a><i class="fab fa-youtube"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Instagram</td>
+                        <td><a><i class="fab fa-instagram"></i></a></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="Creators">
+                <h2><i class="fas fa-user"></i> Creators</i></h2>
+                <table >
+                    <tr>
+                        <td>Sushant Mishra</td>
+                    </tr>
+                    <tr>
+                        <td>Tanish Goyal</td>
+                    </tr>
+                    <tr>
+                        <td>Triptpal Singh</td>
+                    </tr>
+                    <tr>
+                        <td>Tanveer Singh</td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+        <div id="f-container1">&copy; Trade'n Build | 2021</div>
     </footer>
     <div id="overlay">
-        <div>
-            <h3>Alert<hr></h3>
-            <p></p>
+        <div id="alert-box">
+            <h3>Alert</h3><hr>
+            <p>Some Alert</p>
 
             
-            <button onclick="hide_overlay()" style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;">Close</button>
+            <button onclick="hide_overlay()" class="boxShadow2">✖</button>
+        </div>
+        <div id="buy-box" class="boxShadow2">
+            <h2>Buy Stock </h2>
+            <div class="buy-logo"><i class="fas fa-shopping-cart"></i></div>
+            <p><i>Choose a stock,</i></p>
+            <div id="c-list">
+                <div class="boxShadow2">Goolge</div>
+                <div class="boxShadow2">Netflix</div>
+            </div>
+            <button class="boxShadow2" onclick="hide_overlay()">✖</button>
+        </div>
+
+        <div id="payment" class="boxShadow2">
+            <h2>Payment</h2>
+            <p class="pay-p">Stock name</p>
+            <div class="buy-logo"><i class="fas fa-money-check-alt"></i></div>
+            <h3>Google,</h3>
+            <p class="pay-p">Enter no of share you want to buy*</p>
+            <input type="number" id="share" min="1" max="9999">
+            <p class="pay-p" id="amt">Total Amount to Pay: <b><i>$0.00</i></b></p>
+
+            <p class="pay-p"><i>Please enter your Account details*</i></p>
+            
+            
+            <div id="payment-form">
+                <input type="number" placeholder="Enter your Demat Account Number" >
+                <input type="text" placeholder="Enter your Account Name ">
+                <input type="number" placeholder="Enter your PIN" >
+                <button class="boxShadow2">Pay <i class="fas fa-money-bill-wave"></i></button>
+            </div>
+            <button class="boxShadow2" onclick="hide_overlay()">✖</button>
+        </div>
+
+        <div id="payment-complete" class="boxShadow2">
+            <img src="../sources/Pictures/7efs.gif">
+            <h3>Your Payment is complete.</h3>
+            <p>Thanks for Choosing Trade'n Build</p>
+            <button onclick="hide_overlay()" class="boxShadow2">✖</button>
         </div>
     </div>
 

@@ -17,13 +17,16 @@ window.company_t = {
 hide_overlay();
 hide_loading_animation();
 $('.c-button').hide();
-
+// $('#alert-box').hide();
+$('#buy-box').hide()
+$('#payment').hide()
+$('#payment-complete').hide()
 
 window.company=company_t;
 window.final_company=company_t;
 
 
-const api_key="IKA4T7MP6LW4SQQO";
+const api_key="K8OUKTRAB4ZCGXV9";
 const search_key="2Y7TYXX29G2ZODZS"
 /*
 Api keys
@@ -69,10 +72,9 @@ $('#inp').focus(function(){
     //input focus
     res_size()
     $('#inp').css({
-        backgroundColor:"#0b4279",
-        color:"white",
+        backgroundColor:"white",
+        color:"black",
         borderRadius: '10px 10px 0px 0px',
-        color:"white"
     })
     $('.res').css({
         display:'block',
@@ -86,9 +88,9 @@ $('#inp').focusout(function(){
     //input focusout
     setTimeout(function(){
         $('#inp').css({
-            backgroundColor:"white",
-            color:"black",
-            borderRadius: '10px',
+            backgroundColor:"transparent",
+            color:"white",
+            borderRadius: '0px',
             
         })
         $('.res').css({
@@ -289,6 +291,18 @@ $('.time-range li').click(function(){
 function get_data(e){
     console.log(e["id"])
 
+    //this will be used to close nav
+    $('.nav-link').toggleClass('nav-active')
+    $('.line1').toggleClass('l1')
+    $('.line2').toggleClass('l2')
+    $('.line3').toggleClass('l3')
+    if(t == true){
+        t = false
+    }else{
+        t = true
+    }
+
+
     let w = e["id"] == "s1" ? 1 : 0; 
 
     let c;
@@ -306,14 +320,14 @@ function get_data(e){
         //if user have not searched any company just return
         console.log(final_company)
         console.log(final_company[c])
-        $('#overlay div p').text("Please enter a valid company name")
+        $('#alert-box p').text("Please enter a valid company name")
         show_overlay();
         return;
     }
 
     if(window.time_range == undefined){
         //if time range no selected alert user
-        $('#overlay div p').text("Please choose a time range")
+        $('#alert-box p').text("Please choose a time range")
         show_overlay();
         return;
     }
@@ -322,7 +336,7 @@ function get_data(e){
 
 
     //this function will be used to get company infomation
-    $.getJSON("https://www.alphavantage.co/query?function=OVERVIEW&symbol="+final_company[c]+"&apikey="+"2Y7TYXX29G2ZODZS")
+    $.getJSON("https://www.alphavantage.co/query?function=OVERVIEW&symbol="+final_company[c]+"&apikey="+"DLDFRT3OS2GC4CS9")
     .done(function(data){
 
         
@@ -466,7 +480,7 @@ function get_data(e){
         console.log(data)
         
 
-
+        hide_loading_animation();
         if(window.ctx == undefined){
             //if ctx is not defined put the graph 
             put_chart(l,d,name);
@@ -573,18 +587,20 @@ function put_chart(l,d,name1){
 
 function update_chart(l,d,name,w){
     //this function will be used to update data on chart
-    hide_loading_animation();
+    
 
     if(w){
         chart.data.labels = l;
         chart.data.datasets[0].data= d;
         chart.data.datasets[0].label=name;
+        
     }
     else{
         chart.data.labels = l;
         chart.data.datasets[1].data= d;
         chart.data.datasets[1].label=name;
-        chart.data.datasets[0].backgroundColor="";
+        chart.data.datasets[0].backgroundColor="rgba(0,0,0,0.3)";
+        chart.data.datasets[0].borderColor="green";
     }
     
 
@@ -617,14 +633,9 @@ function hide_loading_animation(){
 function show_overlay(){
     $(window).scrollTop(0);
     $('#overlay').show()
-    stop_scroll();
+    
 }
 
-function stop_scroll(){
-    $('body').css({
-        'overflow':'hidden',
-    });
-}
 
 //compare stock functions
 function set_open_high(arr,w){
@@ -739,3 +750,79 @@ $('.c-button').click(function(){
         }
     }  
 });
+
+
+//Buy section 
+$('#buy').click(function(){
+    $('#alert-box').hide();
+    $('#buy-box').show();
+    $('#payment').hide();
+
+    $($('#c-list').children()[0]).text($($('.info:nth-child(1)').children()[0]).text());
+
+    if($($('.info:nth-child(2)').children()[0]).text() == ""){
+        $($('#c-list').children()[1]).hide();
+    }
+    else{
+        $($('#c-list').children()[1]).show();
+        $($('#c-list').children()[1]).text($($('.info:nth-child(2)').children()[0]).text());
+    }
+    
+
+    show_overlay();
+    
+    $('.nav-link').toggleClass('nav-active')
+    $('.line1').toggleClass('l1')
+    $('.line2').toggleClass('l2')
+    $('.line3').toggleClass('l3')
+    if(t == true){
+        t = false
+    }else{
+        t = true
+    }
+
+})
+
+$('#c-list div').click(function(){
+    $('#payment h3').text($(this).text())
+    $('#buy-box').hide();
+    $('#payment').show();
+})
+$('#share').change(function(){
+    let a = $(this).val();
+    console.log(a);
+
+    if(!a==""){
+        let l = $('#payment h3').text().length;
+        let t_amount = (a*(13.33+l)).toFixed(2);
+        $('#amt b i').text("$"+t_amount);
+    }
+    else{
+        $('#amt b i').text("$0.00");
+    }
+})
+$('#share').keyup(function(){
+    let a = $(this).val();
+    console.log(a);
+
+    if(!a==""){
+        let l = $('#payment h3').text().length;
+        let t_amount = (a*(13.33+l)).toFixed(2);
+        $('#amt b i').text("$"+t_amount);
+    }
+    else{
+        $('#amt b i').text("$0.00");
+    }
+})
+
+$('#payment-form button').click(function(){
+    $('#buy-box').hide();
+    $('#payment').hide();
+    $('#payment-complete').show()
+
+})
+$('#payment-complete button').click(function(){
+    $('#overlay').hide()
+    $('#payment-complete').hide()
+    $('#alert-box').show()
+})
