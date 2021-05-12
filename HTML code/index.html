@@ -21,7 +21,7 @@
 
             <li>
                 <div class="search-res">
-                    <input class="boxShadow2" type="text" placeholder="search stock here..." id="inp" autocomplete="off">
+                    <input  type="text" placeholder="search stock here..." id="inp" autocomplete="off">
                     <div class="res boxShadow2"><!--boxShadow is a shadow class property-->
                         <ul class="res-list" id="list">
                             <li>Microsoft</li>
@@ -36,6 +36,9 @@
             <li>
                 <button class="boxShadow2" onclick="get_data(this)" id="s1"><i class="fas fa-search-dollar"></i></button>
             </li>
+            <li>
+                <button id="buy" class="boxShadow2">Buy <i class="fas fa-shopping-cart"></i></button>
+            </li>
         </ul>
         <div class="burger">
             <div class="line1 boxShadow"></div>
@@ -49,7 +52,7 @@
             <div id="info-box">
 
                 <div class="info">
-                    <h2>Google</h2><br>
+                    <h2>Netflix</h2><br>
                     <h3>GOOGL</h3><br>
                     <h3>Asset type</h3> Common Stock <br><br>
                     <h3>Exchange</h3> NYSE <br><br>
@@ -188,12 +191,41 @@
 
     </footer>
     <div id="overlay">
-        <div>
+        <div id="alert-box">
             <h3>Alert<hr></h3>
             <p></p>
 
             
             <button onclick="hide_overlay()" style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;">Close</button>
+        </div>
+        <div id="buy-box" class="boxShadow2">
+            <h2>Buy Stock </h2>
+            <div class="buy-logo"><i class="fas fa-shopping-cart"></i></div>
+            <p><i>Choose a stock,</i></p>
+            <div id="c-list">
+                <div class="boxShadow2">Goolge</div>
+                <div class="boxShadow2">Netflix</div>
+            </div>
+            
+        </div>
+        <div id="payment" class="boxShadow2">
+            <h2>Payment</h2>
+            <p class="pay-p">Stock name</p>
+            <div class="buy-logo"><i class="fas fa-money-check-alt"></i></div>
+            <h3>Google,</h3>
+            <p class="pay-p">Enter no of share you want to buy*</p>
+            <input type="number" id="share" maxlength="6">
+            <p class="pay-p" id="amt">Your Total Amount : <b><i>$0.00</i></b></p>
+
+            <p class="pay-p"><i>Please enter your Account details*</i></p>
+            
+            
+            <div id="payment-form">
+                <input type="number" placeholder="Enter your Demat Account Number" >
+                <input type="text" placeholder="Enter your Account Name ">
+                <input type="number" placeholder="Enter your PIN" >
+                <button class="boxShadow2">Pay <i class="fas fa-money-bill-wave"></i></button>
+            </div>
         </div>
     </div>
 
