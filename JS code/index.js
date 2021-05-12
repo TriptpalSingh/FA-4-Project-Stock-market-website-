@@ -757,8 +757,17 @@ $('#buy').click(function(){
     $('#alert-box').hide();
     $('#buy-box').show();
     $('#payment').hide();
+
     $($('#c-list').children()[0]).text($($('.info:nth-child(1)').children()[0]).text());
-    $($('#c-list').children()[1]).text($($('.info:nth-child(2)').children()[0]).text());
+
+    if($($('.info:nth-child(2)').children()[0]).text() == ""){
+        $($('#c-list').children()[1]).hide();
+    }
+    else{
+        $($('#c-list').children()[1]).show();
+        $($('#c-list').children()[1]).text($($('.info:nth-child(2)').children()[0]).text());
+    }
+    
 
     show_overlay();
     

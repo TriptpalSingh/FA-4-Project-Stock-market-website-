@@ -839,7 +839,11 @@ main{
     }
     
     #footer{
+        min-height: 340px;
+    }
+    #f-continer{
         min-height: 300px;
+        height: auto;
     }
     
 }
