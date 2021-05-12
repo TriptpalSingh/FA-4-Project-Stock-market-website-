@@ -187,16 +187,56 @@
 
     </main>
 
-    <footer class="footer" id="footer">
+    <footer id="footer">
+        <div id="f-container">
+            <div id="About">
+                <h2>About Us</h2>
+                <p><b>Trade'n Build</b> is a Stock Market Website, Used To provide 
+                information about Stocks of different Company and provide comparison among them,
+                We also provide option to buy stock. </p>
 
+            </div>
+            <div id="follow">
+                <h2>Follow Us</h2>
+                <table >
+                    <tr>
+                        <td>Facebook</td>
+                        <td><a> <i class="fab fa-facebook"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Twitter</td>
+                        <td><a><i class="fab fa-twitter"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Youtube</td>
+                        <td><a><i class="fab fa-youtube"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Instagram</td>
+                        <td><a><i class="fab fa-instagram"></i></a></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="Creators">
+                <h2>Creators</h2>
+                <ul>
+                    <li>Sushant Mishra</li>
+                    <li>Tanish Goyal</li>
+                    <li>Triptpal Singh</li>
+                    <li>Tanveer Singh</li>
+                </ul>
+            </div>
+            
+        </div>
+        <div id="f-container1">&copy; Trade'n Build | 2021</div>
     </footer>
     <div id="overlay">
         <div id="alert-box">
-            <h3>Alert<hr></h3>
-            <p></p>
+            <h3>Alert</h3><hr>
+            <p>Some Alert</p>
 
             
-            <button onclick="hide_overlay()" style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;">Close</button>
+            <button onclick="hide_overlay()" class="boxShadow2">✖</button>
         </div>
         <div id="buy-box" class="boxShadow2">
             <h2>Buy Stock </h2>
@@ -206,7 +246,7 @@
                 <div class="boxShadow2">Goolge</div>
                 <div class="boxShadow2">Netflix</div>
             </div>
-            
+            <button class="boxShadow2" onclick="hide_overlay()">✖</button>
         </div>
         <div id="payment" class="boxShadow2">
             <h2>Payment</h2>
@@ -214,8 +254,8 @@
             <div class="buy-logo"><i class="fas fa-money-check-alt"></i></div>
             <h3>Google,</h3>
             <p class="pay-p">Enter no of share you want to buy*</p>
-            <input type="number" id="share" maxlength="6">
-            <p class="pay-p" id="amt">Your Total Amount : <b><i>$0.00</i></b></p>
+            <input type="number" id="share" min="1" max="9999">
+            <p class="pay-p" id="amt">Total Amount to Pay: <b><i>$0.00</i></b></p>
 
             <p class="pay-p"><i>Please enter your Account details*</i></p>
             
@@ -226,6 +266,14 @@
                 <input type="number" placeholder="Enter your PIN" >
                 <button class="boxShadow2">Pay <i class="fas fa-money-bill-wave"></i></button>
             </div>
+            <button class="boxShadow2" onclick="hide_overlay()">✖</button>
+        </div>
+
+        <div id="payment-complete" class="boxShadow2">
+            <img src="../sources/Pictures/7efs.gif">
+            <h3>Your Payment is complete.</h3>
+            <p>Thanks for Choosing Trade'n Build</p>
+            <button onclick="hide_overlay()" class="boxShadow2">✖</button>
         </div>
     </div>
 

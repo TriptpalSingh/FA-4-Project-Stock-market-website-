@@ -14,13 +14,13 @@ window.company_t = {
 }
 
 
-// hide_overlay();
+hide_overlay();
 hide_loading_animation();
 $('.c-button').hide();
-$('#alert-box').hide();
+// $('#alert-box').hide();
 $('#buy-box').hide()
-// $('#payment').hide()
-
+$('#payment').hide()
+$('#payment-complete').hide()
 
 window.company=company_t;
 window.final_company=company_t;
@@ -291,6 +291,18 @@ $('.time-range li').click(function(){
 function get_data(e){
     console.log(e["id"])
 
+    //this will be used to close nav
+    $('.nav-link').toggleClass('nav-active')
+    $('.line1').toggleClass('l1')
+    $('.line2').toggleClass('l2')
+    $('.line3').toggleClass('l3')
+    if(t == true){
+        t = false
+    }else{
+        t = true
+    }
+
+
     let w = e["id"] == "s1" ? 1 : 0; 
 
     let c;
@@ -308,14 +320,14 @@ function get_data(e){
         //if user have not searched any company just return
         console.log(final_company)
         console.log(final_company[c])
-        $('#overlay div p').text("Please enter a valid company name")
+        $('#alert-box p').text("Please enter a valid company name")
         show_overlay();
         return;
     }
 
     if(window.time_range == undefined){
         //if time range no selected alert user
-        $('#overlay div p').text("Please choose a time range")
+        $('#alert-box p').text("Please choose a time range")
         show_overlay();
         return;
     }
@@ -767,6 +779,19 @@ $('#c-list div').click(function(){
     $('#buy-box').hide();
     $('#payment').show();
 })
+$('#share').change(function(){
+    let a = $(this).val();
+    console.log(a);
+
+    if(!a==""){
+        let l = $('#payment h3').text().length;
+        let t_amount = (a*(13.33+l)).toFixed(2);
+        $('#amt b i').text("$"+t_amount);
+    }
+    else{
+        $('#amt b i').text("$0.00");
+    }
+})
 $('#share').keyup(function(){
     let a = $(this).val();
     console.log(a);
@@ -780,10 +805,15 @@ $('#share').keyup(function(){
         $('#amt b i').text("$0.00");
     }
 })
+
 $('#payment-form button').click(function(){
-    $('#overlay').hide();
-    $('#alert-box').show();
     $('#buy-box').hide();
     $('#payment').hide();
+    $('#payment-complete').show()
 
+})
+$('#payment-complete button').click(function(){
+    $('#overlay').hide()
+    $('#payment-complete').hide()
+    $('#alert-box').show()
 })
