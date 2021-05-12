@@ -1,16 +1,22 @@
 var searchItem_stockname;
+var StocksNameList = ["Adobe", "Adobe Inc.", "Alibaba Group", "Amazon", "AMD", "American Tower Corporation", "Apple", "Bank of America", "Chevron Corporation", "Cisco Systems", "Coca-Cola Company", "Colgate-Palmolive Company", "Facebook", "Google", "HDFC Bank Limited", "Intel", "JP Morgan Chase", "Johnson & Johnson", "Mastercard Incorporated", "McDonald's Corporation", "Microsoft", "NVIDIA", "Netflix", "Nike", "Oracle Corporation", "PayPal Holdings", "PepsiCo", "Pfizer", "Reliance", "StarBucks Corporation", "Tesla", "Toyota Motors", "Unilever PLC", "United Parcel Service", "UnitedHealth Group Incorporated", "Visa", "Walmart Inc.", "Walt Disney", "Zoom video"];
+var SearchInfo;
 function openNew(){
     
     searchItem_stockname=document.getElementById("search-box").value;
     
-    if(searchItem_stockname=="" || searchItem_stockname=="Please enter valid stock name"){
-        document.getElementById("search-box").placeholder="Please enter valid stock name.....";
-        document.getElementById("search-box").classList.add("mystyle");
-        //document.getElementById("search-box").placeholder.style.color = red;
-    }
-    else{
+    //if(searchItem_stockname=="" || searchItem_stockname=="Please enter valid stock name"){
+    if(StocksNameList.includes(searchItem_stockname)){
         window.open("../HTML code/index.html");
         document.getElementById("search-box").classList.remove("mystyle");
+        SearchInfo=searchItem_stockname;
+        localStorage.setItem("stockSearch",SearchInfo);
+    }
+    else{
+        document.getElementById("search-box").value="";
+        document.getElementById("search-box").placeholder="Select Stock only from Dropdown..";
+        document.getElementById("search-box").classList.add("mystyle");
+        //document.getElementById("search-box").placeholder.style.color = red;
     }
     
       
