@@ -467,7 +467,7 @@ main{
 }
 #follow table{
     margin: auto;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 #follow table tr td{
     padding: 7px;
@@ -475,14 +475,14 @@ main{
 #follow .fab{
     cursor: pointer;
 }
-#Creators ul{
-    margin-top: 20px;
-    list-style-type: none;
-    text-align: center;
+#Creators table{
+    margin: auto;
+    margin-top: 30px;
 }
-#Creators ul li{
+#Creators table tr td{
     padding: 7px;
 }
+
 
 
 #f-container1{
