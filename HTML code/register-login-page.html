@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>register-page</title>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
@@ -16,7 +16,7 @@
 <body>
     <canvas id="myCanvas"></canvas>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-custom-1">
+    <nav class="navbar navbar-expand-md navbar-dark bg-custom-1">
         <div class="container-fluid">
             <!-- <a class="navbar-brand" href="#"><img src="../sources/Pictures/company_logo.png"
                     style="width: 35px; height: 35px;"></a> -->
@@ -26,6 +26,11 @@
             </button> -->
             <div class="collapse navbar-collapse" id="info">
 
+            </div>
+            <div id="burger_outer" role="button">
+                <div class="burger_icon_divs" role="button"></div>
+                <div class="burger_icon_divs" role="button"></div>
+                <div class="burger_icon_divs" role="button"></div>
             </div>
         </div>
     </nav>
@@ -47,7 +52,10 @@
                                 <td class="lables"></td>
                             </tr> -->
                             <tr class="input-rows">
-                                <td class="input-col"><input type="text" class="inputs" auto-complete="false" placeholder="FirstName"  id="f_name" ></td>
+                                <td class="input-col">
+                                    
+                                    <input type="text" class="inputs" auto-complete="false" placeholder="FirstName"  id="f_name" >
+                                </td>
                             </tr>
                             <tr class="hint-rows">
                                 <td>
@@ -62,7 +70,7 @@
                             <tr class="hint-rows">
                                 <td>
                                     <ul id="l_name_hint" class="some">
-                                        <li>The first name shouldn't contain any numbers or spectial characters.</li>
+                                        <li>The last name shouldn't contain any numbers or spectial characters.</li>
                                     </ul>
                                 </td>
                             </tr>
@@ -72,7 +80,9 @@
                             <tr class="hint-rows">
                                 <td>
                                     <ul id="email_hint" class="some">
-                                        <li>The first name shouldn't contain any numbers or spectial characters.</li>
+                                        <li>The Email should contain '@'</li>
+                                        <li>The Email should contain a domain name eg:-google,yahoo,etc.</li>
+                                        <li>Example of an email:- something@domain.(com or net)</li>
                                     </ul>
                                 </td>
                             </tr>
@@ -82,7 +92,11 @@
                             <tr class="hint-rows">
                                 <td>
                                     <ul id="pass_hint" class="some">
-                                        <li>The first name shouldn't contain any numbers or spectial characters.</li>
+                                        <li>Password should be at least 8 characters long.</li>
+                                        <li>Password should contain at least one number.</li>
+                                        <li>Password should contain at least one lower case alphabet.</li>
+                                        <li>Password should contain at least one upper case alphbet.</li>
+                                        <li>Password should contain at least one special character.</li>
                                     </ul>
                                 </td>
                             </tr>
@@ -92,7 +106,7 @@
                             <tr class="hint-rows">
                                 <td>
                                     <ul id="confirm_pass_hint" class="some">
-                                        <li>The first name shouldn't contain any numbers or spectial characters.</li>
+                                        <li>The confirm-password must match the password.</li>
                                     </ul>
                                 </td>
                             </tr>

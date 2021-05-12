@@ -18,7 +18,7 @@ function openNew(){
             //Graph1
 var ctx=document.getElementById("myChart1").getContext('2d');
 var chart =new Chart(ctx,{
-    type: 'bar',
+    type: 'line',
 
     data:{
         labels:['Day1','Day2','Day3','Day4','Day5'],
@@ -26,7 +26,8 @@ var chart =new Chart(ctx,{
             label: 'NIFTY(NSE)',
             data: [10,15,5,8,18],
             borderColor: 'grey',
-            backgroundColor: '#5e6c75',
+            //backgroundColor: '#5e6c75',
+            backgroundColor: '#00ff00',
         }]
     },
     options : {}
@@ -43,8 +44,27 @@ var chart =new Chart(ctx,{
             label: 'SENSEX(DSE)',
             data: [28,20,15,22,18],
             borderColor: 'grey',
-            backgroundColor: '#5e6c75'
+            backgroundColor: '#00e600'
         }]
     },
     options : {}
 });
+
+            //Graph3
+
+            var ctx=document.getElementById("myChart3").getContext('2d');
+            var chart =new Chart(ctx,{
+                type: 'line',
+            
+                data:{
+                    labels:['Day1','Day2','Day3','Day4','Day5'],
+                    datasets: [{
+                        label: 'TCS',
+                        data: [18,9,15,22,24],
+                        borderColor: 'grey',
+                        backgroundColor: '#00cc00'
+                    }]
+                },
+                options : {}
+            });
+
