@@ -39,6 +39,7 @@ window.company_t = {
     "HDFC Bank Limited":"HDB",
     "American Tower Corporation":"AMT",
     "Colgate-Palmolive Company":"CL",
+    "fuck":"bahi"
 
 }
 
