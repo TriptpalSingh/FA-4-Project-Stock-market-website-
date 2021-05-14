@@ -126,6 +126,11 @@ function animate(){
 animate();
 
 
+// function submitIt(){
+//     return true;
+// }
+
+
 $("document").ready(function(){
     var namereg = /[^A-Za-z]/;
     var emailreg = /^\w+\@+([*a-z])+\.+([a-z]{3})$/;

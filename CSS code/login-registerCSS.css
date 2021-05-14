@@ -47,7 +47,7 @@
 
 #img_div{
     margin-top: 7px;
-    width: 1000px;
+    width: 400px;
     height: 550px;
     /* background: url(../sources/Pictures/MicrosoftTeams-image.png);
     background-size: cover; */
@@ -58,7 +58,7 @@
 }
 #bull_img{
     height: 550px;
-    width: 450px;
+    width: 400px;
     /* opacity: 0.5; */
     border-radius: 10px 0 0 10px;
 }
@@ -77,8 +77,6 @@
     overflow: visible;
     color: #edf5e1;
     border-radius: 0 10px 10px 0px;
-    position: absolute;
-    left: 50vw;
 }
 
 #button-div {
