@@ -69,7 +69,7 @@ function preloadFunc()
 }
 window.onpaint = preloadFunc();
 
-const api_key="DLDFRT3OS2GC4CS9";
+const api_key="IKA4T7MP6LW4SQQO";
 const search_key="2Y7TYXX29G2ZODZS"
 
 /*
@@ -95,8 +95,12 @@ $(document).ready(function(){
     time_type="Weekly Time Series";
 
     $('#s1').click();
-    $('#inp').focus();
-    $('#inp').focusout();
+    // $('#inp').focus();
+    // $('#inp').focusout();
+
+    $('#inp').css({
+        color:"white"
+    })
 
 })
 
@@ -110,9 +114,12 @@ $('.burger').click(function(){
     $('.line3').toggleClass('l3')
     if(t == true){
         t = false
+
     }else{
         t = true
     }
+
+
     
 })
 $('main').click(function(){
