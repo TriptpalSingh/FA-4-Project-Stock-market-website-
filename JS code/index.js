@@ -43,21 +43,35 @@ window.company_t = {
 
 }
 
-
-hide_overlay();
-hide_loading_animation();
-$('.c-button').hide();
-// $('#alert-box').hide();
-$('#buy-box').hide()
-$('#payment').hide()
-$('#payment-complete').hide()
-
-window.company=company_t;
-window.final_company=company_t;
+// hide_overlay();
 
 
-const api_key="K8OUKTRAB4ZCGXV9";
+function preloadFunc()
+{   
+
+    hide_overlay();
+    hide_loading_animation();
+    $('.c-button').hide();
+    // $('#alert-box').hide();
+    $('#buy-box').hide()
+    $('#payment').hide()
+    $('#payment-complete').hide()
+
+    window.company=company_t;
+    window.final_company=company_t;
+
+    $('#overlay').css({
+        visibility:"visible",
+    })
+
+
+    
+}
+window.onpaint = preloadFunc();
+
+const api_key="DLDFRT3OS2GC4CS9";
 const search_key="2Y7TYXX29G2ZODZS"
+
 /*
 Api keys
 K8OUKTRAB4ZCGXV9
@@ -68,6 +82,23 @@ RZK00R0YIOTNFTPY
 QPOUSNBCLNPRRT4I
 */
 
+$(document).ready(function(){
+
+    
+
+    window.stockSearch = localStorage.getItem("stockSearch");
+
+    // $('#inp').val(stockSearch);
+    document.getElementById("inp").value=stockSearch;
+    time_range="TIME_SERIES_WEEKLY";
+    loop=5;
+    time_type="Weekly Time Series";
+
+    $('#s1').click();
+    $('#inp').focus();
+    $('#inp').focusout();
+
+})
 
 
 
