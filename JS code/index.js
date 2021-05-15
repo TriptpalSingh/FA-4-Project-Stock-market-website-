@@ -22,7 +22,6 @@ window.company_t = {
     "Bank of America":"BAC",
     "Nvidia":"NVDA",
     "Walt Disney":"DIS",
-    "PayPal Holdings":"PYPL",
     "Coca-Cola Company":"KO",
     "Adobe Inc.":"ADBE",
     "Oracle Corporation":"ORCL",
