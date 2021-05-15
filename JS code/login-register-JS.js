@@ -126,9 +126,6 @@ function animate(){
 animate();
 
 
-// function submitIt(){
-//     return true;
-// }
 
 
 $("document").ready(function(){
@@ -200,8 +197,6 @@ $("document").ready(function(){
 
 
 
-
-    
     function check_signup_credentials(){
         let f_name_flag = false;
         let l_name_flag = false;
