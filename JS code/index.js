@@ -20,7 +20,7 @@ window.company_t = {
     "UnitedHealth Group Incorporated":"UNH",
     "Mastercard Incorporated":"MA",
     "Bank of America":"BAC",
-    "NVIDIA":"NVDA",
+    "Nvidia":"NVDA",
     "Walt Disney":"DIS",
     "PayPal Holdings":"PYPL",
     "Coca-Cola Company":"KO",
@@ -39,7 +39,6 @@ window.company_t = {
     "HDFC Bank Limited":"HDB",
     "American Tower Corporation":"AMT",
     "Colgate-Palmolive Company":"CL",
-    "fuck":"bahi"
 
 }
 
@@ -65,7 +64,6 @@ function preloadFunc()
         visibility:"visible",
     })
 
-    $('.chart-container').click();
 
 
     
@@ -99,12 +97,12 @@ $(document).ready(function(){
     time_type="Weekly Time Series";
 
     $('#s1').click();
-    // $('#inp').focus();
-    // $('#inp').focusout();
 
     $('#inp').css({
         color:"white"
     })
+
+    
 
 })
 
@@ -142,6 +140,7 @@ $('main').click(function(){
 
 $('#inp').focus(function(){
     //input focus
+
     res_size()
     $('#inp').css({
         backgroundColor:"white",
@@ -151,6 +150,7 @@ $('#inp').focus(function(){
     $('.res').css({
         display:'block',
         border: '1px solid grey',
+        "z-index":4,
     })
     $('.res-list').css({
         display:'block',

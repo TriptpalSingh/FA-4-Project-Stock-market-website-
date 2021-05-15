@@ -34,15 +34,16 @@ body{
     width: 100%;
     height: 70px;
     
-    background-color:#05386B;
+    background-color:#215588;
     display: flex;
     justify-content: space-around;
     align-items: center;
     color:white;
     font-size: 1.7em;
     letter-spacing: 1.5px;
-    /* position: fixed; */
-    z-index: 4;
+    position: fixed;
+    top: 0px;
+    z-index: 3;
     padding-top: 5px;
 
     
@@ -89,7 +90,7 @@ body{
     border-radius: 0px 0px 10px 10px;
     transition: all 0.1s;
     overflow: scroll;
-    z-index: 5;
+    z-index: 4;
     font-size: 1.3em;
     
 }
@@ -174,7 +175,7 @@ main{
     margin: auto;
     display: flex;
     justify-content: space-around;
-    margin-top: 3vh;
+    margin-top: 90px;
     position: relative;
 }
 .chart-info{
@@ -525,7 +526,8 @@ main{
     margin-top: 20px;
 }
 #buy-box{
-    height: 300px;
+    min-height: 300px;
+    height: auto;
     width: 500px;
     background-color:#05386B ;
     border-radius: 5px;
@@ -554,7 +556,8 @@ main{
     flex-direction: column;
 }
 #c-list div{
-    height: 50px;
+    min-height: 50px;
+    height: auto;
     width: 400px;
     background-color: #2865a1;
     color: white;
@@ -570,7 +573,8 @@ main{
 }
 
 #payment{
-    height: 630px;
+    min-height: 630px;
+    height: auto;
     width: 400px;
     background-color: seagreen;
     border-radius: 5px;
@@ -740,7 +744,8 @@ main{
         margin-left: 90px;
     }
     main{
-        height: 700px;
+        min-height: 700px;
+        height: auto;
     }
     #footer{
         height: auto;
@@ -889,11 +894,13 @@ main{
 
 .l1{
 
-    transform: rotateZ(50deg);
+    transform: rotateZ(45deg);
+    margin-bottom: 0px !important;
 }
 .l2{
     display: none;
 }
 .l3{
-    transform: rotateZ(-50deg);
+    transform: rotateZ(-45deg);
+    margin-top: -2.5px !important;
 }
