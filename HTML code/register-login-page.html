@@ -19,12 +19,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-custom-1">
         <div class="container-fluid">
-            <!-- <a class="navbar-brand" href="#"><img src="../sources/Pictures/company_logo.png"
-                    style="width: 35px; height: 35px;"></a> -->
             <a class="navbar-brand mr-auto ml-auto" href="#" style="font-family: cursive; font-size: 2rem;">TRADE'n BUILD</a>
-            <!-- <button class="navbar-toggler" data-toggle="collapse" data-target="#info">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
             <div class="collapse navbar-collapse" id="info">
 
             </div>
@@ -40,7 +35,7 @@
             <img src="../sources/Pictures/pexels-nataliya-vaitkevich-6120204.jpg" id="bull_img">
         </div>
         <div id="formdiv">
-            <form action="Home.html" method="GET" autocomplete="off">
+            <form action="Home.html" onsubmit="return submitIt()" method="GET" autocomplete="off">
                 <div id="button-div">
                     <div class="buttons" role="button" id="su_b"><a>SIGN-UP</a></div>
                     <div id="seperator"></div>
@@ -49,9 +44,6 @@
                 <div id="inner_formdiv">
                     <div id="register_form" class="forms">
                         <table id="table">
-                            <!-- <tr class="lable-rows">
-                                <td class="lables"></td>
-                            </tr> -->
                             <tr class="input-rows">
                                 <td class="input-col">
                                     
@@ -140,6 +132,7 @@
     </div>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../JS code/login-register-JS.js"></script>
+    <script src="../sources/database.js"></script>
 </body>
 
 </html>

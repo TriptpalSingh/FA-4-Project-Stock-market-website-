@@ -11,4 +11,8 @@ var database ={
             ]
         };
 
-localStorage.setItem("loginData", JSON.stringify(database));
+
+if(localStorage.getItem("loginData") == null){
+    localStorage.setItem("loginData", JSON.stringify(database));
+}
+

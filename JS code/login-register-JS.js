@@ -11,7 +11,6 @@ window.addEventListener('resize', () => {
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-
 var loginInfo = {
     "data":[
         {
@@ -25,7 +24,6 @@ var loginInfo = {
     ]
 }
 
-
 var mouse = {
     x: undefined,
     y: undefined
@@ -35,14 +33,11 @@ canvas.addEventListener("mousemove", coordinates);
 
 class partical{
     constructor(){
-        // this.x = mouse.x;
-        // this.y = mouse.y;
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.size = Math.random() * 9 +1;
         this.speedX = Math.random() * 3 -1.5;
         this.speedY = Math.random() * 3 -1.5;
-        // this.color = "rgb("+Math.random()* 255+","+Math.random()* 255+","+Math.random()* 255+")";
         this.color = "#05386B"
     }
 
@@ -80,9 +75,6 @@ for(var i=0; i<100;i++){
 function coordinates(event){
     mouse.x = event.x;
     mouse.y = event.y;
-    // for(var i=0; i<10;i++){
-    //     particalsArray.push(new partical());
-    // }
     
 }
 
@@ -125,7 +117,27 @@ function animate(){
 }
 animate();
 
-
+function submitIt(){
+    var logindata = localStorage.getItem("loginData");
+    var cred = JSON.parse(logindata);
+    var em = document.getElementById("register_email").value;
+    var pass = document.getElementById("register_pass").value;
+    if(em == ""){
+        return true;
+    }
+    for(var i=0;i<cred.data.length;i++){
+        if(em == cred.data[i].email){
+            alert("the email is already in use.");
+            return false;
+        }
+    }
+    cred.data.push({
+        email:em,
+        password:pass
+    })
+    localStorage.setItem("loginData",JSON.stringify(cred));
+    return true;
+}
 
 
 $("document").ready(function(){
@@ -145,6 +157,11 @@ $("document").ready(function(){
     var confirmPass = document.getElementById("confirm_pass");  
     var login_email = document.getElementById("login_email");
     var login_pass = document.getElementById("login_pass");
+
+    if(localStorage.getItem("loginData") == null){
+        alert("please uncomment the last script tag for one run of the code for making the local storage, otherwise this page will not function properly.")
+    }
+
 
     // hint toggle
     {
@@ -255,9 +272,12 @@ $("document").ready(function(){
         var login_email_val = login_email.value;
         var login_pass_val = login_pass.value;
 
-        for(var i=0; i<loginInfo.data.length;i++){
-            var check_email = loginInfo.data[i].email;
-            var check_pass = loginInfo.data[i].password;
+        var logindata = localStorage.getItem("loginData");
+        var cred = JSON.parse(logindata);
+
+        for(var i=0; i<cred.data.length;i++){
+            var check_email = cred.data[i].email;
+            var check_pass = cred.data[i].password;
             if(login_email_val == check_email){
                 login_email_flag = true;
             }
