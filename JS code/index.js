@@ -84,27 +84,27 @@ RZK00R0YIOTNFTPY
 QPOUSNBCLNPRRT4I
 */
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
     
 
-    window.stockSearch = localStorage.getItem("stockSearch");
+//     window.stockSearch = localStorage.getItem("stockSearch");
 
-    // $('#inp').val(stockSearch);
-    document.getElementById("inp").value=stockSearch;
-    time_range="TIME_SERIES_WEEKLY";
-    loop=5;
-    time_type="Weekly Time Series";
+//     // $('#inp').val(stockSearch);
+//     document.getElementById("inp").value=stockSearch;
+//     time_range="TIME_SERIES_WEEKLY";
+//     loop=5;
+//     time_type="Weekly Time Series";
 
-    $('#s1').click();
+//     $('#s1').click();
 
-    $('#inp').css({
-        color:"white"
-    })
+//     $('#inp').css({
+//         color:"white"
+//     })
 
     
 
-})
+// })
 
 
 

@@ -169,6 +169,7 @@ a{
 
 /* main */
 main{
+    min-height: 700px;
     height: 100vh;
     width: 90vw;
     /* background-color: aquamarine; */
@@ -437,7 +438,8 @@ main{
 /* footer */
 #footer{
     width: 100%;
-    height: 40vh;
+    min-height: 250px;
+    height: 33vh;
     position: aboslute;
     left: 0px;
     bottom:0px;
@@ -743,10 +745,7 @@ main{
     #buy{
         margin-left: 90px;
     }
-    main{
-        min-height: 700px;
-        height: auto;
-    }
+
     #footer{
         height: auto;
     }
