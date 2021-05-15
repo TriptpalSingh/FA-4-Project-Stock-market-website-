@@ -735,6 +735,7 @@ main{
     .nav-link{
         width: 55%;
     }
+    
     #buy{
         margin-left: 90px;
     }
@@ -746,7 +747,7 @@ main{
     }
 }
 
-@media screen and (max-width: 1042px){
+@media screen and (max-width: 1085px){
 
     .chart-graph{
         width: 100%;
@@ -755,14 +756,14 @@ main{
 
     .chart-info{
         margin-top: 10px;
-        height: 350px;
+        height: 450px;
         width: 100%;
     }
     .chart-container{
         min-height: 500px;
     }
     .stock-compare{
-        min-height: 270px;
+        height: 270px;
     }
     main{
         flex-direction: column-reverse;
@@ -773,9 +774,7 @@ main{
     }
 }
 @media  screen and (max-width:970px) {
-    .stock-compare{
-        height: 200px;
-    }
+
     .chart-container{
         height: 300px;
     }
@@ -833,8 +832,7 @@ main{
         margin: 5%;
     }
     .chart-info{
-        margin-top: 30px;
-        min-height: 300px;
+        margin-top: 20px;
     }
     .chart-container{
         min-height: 380px;
@@ -842,9 +840,9 @@ main{
     .stock-compare{
         min-height: 250px;
     }
-    .com-1,.com-2{
+    /* .com-1,.com-2{
         height: 105%;
-    }
+    } */
 
     main{
         height: auto;
@@ -862,7 +860,7 @@ main{
 
 @media screen and (max-width : 655px){
     .chart-graph{
-        height: 600px;
+        height: 700px;
     }
     .nav-link input{
         width: 200px;

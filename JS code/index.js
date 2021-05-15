@@ -52,6 +52,7 @@ function preloadFunc()
     hide_overlay();
     hide_loading_animation();
     $('.c-button').hide();
+    //c-button is button that is present of slide div
     // $('#alert-box').hide();
     $('#buy-box').hide()
     $('#payment').hide()
@@ -64,9 +65,12 @@ function preloadFunc()
         visibility:"visible",
     })
 
+    $('.chart-container').click();
+
 
     
 }
+//This function is called before loading of the page
 window.onpaint = preloadFunc();
 
 const api_key="IKA4T7MP6LW4SQQO";
@@ -688,6 +692,10 @@ function hide_overlay(){
     $('body').css({
         'overflow':'scroll',
     })
+    $('#alert-box').show();
+    $('#buy-box').hide()
+    $('#payment').hide()
+    $('#payment-complete').hide()
 }
 
 function show_loading_animation(){
