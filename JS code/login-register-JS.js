@@ -120,6 +120,8 @@ animate();
 function submitIt(){
     var logindata = localStorage.getItem("loginData");
     var cred = JSON.parse(logindata);
+    var ff_name = document.getElementById("f_name").value;
+    var ll_name = document.getElementById("l_name").value;
     var em = document.getElementById("register_email").value;
     var pass = document.getElementById("register_pass").value;
     if(em == ""){
@@ -133,9 +135,13 @@ function submitIt(){
     }
     cred.data.push({
         email:em,
-        password:pass
+        password:pass,
+        f_name:ff_name,
+        l_name:ll_name
     })
     localStorage.setItem("loginData",JSON.stringify(cred));
+    var user = cred.data[cred.data.length - 1].f_name+" "+ cred.data[cred.data.length - 1].l_name;
+    localStorage.setItem("username",user);
     return true;
 }
 
@@ -158,9 +164,6 @@ $("document").ready(function(){
     var login_email = document.getElementById("login_email");
     var login_pass = document.getElementById("login_pass");
 
-    if(localStorage.getItem("loginData") == null){
-        alert("please uncomment the last script tag for one run of the code for making the local storage, otherwise this page will not function properly.")
-    }
 
 
     // hint toggle
@@ -265,6 +268,8 @@ $("document").ready(function(){
         
     }
 
+
+
     function check_login_credentials(){
         var login_email_flag = false;
         var login_pass_flag = false;
@@ -279,6 +284,8 @@ $("document").ready(function(){
             var check_email = cred.data[i].email;
             var check_pass = cred.data[i].password;
             if(login_email_val == check_email){
+                var user = cred.data[i].f_name+" "+ cred.data[i].l_name;
+                localStorage.setItem("username",user);
                 login_email_flag = true;
             }
             if(login_pass_val == check_pass){
