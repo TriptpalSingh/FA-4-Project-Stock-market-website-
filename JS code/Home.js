@@ -21,7 +21,7 @@ function openNew(){
     
     //if(searchItem_stockname=="" || searchItem_stockname=="Please enter valid stock name"){
     if(StocksNameList.includes(searchItem_stockname)){
-        window.open("../HTML code/index.html");
+        window.open("../HTML code/Page3(stock info and compare page).html");
         document.getElementById("search-box").classList.remove("mystyle");
         SearchInfo=searchItem_stockname;
         localStorage.setItem("stockSearch",SearchInfo);
