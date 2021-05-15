@@ -91,7 +91,7 @@ var chart =new Chart(ctx,{
 
 $("#Profile-logo").hover(function(){
     $("#user-name").toggle();
-    //$("#username").text(localStorage.getItem("username"));
+    $("#username").text(localStorage.getItem("username"));
 })
 
 
