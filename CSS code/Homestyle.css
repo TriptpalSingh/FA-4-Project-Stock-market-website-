@@ -85,9 +85,8 @@ input[type="search"] {
     text-align: center;
     background-color: rgb(230, 227, 227);
     font-size: 1.5vw;
-    width: 10vw;
-    min-height: 35px;
-    height:auto;
+    width: 18vw;
+    height: 38px;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
