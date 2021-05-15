@@ -660,6 +660,7 @@ function put_chart(l,d,name1){
 function update_chart(l,d,name,w){
     //this function will be used to update data on chart
     
+    hide_loading_animation();
 
     if(w){
         chart.data.labels = l;
@@ -891,10 +892,22 @@ $('#share').keyup(function(){
     }
 })
 
-$('#payment-form button').click(function(){
-    $('#buy-box').hide();
-    $('#payment').hide();
-    $('#payment-complete').show()
+
+
+$('#payment-form button').click(function(e){
+    e.preventDefault();
+    if($("form input").val() == ""){
+        alert("Input Your payment Details")
+    }
+    else{
+        $('#buy-box').hide();
+        $('#payment').hide();
+        $('#payment-complete').show()
+
+        $("#payment input").val("");
+        $('#amt b i').text("$0.00");
+    }
+    
 
 })
 $('#payment-complete button').click(function(){
