@@ -20,7 +20,7 @@ window.company_t = {
     "UnitedHealth Group Incorporated":"UNH",
     "Mastercard Incorporated":"MA",
     "Bank of America":"BAC",
-    "NVIDIA":"NVDA",
+    "Nvidia":"NVDA",
     "Walt Disney":"DIS",
     "PayPal Holdings":"PYPL",
     "Coca-Cola Company":"KO",
@@ -39,7 +39,6 @@ window.company_t = {
     "HDFC Bank Limited":"HDB",
     "American Tower Corporation":"AMT",
     "Colgate-Palmolive Company":"CL",
-    "fuck":"bahi"
 
 }
 
@@ -52,6 +51,7 @@ function preloadFunc()
     hide_overlay();
     hide_loading_animation();
     $('.c-button').hide();
+    //c-button is button that is present of slide div
     // $('#alert-box').hide();
     $('#buy-box').hide()
     $('#payment').hide()
@@ -65,8 +65,10 @@ function preloadFunc()
     })
 
 
+
     
 }
+//This function is called before loading of the page
 window.onpaint = preloadFunc();
 
 const api_key="IKA4T7MP6LW4SQQO";
@@ -82,27 +84,27 @@ RZK00R0YIOTNFTPY
 QPOUSNBCLNPRRT4I
 */
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
     
 
-    window.stockSearch = localStorage.getItem("stockSearch");
+//     window.stockSearch = localStorage.getItem("stockSearch");
 
-    // $('#inp').val(stockSearch);
-    document.getElementById("inp").value=stockSearch;
-    time_range="TIME_SERIES_WEEKLY";
-    loop=5;
-    time_type="Weekly Time Series";
+//     // $('#inp').val(stockSearch);
+//     document.getElementById("inp").value=stockSearch;
+//     time_range="TIME_SERIES_WEEKLY";
+//     loop=5;
+//     time_type="Weekly Time Series";
 
-    $('#s1').click();
-    // $('#inp').focus();
-    // $('#inp').focusout();
+//     $('#s1').click();
 
-    $('#inp').css({
-        color:"white"
-    })
+//     $('#inp').css({
+//         color:"white"
+//     })
 
-})
+    
+
+// })
 
 
 
@@ -138,6 +140,7 @@ $('main').click(function(){
 
 $('#inp').focus(function(){
     //input focus
+
     res_size()
     $('#inp').css({
         backgroundColor:"white",
@@ -147,6 +150,7 @@ $('#inp').focus(function(){
     $('.res').css({
         display:'block',
         border: '1px solid grey',
+        "z-index":4,
     })
     $('.res-list').css({
         display:'block',
@@ -688,6 +692,10 @@ function hide_overlay(){
     $('body').css({
         'overflow':'scroll',
     })
+    $('#alert-box').show();
+    $('#buy-box').hide()
+    $('#payment').hide()
+    $('#payment-complete').hide()
 }
 
 function show_loading_animation(){

@@ -34,15 +34,16 @@ body{
     width: 100%;
     height: 70px;
     
-    background-color:#05386B;
+    background-color:#215588;
     display: flex;
     justify-content: space-around;
     align-items: center;
     color:white;
     font-size: 1.7em;
     letter-spacing: 1.5px;
-    /* position: fixed; */
-    z-index: 4;
+    position: fixed;
+    top: 0px;
+    z-index: 3;
     padding-top: 5px;
 
     
@@ -89,7 +90,7 @@ body{
     border-radius: 0px 0px 10px 10px;
     transition: all 0.1s;
     overflow: scroll;
-    z-index: 5;
+    z-index: 4;
     font-size: 1.3em;
     
 }
@@ -168,13 +169,14 @@ a{
 
 /* main */
 main{
+    min-height: 700px;
     height: 100vh;
     width: 90vw;
     /* background-color: aquamarine; */
     margin: auto;
     display: flex;
     justify-content: space-around;
-    margin-top: 3vh;
+    margin-top: 90px;
     position: relative;
 }
 .chart-info{
@@ -436,7 +438,8 @@ main{
 /* footer */
 #footer{
     width: 100%;
-    height: 40vh;
+    min-height: 250px;
+    height: 33vh;
     position: aboslute;
     left: 0px;
     bottom:0px;
@@ -525,7 +528,8 @@ main{
     margin-top: 20px;
 }
 #buy-box{
-    height: 300px;
+    min-height: 300px;
+    height: auto;
     width: 500px;
     background-color:#05386B ;
     border-radius: 5px;
@@ -554,7 +558,8 @@ main{
     flex-direction: column;
 }
 #c-list div{
-    height: 50px;
+    min-height: 50px;
+    height: auto;
     width: 400px;
     background-color: #2865a1;
     color: white;
@@ -570,7 +575,8 @@ main{
 }
 
 #payment{
-    height: 630px;
+    min-height: 630px;
+    height: auto;
     width: 400px;
     background-color: seagreen;
     border-radius: 5px;
@@ -735,18 +741,17 @@ main{
     .nav-link{
         width: 55%;
     }
+    
     #buy{
         margin-left: 90px;
     }
-    main{
-        height: 700px;
-    }
+
     #footer{
         height: auto;
     }
 }
 
-@media screen and (max-width: 1042px){
+@media screen and (max-width: 1085px){
 
     .chart-graph{
         width: 100%;
@@ -755,14 +760,14 @@ main{
 
     .chart-info{
         margin-top: 10px;
-        height: 350px;
+        height: 450px;
         width: 100%;
     }
     .chart-container{
         min-height: 500px;
     }
     .stock-compare{
-        min-height: 270px;
+        height: 270px;
     }
     main{
         flex-direction: column-reverse;
@@ -773,9 +778,7 @@ main{
     }
 }
 @media  screen and (max-width:970px) {
-    .stock-compare{
-        height: 200px;
-    }
+
     .chart-container{
         height: 300px;
     }
@@ -833,8 +836,7 @@ main{
         margin: 5%;
     }
     .chart-info{
-        margin-top: 30px;
-        min-height: 300px;
+        margin-top: 20px;
     }
     .chart-container{
         min-height: 380px;
@@ -842,9 +844,9 @@ main{
     .stock-compare{
         min-height: 250px;
     }
-    .com-1,.com-2{
+    /* .com-1,.com-2{
         height: 105%;
-    }
+    } */
 
     main{
         height: auto;
@@ -862,7 +864,7 @@ main{
 
 @media screen and (max-width : 655px){
     .chart-graph{
-        height: 600px;
+        height: 700px;
     }
     .nav-link input{
         width: 200px;
@@ -891,11 +893,13 @@ main{
 
 .l1{
 
-    transform: rotateZ(50deg);
+    transform: rotateZ(45deg);
+    margin-bottom: 0px !important;
 }
 .l2{
     display: none;
 }
 .l3{
-    transform: rotateZ(-50deg);
+    transform: rotateZ(-45deg);
+    margin-top: -2.5px !important;
 }
