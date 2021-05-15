@@ -89,3 +89,9 @@ var chart =new Chart(ctx,{
     options : {}
 });
 
+$("#Profile-logo").hover(function(){
+    $("#user-name").toggle();
+    //$("#username").text(localStorage.getItem("username"));
+})
+
+
