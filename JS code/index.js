@@ -88,19 +88,24 @@ $(document).ready(function(){
 
     
 
-window.stockSearch = localStorage.getItem("stockSearch");
+    window.stockSearch = localStorage.getItem("stockSearch");
 
-// $('#inp').val(stockSearch);
-document.getElementById("inp").value=stockSearch;
-time_range="TIME_SERIES_WEEKLY";
-loop=5;
-time_type="Weekly Time Series";
+    // $('#inp').val(stockSearch);
+    document.getElementById("inp").value=stockSearch;
+    time_range="TIME_SERIES_WEEKLY";
+    loop=5;
+    time_type="Weekly Time Series";
 
-$('#s1').click();
+    $(".time-range").children()[2].style.backgroundColor="#0b4279" ;
+    $('.time-range').children()[2].style.color="black";
+    // this.style.backgroundColor="#0b4279" //changing color to clicked time-range
+    // this.style.color="white"
 
-$('#inp').css({
-    color:"white"
-})
+    $('#s1').click();
+
+    $('#inp').css({
+        color:"white"
+    })
 
     
 
