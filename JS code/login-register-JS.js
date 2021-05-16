@@ -230,12 +230,12 @@ $("document").ready(function(){
         let register_pass_val = registerPass.value;
         let confirm_pass_val = confirmPass.value;
         
-        if(!namereg.test(f_name_val)){
+        
+        if(f_name_val !== ""){
+            if(!namereg.test(f_name_val)){
                 f_name_flag = true;
                 // alert(" fname success!!");
             }
-        if(f_name_val !== ""){
-            
         }
         if(l_name_val !== ""){
             if(!namereg.test(l_name_val)){
@@ -308,6 +308,11 @@ $("document").ready(function(){
         clearInterval(signup_function);
         login_function = setInterval(check_login_credentials,500);
 
+        firstName.value="";
+        lastName.value= "";
+        registerEmail.value="";
+        registerPass.value="";
+        confirmPass.value="";
 
         var register_div = document.getElementById("register_form");
         var login_div = document.getElementById("login_form");
@@ -323,6 +328,8 @@ $("document").ready(function(){
         clearInterval(login_function)
         signup_function = setInterval(check_signup_credentials,500);
 
+        login_email.value="";
+        login_pass.value="";
 
         var register_div = document.getElementById("register_form");
         var login_div = document.getElementById("login_form");
