@@ -444,12 +444,35 @@ footer {
 
     }
     .Comments{
+        
+        margin-bottom: 21px;
+        margin-top: 21px;
+        width: 450px;
+        height: 500px;
+    }
+    
+    .Comments td{
+        font-size: 1.5rem;
+    }
+    .Comments p{
+        font-size: 1.8rem;
+    }
+    .Comments i{
+        font-size: 1.8rem;
+    }
+    .com-prof{
+        width:80px;
+        height: 80px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .Comments{
         margin-bottom: 21px;
         margin-top: 21px;
         width: 350px;
         height: 400px;
     }
-    
     .Comments td{
         font-size: 1.1rem;
     }
@@ -463,4 +486,5 @@ footer {
         width:40px;
         height: 40px;
     }
+
   }
