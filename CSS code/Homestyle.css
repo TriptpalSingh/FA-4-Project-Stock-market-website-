@@ -24,12 +24,14 @@ body{
 
     /*Navbar*/
 .navbar{
-    position: relative;
-    top:-7px;
+    min-width: 494px;
+    position: sticky;
+    top:0px;
     background-color: #05386B !important;
     padding-top: 2px;
     padding-bottom: 2px;
-    z-index: 2;
+    z-index: 8;
+    margin-top: -7px;
 }
 .navbar-brand{
     background-color: #05386B;
@@ -133,6 +135,8 @@ video{
     /*color: #edf5e1;*/
     border-bottom: 4px dashed rgb(87, 85, 85);
     color:black;
+    transition-duration: 100ms;
+    transition-timing-function: ease-out;
     
 }
 #Top-stocks:hover{
@@ -163,6 +167,9 @@ video{
     background-color: white;
     box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
 }
 #Graph1:hover{
     /*background-color: #f0f0f0;*/
@@ -171,6 +178,7 @@ video{
     height: 33vw;
     box-shadow: 0 10px 15px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19);
     border-radius: 10px;
+
 }
 
 
@@ -180,6 +188,8 @@ video{
     width:80%;
     box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
 }
 
 #Graph2:hover{
@@ -197,6 +207,8 @@ video{
     width:80%;
     box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
 }
 
 #Graph3:hover{
@@ -216,6 +228,7 @@ video{
     margin-top: 15px;
     margin-bottom: 5px;
     color: #edf5e1;
+    
     /*font-size: 2.7vw;*/
 
 }
@@ -276,6 +289,8 @@ aside marquee{
 }
 .Comments:hover{
     box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
 }
 .Stars{
     color: orange;
@@ -315,3 +330,161 @@ footer {
     color:white;
 
 }
+
+.F-f3{
+    font-size: 2.3vw;
+}
+.F-f2{
+    font-size: 1.9vw;
+}
+.F-f{
+    font-size: 1.4vw;
+}
+@media screen and (max-width: 900px) {
+    #myChart1{
+        margin: auto;
+    }
+    #myChart2{
+        margin: auto;
+    }
+    #myChart3{
+        margin: auto;
+    }
+    #Graph1{
+        background-color: white;
+        padding: 2%;
+        width:80%;
+        box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 10px;
+        margin: 20px 0px;
+    }
+    #Graph2{
+        background-color: white;
+        padding: 2%;
+        width:80%;
+        box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 10px;
+        margin: 20px 0px;
+    }
+    #Graph3{
+        background-color: white;
+        padding: 2%;
+        width:80%;
+        box-shadow: 0 10px 19px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 10px;
+        margin: 20px 0px;
+    }
+    #Graph1:hover{
+        /*background-color: #00ff80;*/
+        padding: 2%;
+        width:83%;
+        height: 50vw;
+        box-shadow: 0 10px 15px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19);
+        border-radius: 10px;
+    }
+    #Graph2:hover{
+        /*background-color: #00ff80;*/
+        padding: 2%;
+        width:83%;
+        height: 50vw;
+        box-shadow: 0 10px 15px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19);
+        border-radius: 10px;
+    }
+    #Graph3:hover{
+        /*background-color: #00ff80;*/
+        padding: 2%;
+        width:83%;
+        height: 50vw;
+        box-shadow: 0 10px 15px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19);
+        border-radius: 10px;
+    }
+    #com-h{
+        font-size:4.5vw;
+    }
+    #com-p{
+        font-size:3.5vw;
+    }
+    .F-f3{
+        font-size: 4vw;
+    }
+    .F-f2{
+        font-size: 2.7vw;
+    }
+    .F-f{
+        font-size: 2.1vw;
+    }
+    #Main-Body{
+        flex-direction: column;
+        align-items: center;
+    }
+    aside{
+        display: block;
+        width: 70vw;
+        height: auto;
+    }
+    aside p{
+        font-size: 3.2vw;
+    }
+    #major-stocks{
+        font-size: 4vw;
+    }
+
+    #Graphs{
+        width: 100vw;
+        height: auto;
+    }
+
+    #Comments-inner{
+        flex-direction: column;
+        align-items: center;
+    }
+    #Comments1{
+        height: auto;
+
+
+    }
+    .Comments{
+        
+        margin-bottom: 21px;
+        margin-top: 21px;
+        width: 450px;
+        height: 500px;
+    }
+    
+    .Comments td{
+        font-size: 1.5rem;
+    }
+    .Comments p{
+        font-size: 1.8rem;
+    }
+    .Comments i{
+        font-size: 1.8rem;
+    }
+    .com-prof{
+        width:80px;
+        height: 80px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .Comments{
+        margin-bottom: 21px;
+        margin-top: 21px;
+        width: 350px;
+        height: 400px;
+    }
+    .Comments td{
+        font-size: 1.1rem;
+    }
+    .Comments p{
+        font-size: 1.3rem;
+    }
+    .Comments i{
+        font-size: 1.3rem;
+    }
+    .com-prof{
+        width:40px;
+        height: 40px;
+    }
+
+  }
