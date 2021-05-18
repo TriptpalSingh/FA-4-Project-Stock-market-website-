@@ -1,7 +1,6 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext('2d');
 var particalsArray = [];
-var hue = 0;
 
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
@@ -11,25 +10,6 @@ window.addEventListener('resize', () => {
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-var loginInfo = {
-    "data":[
-        {
-            "email":"admin",
-            "password":"admin"
-        },
-        {
-            "email":"triptpalsingh@gmail.com",
-            "password":"1234Tript@"
-        }
-    ]
-}
-
-var mouse = {
-    x: undefined,
-    y: undefined
-}
-
-canvas.addEventListener("mousemove", coordinates);
 
 class partical{
     constructor(){
@@ -44,9 +24,6 @@ class partical{
     update(){
         this.x += this.speedX;
         this.y += this.speedY;
-        // if(this.size>0.2){
-        //     this.size -= 0.1;
-        // }
     }
 
     check(){
@@ -68,15 +45,10 @@ class partical{
 }
 
 
-for(var i=0; i<100;i++){
+for(var i=0; i<150;i++){
     particalsArray[i] = new partical();
 }
 
-function coordinates(event){
-    mouse.x = event.x;
-    mouse.y = event.y;
-    
-}
 
 function particalHandler(){
     for(var i=0; i<particalsArray.length;i++){
@@ -107,12 +79,10 @@ function particalHandler(){
 }
 
 function animate(){
-    // ctx.clearRect(0,0,canvas.width,canvas.height);
     ctx.fillStyle = "rgba(255, 255, 255)";
     ctx.fillRect(0,0,canvas.width,canvas.height);
     ctx.fill();
     particalHandler();
-    hue++;
     requestAnimationFrame(animate);
 }
 animate();
