@@ -318,4 +318,11 @@ $("document").ready(function(){
     
 });
 
+$("#img_div").addEventListener("mouseover",function(){
+    $("#img_div").css({
+        "width":"500px !important",
+        "height":"600px !important"
+    })
+})
+
 
