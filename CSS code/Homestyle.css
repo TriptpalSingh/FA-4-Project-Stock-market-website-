@@ -324,8 +324,9 @@ aside marquee{
         /*Footer*/
 footer {
     height: auto;
-    background-color: rgb(24, 23, 23,1);
-    padding: 30px;
+    background-color: #379683;
+    /* background-color: rgb(24, 23, 23,1); */
+    padding: 60px !important;
     font-weight: bolder;
     color:white;
 
