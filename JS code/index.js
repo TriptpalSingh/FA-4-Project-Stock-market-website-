@@ -22,6 +22,7 @@ window.company_t = {
     "Bank of America":"BAC",
     "Nvidia":"NVDA",
     "Walt Disney":"DIS",
+    "PayPal Holdings":"PYPL",
     "Coca-Cola Company":"KO",
     "Adobe Inc.":"ADBE",
     "Oracle Corporation":"ORCL",
@@ -50,11 +51,13 @@ function preloadFunc()
     hide_overlay();
     hide_loading_animation();
     $('.c-button').hide();
-    //c-button is button that is present of slide div
+    // c-button is button that is present of slide div
     // $('#alert-box').hide();
     $('#buy-box').hide()
     $('#payment').hide()
+    $("#p-alert-box").hide();
     $('#payment-complete').hide()
+
 
     window.company=company_t;
     window.final_company=company_t;
@@ -70,8 +73,9 @@ function preloadFunc()
 //This function is called before loading of the page
 window.onpaint = preloadFunc();
 
-const api_key="IKA4T7MP6LW4SQQO";
-const search_key="2Y7TYXX29G2ZODZS"
+const api_key1="RZK00R0YIOTNFTPY";
+const api_key2="DLDFRT3OS2GC4CS9";
+const search_key="2Y7TYXX29G2ZODZS";
 
 /*
 Api keys
@@ -96,7 +100,7 @@ $(document).ready(function(){
     time_type="Weekly Time Series";
 
     $(".time-range").children()[2].style.backgroundColor="#0b4279" ;
-    $('.time-range').children()[2].style.color="black";
+    $('.time-range').children()[2].style.color="white";
     // this.style.backgroundColor="#0b4279" //changing color to clicked time-range
     // this.style.color="white"
 
@@ -224,18 +228,18 @@ function get_keyword_search_result(){
 }
 
 
-
-$('#inp, #inp2').keyup(function(e){
+//storing function in x to call it later
+let x = $('#inp, #inp2').keyup(function(e){
     //every time a key is up in search box
     //this functio will update suggestion list
     console.log(e)
-    var w = e["target"]["id"] == "inp" ? 0 : 1;
+    var w = e["target"]["id"] == "inp" ? 1 : 0;
     
     if(w){
-        $('.res-list1').empty();
+        $('.res-list').empty();
     }
     else{
-        $('.res-list').empty();
+        $('.res-list1').empty();
     }
     
 
@@ -261,32 +265,32 @@ $('#inp, #inp2').keyup(function(e){
         for(let i=0; i<temp.length; i++){
             li = document.createElement('LI')
             li.innerText=temp[i];
-            $(li).appendTo('.res-list1')
-            res_size1();
+            $(li).appendTo('.res-list')
+            res_size();
         }
     }
     else{
         for(let i=0; i<temp.length; i++){
             li = document.createElement('LI')
             li.innerText=temp[i];
-            $(li).appendTo('.res-list')
-            res_size();
+            $(li).appendTo('.res-list1')
+            res_size1();
         }
     }
-    
-
-    
-    
-    
     
 })
 
 $(document).on("click",'.res-list li',function(){
     //This function will listen to click li element in result
     //and extract its text and put in search field
-    console.log(this.innerText)
-    console.log(final_company)
+    // console.log(this.innerText)
+    // console.log(final_company)
     $('#inp').val(this.innerText)
+
+    //here x variable have reference to event listener to #inp, #inp1
+    //and it is called when user select a company direct from list
+    //with out typing means keyUP
+    x();
 
 })
 
@@ -398,6 +402,7 @@ function get_data(e){
         console.log(final_company[c])
         $('#alert-box p').text("Please enter a valid company name")
         show_overlay();
+        hide_loading_animation();
         return;
     }
 
@@ -405,6 +410,7 @@ function get_data(e){
         //if time range no selected alert user
         $('#alert-box p').text("Please choose a time range")
         show_overlay();
+        hide_loading_animation();
         return;
     }
 
@@ -412,14 +418,15 @@ function get_data(e){
 
 
     //this function will be used to get company infomation
-    $.getJSON("https://www.alphavantage.co/query?function=OVERVIEW&symbol="+final_company[c]+"&apikey="+"DLDFRT3OS2GC4CS9")
+    $.getJSON("https://www.alphavantage.co/query?function=OVERVIEW&symbol="+final_company[c]+"&apikey="+api_key1)
     .done(function(data){
 
         
         if(data["Note"] != undefined || data["Information"] != undefined){
             console.log(data)
-            $('#overlay div p').text("The key is used maximum time \nplease change the key")
+            $('#alert-box p').text("The key is used maximum time \nplease change the Api key 1")
             show_overlay();
+            hide_loading_animation();
             return;
         }
 
@@ -480,11 +487,11 @@ function get_data(e){
     //changing url according to time range has been selected 
     if(time_range == "TIME_SERIES_INTRADAY"){
         //intraday have slightly differnt url so we have to change url according to that
-        url="https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="+final_company[c]+"&interval=5min&apikey="+api_key;
+        url="https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol="+final_company[c]+"&interval=5min&apikey="+api_key2;
     }
     else{
         //rest time range work through same url
-        url="https://www.alphavantage.co/query?function="+time_range+"&symbol="+final_company[c]+"&outputsize=full&apikey="+api_key;
+        url="https://www.alphavantage.co/query?function="+time_range+"&symbol="+final_company[c]+"&outputsize=full&apikey="+api_key2;
     }
 
     $.getJSON(url)
@@ -545,7 +552,7 @@ function get_data(e){
         console.log(l)
 
         if(data["Note"] != undefined || data["Information"] != undefined){
-            $('#overlay div p').text("The key is used maximum time \nplease change the key")
+            $('#alert-box p').text("The key is used maximum time \nplease change the Api key 2")
             show_overlay();
             return;
 
@@ -553,7 +560,7 @@ function get_data(e){
 
         let name = data["Meta Data"]["2. Symbol"];//getting name of stock
 
-        console.log(data)
+        // console.log(data)
         
 
         hide_loading_animation();
@@ -600,7 +607,7 @@ function put_chart(l,d,name1){
     //this function will put chart
     hide_loading_animation();
 
-    ctx = document.getElementById('myChart').getContext('2d');
+    window.ctx = document.getElementById('myChart').getContext('2d');
     
     window.chart = new Chart(ctx, {
         // The type of chart we want to create
@@ -832,6 +839,16 @@ $('.c-button').click(function(){
     }  
 });
 
+$(window).resize(function(){
+    $('#info-box').animate({scrollLeft:0}, 300);
+    $('.com-2').animate({scrollLeft:0}, 300);
+    $('.c-button').text('›');
+    $('.c-button').css({
+        color: "white",
+    })
+    
+})
+
 
 //Buy section 
 $('#buy').click(function(){
@@ -901,7 +918,12 @@ $('#share').keyup(function(){
 $('#payment-form button').click(function(e){
     e.preventDefault();
     if($("form input").val() == ""){
-        alert("Input Your payment Details")
+        $("#p-alert-box h3").text("Alert");
+        $("#p-alert-box p").text("Hey, Please enter your payment details.")
+        $("#p-alert-box").show();
+
+        $("#payment button").hide();
+        $("#p-alert-box button").show();
     }
     else{
         $('#buy-box').hide();
@@ -914,6 +936,13 @@ $('#payment-form button').click(function(e){
     
 
 })
+$("#p-alert-box button").click(function(){
+
+    $("#payment button").show();
+    $("#p-alert-box").hide();
+})  
+
+
 $('#payment-complete button').click(function(){
     $('#overlay').hide()
     $('#payment-complete').hide()

@@ -264,13 +264,17 @@
         <div id="f-container1">&copy; Trade'n Build | 2021</div>
     </footer>
     <div id="overlay">
-        <div id="alert-box">
-            <h3>Alert</h3><hr>
+        <div id="alert-box" class="boxShadow2">
+            <h3>Alert</h3>
+
             <p>Some Alert</p>
 
             
             <button onclick="hide_overlay()" class="boxShadow2">✖</button>
         </div>
+
+        
+
         <div id="buy-box" class="boxShadow2">
             <h2>Buy Stock </h2>
             <div class="buy-logo"><i class="fas fa-shopping-cart"></i></div>
@@ -290,21 +294,27 @@
             <p class="pay-p">Enter no of share you want to buy*</p>
             <input type="number" id="share" min="1" max="9999">
             <p class="pay-p" id="amt">Total Amount to Pay: <b><i>$0.00</i></b></p>
-
             <p class="pay-p"><i>Please enter your Account details*</i></p>
             
             <form>
             <div id="payment-form">
 
                 <input type="number" placeholder="Enter your Demat Account Number" required>
-                <input type="text" placeholder="Enter your Account Name " required>
+                <input type="text" placeholder="Enter your Account Name " required maxlength="20">
                 <input type="number" placeholder="Enter your PIN" required>
-                <button class="boxShadow2">Pay <i class="fas fa-money-bill-wave"></i></button>
+                <button class="boxShadow2" type="submit">Pay <i class="fas fa-money-bill-wave"></i></button>
+
+            </div>
+            </form>
+            <div id="p-alert-box" class="boxShadow2">
+                <h3>Alert</h3>
+    
+                <p>Some Alert</p>
     
                 
+                <button class="boxShadow2">✖</button>
             </div>
-            <button class="boxShadow2" onclick="hide_overlay()" type="submit">✖</button>
-            </form>
+            <button class="boxShadow2" onclick="hide_overlay()">✖</button>
         </div>
 
         <div id="payment-complete" class="boxShadow2">

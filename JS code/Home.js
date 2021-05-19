@@ -1,5 +1,5 @@
 var searchItem_stockname;
-var StocksNameList = ["Adobe", "Adobe Inc.", "Alibaba Group", "Amazon", "AMD", "American Tower Corporation", "Apple", "Bank of America", "Chevron Corporation", "Cisco Systems", "Coca-Cola Company", "Colgate-Palmolive Company", "Facebook", "Google", "HDFC Bank Limited", "Intel", "JP Morgan Chase", "Johnson & Johnson", "Mastercard Incorporated", "McDonald's Corporation", "Microsoft", "NVIDIA", "Netflix", "Nike", "Oracle Corporation", "PepsiCo", "Pfizer", "Reliance", "StarBucks Corporation", "Tesla", "Toyota Motors", "Unilever PLC", "United Parcel Service", "UnitedHealth Group Incorporated", "Visa", "Walmart Inc.", "Walt Disney", "Zoom video"];
+var StocksNameList = ["Adobe", "Adobe Inc.", "Alibaba Group", "Amazon", "AMD", "American Tower Corporation", "Apple", "Bank of America", "Chevron Corporation", "Cisco Systems", "Coca-Cola Company", "Colgate-Palmolive Company", "Facebook", "Google", "HDFC Bank Limited", "Intel", "JP Morgan Chase", "Johnson & Johnson", "Mastercard Incorporated", "McDonald's Corporation", "Microsoft", "NVIDIA", "Netflix", "Nike", "Oracle Corporation", "PayPal Holdings", "PepsiCo", "Pfizer", "Reliance", "StarBucks Corporation", "Tesla", "Toyota Motors", "Unilever PLC", "United Parcel Service", "UnitedHealth Group Incorporated", "Visa", "Walmart Inc.", "Walt Disney", "Zoom video"];
 var SearchInfo;
 function getDate(num){
 	var MonthList=["Jan","Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"];
@@ -21,7 +21,7 @@ function openNew(){
     
     //if(searchItem_stockname=="" || searchItem_stockname=="Please enter valid stock name"){
     if(StocksNameList.includes(searchItem_stockname)){
-        window.open("../HTML code/Page3(stock info and compare page).html");
+        window.open("../HTML code/Page3(stock info and compare page).html","_self");
         document.getElementById("search-box").classList.remove("mystyle");
         SearchInfo=searchItem_stockname;
         localStorage.setItem("stockSearch",SearchInfo);
