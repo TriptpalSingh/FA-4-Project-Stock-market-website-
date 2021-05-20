@@ -424,7 +424,7 @@ function get_data(e){
         
         if(data["Note"] != undefined || data["Information"] != undefined){
             console.log(data)
-            $('#alert-box p').text("The key is used maximum time \nplease change the Api key 1")
+            $('#alert-box p').text("The key is used maximum time \nplease 'change the Api key -> 1'")
             show_overlay();
             hide_loading_animation();
             return;
@@ -552,7 +552,7 @@ function get_data(e){
         console.log(l)
 
         if(data["Note"] != undefined || data["Information"] != undefined){
-            $('#alert-box p').text("The key is used maximum time \nplease change the Api key 2")
+            $('#alert-box p').text("The key is used maximum time \nplease 'change the Api key -> 2'")
             show_overlay();
             return;
 
