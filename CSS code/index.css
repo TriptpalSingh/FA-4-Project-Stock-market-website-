@@ -338,6 +338,7 @@ main{
     margin-right: 5px;
     color: white;
     position: relative;
+    
 }
 .com-2{
     width: 50%;
@@ -445,6 +446,7 @@ main{
     bottom:0px;
     background-color: #379683;
     color: #edf5e1;
+    border-radius: 10px 10px 0px 0px;
 }
 
 #f-container{
@@ -504,29 +506,37 @@ main{
     height: 100%;
     width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
-    /* backdrop-filter: blur(2px); */
+    /* backdrop-filter: blur(1px); */
     visibility:hidden;
 
 }
 
-#overlay #alert-box{
+#overlay #alert-box,#p-alert-box{
     height: 200px;
     width: 350px;
     border-radius:4px;
-    background-color: white;
+    background-color: #ffce44;
     padding: 20px;
-    position: relative;
     display: flex;
     flex-direction: column;
+    color: black;
+    position:absolute;
+    top:40%;
+    margin:auto;
+    z-index:2;
 }
-#alert-box h3{
+#alert-box h3,#p-alert-box h3{
     font-size: 25px;
 }
-#alert-box p{
+#alert-box p,#p-alert-box p{
     margin-top: 20px;
 }
+
+
+/*Buy section css*/
+
 #buy-box{
     min-height: 300px;
     height: auto;
@@ -535,7 +545,6 @@ main{
     border-radius: 5px;
     padding: 35px;
     color: white;
-    /* backdrop-filter: blur(2px); */
     position: relative;
 }
 #buy-box h2{
@@ -620,6 +629,9 @@ main{
 .buy-logo:nth-child(2):hover{
     color: white;
 }
+.buy-logo:nth-child(3):hover{
+    color:#2865a1 ;
+}
 #payment-form{
     display: flex;
     justify-content: center;
@@ -645,6 +657,7 @@ main{
 }
 
 
+/*Cross button css*/
 #overlay div button{
     position: absolute;
     top: 5px;
@@ -661,7 +674,7 @@ main{
 }
 #overlay div button:hover{
     border-radius: 50%;
-    transform: rotate(180deg);
+    transform: rotate(360deg);
     box-shadow: none;
 }
 
@@ -671,7 +684,7 @@ main{
 
 #payment-form button{
     position: relative !important;
-    margin: auto;
+    margin: auto;/*Center*/
     cursor: pointer;
     height: 50px !important;
     width: 200px !important;
@@ -684,6 +697,11 @@ main{
 }
 #payment-form button:hover{
     transform: rotate(0deg) !important;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 25px 35px, rgba(0, 0, 0, 0.23) 0px 21px 21px !important;
+
+}
+#payment-form button:active{
+    box-shadow: none !important;
 }
 
 #payment-complete{

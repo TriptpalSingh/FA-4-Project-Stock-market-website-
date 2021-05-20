@@ -24,7 +24,7 @@ body{
 
     /*Navbar*/
 .navbar{
-    min-width: 494px;
+    /* min-width: 494px; */
     position: sticky;
     top:0px;
     background-color: #05386B !important;
@@ -324,8 +324,9 @@ aside marquee{
         /*Footer*/
 footer {
     height: auto;
-    background-color: rgb(24, 23, 23,1);
-    padding: 30px;
+    background-color: #379683;
+    /* background-color: rgb(24, 23, 23,1); */
+    padding: 2% !important;
     font-weight: bolder;
     color:white;
 
@@ -464,9 +465,24 @@ footer {
         width:80px;
         height: 80px;
     }
+    footer{
+        padding: 4% !important;
+    }
   }
 
   @media screen and (max-width: 700px) {
+    footer{
+        padding: 5% !important;
+    }
+    .F-f3{
+        font-size: 22px;
+    }
+    .F-f2{
+        font-size: 20px;
+    }
+    .F-f{
+        font-size: 15px;
+    }
     .Comments{
         margin-bottom: 21px;
         margin-top: 21px;
@@ -485,6 +501,9 @@ footer {
     .com-prof{
         width:40px;
         height: 40px;
+    }
+    .navbar-brand{
+        margin: 0px;
     }
 
   }
